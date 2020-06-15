@@ -108,15 +108,11 @@ There are no important words in the first example that the second doesn’t have
 
 Idioms pop up all over the place in code, in all sorts of languages, and have done so since well before Python was invented. I’m willing to bet most programmers have seen this, or something like it, even if they never wrote a line of C code in their life.
 
-<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;stdio.h&gt;
-
-int main() {
-	for (int i = 0; i &lt; 10; i++) {
-		printf("The number is %d\n", i);
-	}
-return 0;
-}
-</pre>
+<code>int main() {</code><br>
+<code>for (int i = 0; i &lt; 10; i++) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;printf("The number is %d\n", i);</code><br>
+<code>}</code><br>
+<code>return 0;</code><br>
 
 That ‘for (int i = 0; i < 10; i++)’ expression, in one form or another, appears EVERYWHERE. C, C++, C#, Java, Perl, Groovy, JavaScript - it’s there. Hell, even [Golang,](https://golang.org/) a mere ten years old at the time of this writing and designed to balance old school power with new school syntax has a [modified version](https://tour.golang.org/flowcontrol/1) of that old chestnut\***.
 
@@ -134,8 +130,7 @@ Footnotes:
 
 **For example, if you needed a quick Python program to describe Jay-Z’s problems, you can say a lot in one line, much like the man himself:
 
-<pre class="brush: python; title: ; notranslate" title="">current_probs = [prob for prob in old_probs if prob != “B*tch”]
-</pre>
+<code>current_probs = [prob for prob in old_probs if prob != “B*tch”]</code>
 
 &nbsp;
 

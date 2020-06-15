@@ -11,7 +11,7 @@ layout: feed
 	<id>http://sweeney-th.github.io/blog</id>
 	<author>
 		<name>Thadryan Sweeney</name>
-		<email>thadryan@proton.com</email>
+		<email>thadryan@protonmail.com</email>
 	</author>
 
 	{% for post in site.posts %}

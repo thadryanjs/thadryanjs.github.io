@@ -1,0 +1,8 @@
+I"�<p>Hello all!</p>
+
+<p>I did a project for a data science class in which I classified tweets as being from @realDonaldTrump vs @HillaryClinton. I found a dataset on this on <a href="https://www.kaggle.com/benhamner/clinton-trump-tweets">Kaggle</a>. Because words and context trip up even the most clever programs on occasion, I decided to see if I could write and entirely numerical classifier. It read length of words, average words per sentence, that sort of thing. I wrote a Python function that engineers these features and a script to implement it that adds them to the original dataset. Below is the video:</p>
+
+<p>Please feel free to <a href="http://pythoninthewyld.com/home/contact/">get in touch</a> if you’d like to see a copy of the PDF.</p>
+
+<p> </p>
+:ET

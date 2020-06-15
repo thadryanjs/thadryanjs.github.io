@@ -1,0 +1,142 @@
+---
+id: 123
+title: Idioms about Idioms
+date: 2017-09-26T19:45:04-04:00
+author: admin
+layout: post
+guid: http://pythoninthewyld.com/?p=123
+permalink: /2017/09/26/idioms-about-idioms/
+total_sidebar_layout:
+  - right_sidebar
+categories:
+  - Uncategorized
+---
+I am sitting in a coffee shop at school, theoretically so I can clear some e-todos and paperwork from my ledger, but I just realized something weird so I have to write a blog post.
+
+It all started with me contemplating the term “pythonic”. For those who haven’t heard it before, it’s jargon from the Python programming community to describe something that fits the style and technique of Python well. One might say something “pythonic” is “idiomatic” Python.
+
+Taking a step back, an idiom in normal language according to [The Notorious O.E.D](https://en.oxforddictionaries.com/definition/us/idiom) is:
+
+_1. A group of words established by usage as having a meaning not deducible from those of the individual words (e.g., rain cats and dogs, see the light)._
+
+_2. A characteristic mode of expression in music or art._  
+ _‘they were both working in a neo-impressionist idiom’_
+
+A classic idiom that is [surprisingly well-conserved* all over the damn place](https://en.wikipedia.org/wiki/List_of_idioms_of_improbability) is “When pigs fly”. True to definition 1A, this conveys no real information about what you’re talking about except that which a familiar listener has come to understand it does.
+
+An example of the 2A sort would be all the references to having “99 Xs but a Y ain’t one” that [appear in pop culture](http://www.vulture.com/2014/06/complete-history-99-problems-jay-z-ice-t.html) since Jay-Z released “99 Problems”, making a phrase Ice-T said in one song part of every day speech . If you want to get old school with it, think “I woke up this morning” (Da dum dum da) in a blues song (Did someone leave the radio on? It's getting a little 'NPR' in here!).
+
+Sometimes someone or something quirky is described as 'idiosyncratic', like Bob Dylan's voice (or maybe Bob Dylan in general). You can follow this train of thinking all the way down to a specific person's "idiolect" if you want to [go as hard as this guy](https://www.youtube.com/watch?v=lZSCGZphjq0). In either case, we're talking about traits that belong to a subset, even if that subset is one person.
+
+It’s worth noting that something doesn’t have to be idiomatic to be correct, it’s just not what someone who is fully localized might say. On the street corner, this might be the difference between:
+
+“Pardon me. I require help to find the subway”
+
+and:
+
+“Excuse me, which way’s the train?”
+
+You know what they both mean and neither are incorrect, but you could probably tell which one of these folks was on vacation. Anyway...
+
+Back to the coding example, something pythonic is python written the way a ‘fluent’ user would write it, and that embodies the traits Python is designed to facilitate. This often means it is concise, simple, and easy to read. It might even be an expression that is so common nobody knows who wrote it first, just like with human languages.
+
+Examples, you say? Take a look at the following code:
+
+<pre class="brush: python; title: ; notranslate" title=""># print out each letter of a string
+name = "Guido"
+number = 0
+while number &gt; len(name):
+	print(name[number])
+	number = number + 1
+</pre>
+
+This code achieves what it set out to do; there is nothing really ‘wrong’ with it (you'd still know they guy needs to get to the train, if you will). We all write stuff like this once in a while, and if we’re just trying to get a quick idea out for a prototype, it’s probably not worth slowing down to mess with. But it’s decidedly not pythonic.
+
+For starters, Python would be more likely to sidestep the counter all together. The ‘While’ loop could easily be the more widely understood ‘For’, and the incrementer in line X could be written more concisely . Let’s give it a try.
+
+<pre class="brush: python; title: ; notranslate" title="">name = “Guido”
+for letter in name:
+	print (letter)
+</pre>
+
+Boom. We’re down from 5 lines to 3. You could get down to 2 if you wanted to, (put the print() statement right after the : in the line above it) but this is the more typical.
+
+The ‘for’ takes care of the iteration for us, and we take advantage of a default variable we can define as we see fit, ‘letter’. This would run with any string there, but why not take advantage of the human friendly syntax opportunity? It’s worth noting that ‘i’, is often used and is idiomatic in programming in general (the incrementer, in this case, is replaced by the for-loop but would be more idiomatically written “number + =1”).
+
+That gets the point across, but the example is simple and easy to fix. Let’s look at something a little more true to life. Try this on for size:
+
+<pre class="brush: python; title: ; notranslate" title=""># filter out names that are 3 characters or less.
+names = ["Ada", "Mary", "Bev", "Margaret", "Rosalind"]
+short_names = []
+for name in names:
+	if len(name) &lt;= 3:
+		short_names.append(name)
+</pre>
+
+This snippet sets out to do something slightly more complicated even though it’s also 5 lines long: there is a condition of the list containing unprocessed entries and a check of length. The reason I wrote it this way is because it’s less obvious how it could be made more pythonic, but it can be done, and using an especially python-y move: a list comprehension.
+
+Observe:
+
+<pre class="brush: python; title: ; notranslate" title="">names = ["Ada", "Mary", "Bev", "Margaret", "Rosalind"]
+short_names = [name for name in names if len(name) &lt;= 3]
+</pre>
+
+Whoa, now! Is it all even there?
+
+These can seem a little intimidating at first, but they are super handy**. If you just read through slowly, all of the same idea are expressed, just more smoothly. This is probably the ‘expression’ (idiom) that more experienced users would use, so it is worth noting.
+
+The ‘=’ and the [] define the new list as a list, and the condition is basically typed in (somewhat awkward) English and that’s it.
+
+A skeptical reader might be wondering about the philosophy behind this. The Zen of Python states that it is better to be explicit that implicit, but this feels a bit like a shortcut, no? At least, that’s a question that came to my mind; maybe it is glaringly obviously to everyone else on the planet.
+
+Here’s the thing though: all of the logical components of the first code are carried over into the second. Python isn’t trying to ‘guess’ what we mean from context (nothing is implicit). The only thing that is different is how the command is structured, and that structure is more succinct. I like to read them in English, as well as one can, to illustrate the point.
+
+The first one would look something like this:
+
+“Here is a list of names called names”  
+“Create an empty list name short_names”  
+“...for each name in names...”  
+“...if the length is less than or equal to 3..”  
+“...add that name to the short name list.”
+
+The second:
+
+“Here is a list of names called names”  
+“Create a list called short names that has each name from names if its length is three or less”
+
+There are no important words in the first example that the second doesn’t have. Because all of the same ideas are there, it’s just shorter, I say it fits the philosophy.
+
+Idioms pop up all over the place in code, in all sorts of languages, and have done so since well before Python was invented. I’m willing to bet most programmers have seen this, or something like it, even if they never wrote a line of C code in their life.
+
+<pre class="brush: cpp; title: ; notranslate" title="">#include &lt;stdio.h&gt;
+
+int main() {
+	for (int i = 0; i &lt; 10; i++) {
+		printf("The number is %d\n", i);
+	}
+return 0;
+}
+</pre>
+
+That ‘for (int i = 0; i < 10; i++)’ expression, in one form or another, appears EVERYWHERE. C, C++, C#, Java, Perl, Groovy, JavaScript - it’s there. Hell, even [Golang,](https://golang.org/) a mere ten years old at the time of this writing and designed to balance old school power with new school syntax has a [modified version](https://tour.golang.org/flowcontrol/1) of that old chestnut\***.
+
+In closing I share the random thought that started this rant: Saying something is pythonic is basically using an idiom to describe how idiomatic something is. Huh.
+
+I hope this has been illuminating and/or interesting, and thanks for reading!
+
+Footnotes:
+
+&nbsp;
+
+*The expressions ‘well conserved’ is used all the time in evolutionary biology to describe a protein that varies vary little from species to species. Idiom!
+
+&nbsp;
+
+**For example, if you needed a quick Python program to describe Jay-Z’s problems, you can say a lot in one line, much like the man himself:
+
+<pre class="brush: python; title: ; notranslate" title="">current_probs = [prob for prob in old_probs if prob != “B*tch”]
+</pre>
+
+&nbsp;
+
+\***this is an idiom.

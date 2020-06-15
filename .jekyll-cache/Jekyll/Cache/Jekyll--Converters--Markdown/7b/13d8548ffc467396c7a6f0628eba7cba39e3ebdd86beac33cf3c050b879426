@@ -1,0 +1,24 @@
+I"�<p>During a recent differential gene expression analysis I had a few issues converge in such a way that the code would run fine from top to bottom but would silently compromise the analysis and produce bogus results. Essentially it was a combination of a bugged error message in a package I was using, a bad row in an input file I was given, and some weird behavior of R (and of course, my initial carelessness in not noticing sooner). I caught this issues with some included QC functions.</p>
+
+<p>It seemed plausible that these issues could join forces to trip people up now and then, so I figured I would document it in case people wanted to keep an eye out for it.</p>
+
+<p>If you’re not interested in this sort of analysis but use R, there is still a short takeaway summarized here:</p>
+
+<p><code> &gt; x &lt;- c("1", "10", "100") </code></p>
+<blockquote>
+  <p>x
+  [1] “1”   “10”  “100”
+x &lt;- as.factor(x)
+x
+  [1] 1   10  100
+  Levels: 1 10 100
+x &lt;- as.integer(x)
+x
+  [1] 1 2 3</p>
+  <h1 id="also-happens-with-numerics">also happens with numerics```</h1>
+</blockquote>
+
+<p>The repo for the analysis <a href="https://github.com/sweeney-th/type-issue-case-study">here</a>, and the PDF is below:</p>
+
+<p><a class="s_pdf_download_link" href="http://pythoninthewyld.com/wp-content/uploads/2020/04/CaseStudy.pdf" download=""><button style="" class="s_pdf_download_bttn">Download</button></a></p>
+:ET

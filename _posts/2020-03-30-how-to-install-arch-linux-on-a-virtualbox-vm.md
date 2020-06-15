@@ -25,21 +25,21 @@ The benefits and downsides or Arch have been debated extensively (ad nauseam?) a
 
 ### Pros
 
-  * Minimal - Arch installs a minimal system without even so much as a desktop environment and not a lot of stuff to slow your system down. The user doesn't have the hassle of tracking down extra software and figuring if it's bloat or important.
+  > Minimal - Arch installs a minimal system without even so much as a desktop environment and not a lot of stuff to slow your system down. The user doesn't have the hassle of tracking down extra software and figuring if it's bloat or important.
 
-  * Customizable - This minimal approach means you can install whatever you want. In particular, you get to choose a desktop without depending on that has been made into a flavor/edition/spin. 
+  > Customizable - This minimal approach means you can install whatever you want. In particular, you get to choose a desktop without depending on that has been made into a flavor/edition/spin. 
 
-  * Well-documented - The much-hyped [Arch Wiki](https://wiki.archlinux.org/) is, in fact, great.
+  > Well-documented - The much-hyped [Arch Wiki](https://wiki.archlinux.org/) is, in fact, great.
 
-  * Transparent - It's often said Arch is good if you want to learn more about GNU/Linux and how it works. Arch is helpful for this in my experience - I learned a lot tinkering under the hood.
+  > Transparent - It's often said Arch is good if you want to learn more about GNU/Linux and how it works. Arch is helpful for this in my experience - I learned a lot tinkering under the hood.
 
-  * Current - Arch is a rolling release distro know for getting updates quickly.
+  > Current - Arch is a rolling release distro know for getting updates quickly.
 
 ### Cons
 
-  * (Relatively) Complex to install - Arch has a more involved installation process that other distros; the minimal system doesn't come without a trade-off. It's less geared to getting a system setup quickly and easily than other distros.
+  > (Relatively) Complex to install - Arch has a more involved installation process that other distros; the minimal system doesn't come without a trade-off. It's less geared to getting a system setup quickly and easily than other distros.
 
-  * Requires some maintenance - every now and then (a handful of times a year maybe) a package will requires you to manually run a command or two to update properly. They'll be noted on the front page of the Arch website, but if you let them build up, things can get weird. In theory, this increases the chances that some update will screw up your machine and require you too boot into a live medium and fix it.
+  > Requires some maintenance - every now and then (a handful of times a year maybe) a package will requires you to manually run a command or two to update properly. They'll be noted on the front page of the Arch website, but if you let them build up, things can get weird. In theory, this increases the chances that some update will screw up your machine and require you too boot into a live medium and fix it.
 
 ## Procedure
 

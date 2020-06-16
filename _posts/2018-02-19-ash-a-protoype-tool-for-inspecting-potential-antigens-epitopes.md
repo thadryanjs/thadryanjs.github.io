@@ -1,7 +1,7 @@
 ---
 id: 657
 title: 'ASH: A Protoype Tool For Inspecting Potential Antigens/Epitopes'
-date: 2018-02-19T19:16:04-05:00
+date: 2018-02-19
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=657

@@ -1,7 +1,7 @@
 ---
 id: 759
 title: Python Imports Sample Project + Explanations
-date: 2018-09-30T19:28:07-04:00
+date: 2018-09-30
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=759

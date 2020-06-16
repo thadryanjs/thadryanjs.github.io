@@ -1,7 +1,7 @@
 ---
 id: 280
 title: Python Overview for Perl Users
-date: 2017-12-21T18:40:26-05:00
+date: 2017-12-21
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=280

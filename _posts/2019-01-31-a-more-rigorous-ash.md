@@ -1,7 +1,7 @@
 ---
 id: 772
 title: A More Rigorous ASH
-date: 2019-01-31T07:27:01-05:00
+date: 2019-01-31
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=772

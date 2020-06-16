@@ -1,0 +1,407 @@
+I"�I<p>I was recently asked a question about manipulating dates in R. I built upon my answer and wrote it into a Python function.</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>**&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;</p>
+<div class="container" id="notebook-container">
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <h1 id="Simple-Date-Strings-Conversion:-split-process-join">
+            Simple Date Strings Conversion: split-process-join<a class="anchor-link" href="#Simple-Date-Strings-Conversion:-split-process-join">¶</a>
+          </h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            Someone recently asked me about converting dates in number form to dates their names to make approximate ranges that are easier to read. For example, "01/01/2017 to 04/01/2017" would be "January to February" (in the context of what I was being asked, the years were the columns in a dataframe, so I wasn't concerned with the year.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            Firstly, when confronted with this type of challenge, it is best to do a little background reading. If the times are in a certain format, for instance, there might be packages that allow you to manipulate and convert them already written, like Python's datetime module. For this post, we will just assume we have raw strings and have to deal with them.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            That said, let's see what we are dealing with.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing code_cell rendered">
+      <div class="input">
+        <div class="prompt input_prompt">
+          In [22]:
+        </div>
+        
+        <div class="inner_cell">
+          <div class="input_area">
+            <div class=" highlight hl-ipython3">
+              <pre><span></span><span class="n">date</span> <span class="o">=</span> <span class="s2">"01/01/2017 to 04/01/2017"</span>
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            Note that the information is all in one string, as opposed to a list with the dates in their own entries.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            The first thing that might come to mind is a regular expression. They're a powerful tool, and they might be useful in a problem like this. I ended finding a way to it without them. In general, I try to avoid them for simple tasks because trying to add a regex to a program is like busting out your pepper spray in a mosh pit. Quick, easy, life saver? Spark that turns a dicey situation into a full-on incident? Well-intended plan that backfires causing hours of pain? You just don't know.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            I used a "split-process-join" approach.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            In order to simplify the process, I split the string on " to " so we can deal with each date on its own.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing code_cell rendered">
+      <div class="input">
+        <div class="prompt input_prompt">
+          In [23]:
+        </div>
+        
+        <div class="inner_cell">
+          <div class="input_area">
+            <div class=" highlight hl-ipython3">
+              <pre><span></span><span class="c1"># use the split function </span>
+<span class="n">split_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" to "</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">split_date</span><span class="p">)</span>
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="output_wrapper">
+        <div class="output">
+          <div class="output_area">
+            <div class="prompt">
+            </div>
+            
+            <div class="output_subarea output_stream output_stdout output_text">
+              <pre>['01/01/2017', '04/01/2017']
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            Now we an iterate over the list and use the .startswith() with method as this is a list of strings. I use the the range() function instead of "for x in y" because we want to refer to list elements by their number.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing code_cell rendered">
+      <div class="input">
+        <div class="prompt input_prompt">
+          In [24]:
+        </div>
+        
+        <div class="inner_cell">
+          <div class="input_area">
+            <div class=" highlight hl-ipython3">
+              <pre><span></span><span class="c1"># for each index in length of list...</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">split_date</span><span class="p">)):</span>
+    
+    <span class="c1"># give it a name to for readability</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">split_date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+    <span class="c1"># if the entry there starts with "01/" -&gt; "January"</span>
+    <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"01/"</span><span class="p">):</span>
+        
+        <span class="c1"># replace the item in the array with the month</span>
+        <span class="n">split_date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"January"</span>
+        
+    <span class="c1"># as above with "February"</span>
+    <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"04/"</span><span class="p">):</span>
+       
+        <span class="c1"># put "February" there</span>
+        <span class="n">split_date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"February"</span>
+        
+<span class="c1"># see the output </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">split_date</span><span class="p">)</span>
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="output_wrapper">
+        <div class="output">
+          <div class="output_area">
+            <div class="prompt">
+            </div>
+            
+            <div class="output_subarea output_stream output_stdout output_text">
+              <pre>['January', 'February']
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            To finish the process, we simply need to join the entries back on the " to ". Because .split() and .join() and string methods in Python, the join is admittedly awkward looking.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing code_cell rendered">
+      <div class="input">
+        <div class="prompt input_prompt">
+          In [25]:
+        </div>
+        
+        <div class="inner_cell">
+          <div class="input_area">
+            <div class=" highlight hl-ipython3">
+              <pre><span></span><span class="c1"># on " to " join split_date</span>
+<span class="n">final</span> <span class="o">=</span> <span class="s2">" to "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_date</span><span class="p">)</span>
+
+<span class="c1"># show results </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">final</span><span class="p">)</span>
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="output_wrapper">
+        <div class="output">
+          <div class="output_area">
+            <div class="prompt">
+            </div>
+            
+            <div class="output_subarea output_stream output_stdout output_text">
+              <pre>January to February
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            And we're there:) All in once place, and from the top, that gives us:
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing code_cell rendered">
+      <div class="input">
+        <div class="prompt input_prompt">
+          In [26]:
+        </div>
+        
+        <div class="inner_cell">
+          <div class="input_area">
+            <div class=" highlight hl-ipython3">
+              <pre><span></span><span class="n">date</span> <span class="o">=</span> <span class="s2">"01/01/2017 to 04/01/2017"</span>
+
+<span class="n">split_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" to "</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">split_date</span><span class="p">)):</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">split_date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"01/"</span><span class="p">):</span>
+        <span class="n">split_date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"January"</span>
+    <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"04/"</span><span class="p">):</span>
+        <span class="n">split_date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"February"</span>
+
+<span class="n">final</span> <span class="o">=</span> <span class="s2">" to "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_date</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">final</span><span class="p">)</span>
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="output_wrapper">
+        <div class="output">
+          <div class="output_area">
+            <div class="prompt">
+            </div>
+            
+            <div class="output_subarea output_stream output_stdout output_text">
+              <pre>January to February
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            Obviously, this is just a proof of concept that only works for two months, but it is easy to see how it could made into a function. What would your next step be? I'd go with a function using a dict.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing code_cell rendered">
+      <div class="input">
+        <div class="prompt input_prompt">
+          In [27]:
+        </div>
+        
+        <div class="inner_cell">
+          <div class="input_area">
+            <div class=" highlight hl-ipython3">
+              <pre><span></span><span class="k">def</span> <span class="nf">number_to_name</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+    <span class="c1"># create a dic that stores the pairs</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"01/"</span><span class="p">:</span><span class="s2">"January"</span><span class="p">,</span>  <span class="s2">"02/"</span><span class="p">:</span><span class="s2">"February"</span><span class="p">,</span> <span class="s2">"03/"</span><span class="p">:</span><span class="s2">"March"</span><span class="p">,</span> 
+         <span class="s2">"04/"</span><span class="p">:</span><span class="s2">"April"</span>  <span class="p">,</span>  <span class="s2">"05/"</span><span class="p">:</span><span class="s2">"May"</span><span class="p">,</span>      <span class="s2">"06/"</span><span class="p">:</span><span class="s2">"June"</span><span class="p">,</span>
+         <span class="s2">"07/"</span><span class="p">:</span><span class="s2">"July"</span><span class="p">,</span>     <span class="s2">"08/"</span><span class="p">:</span><span class="s2">"August"</span><span class="p">,</span>   <span class="s2">"09/"</span><span class="p">:</span><span class="s2">"September"</span><span class="p">,</span>
+         <span class="s2">"10/"</span><span class="p">:</span><span class="s2">"October"</span><span class="p">,</span>  <span class="s2">"11/"</span><span class="p">:</span><span class="s2">"November"</span><span class="p">,</span> <span class="s2">"12/"</span><span class="p">:</span><span class="s2">"December"</span> <span class="p">}</span>
+    
+    <span class="n">split_date</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" to "</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">split_date</span><span class="p">)):</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="n">split_date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c1"># the first 3 chars denote the month</span>
+        <span class="n">month</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="c1"># sub them from dict</span>
+        <span class="n">split_date</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
+    <span class="c1"># return after joining </span>
+    <span class="k">return</span> <span class="s2">" to "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_date</span><span class="p">)</span>               <span class="c1"># ugly, but saves a line</span>
+                                         
+<span class="nb">print</span><span class="p">(</span><span class="n">number_to_name</span><span class="p">(</span><span class="s2">"01/01/2017 to 04/01/2017"</span><span class="p">))</span>
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="output_wrapper">
+        <div class="output">
+          <div class="output_area">
+            <div class="prompt">
+            </div>
+            
+            <div class="output_subarea output_stream output_stdout output_text">
+              <pre>January to April
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cell border-box-sizing text_cell rendered">
+      <div class="prompt input_prompt">
+      </div>
+      
+      <div class="inner_cell">
+        <div class="text_cell_render border-box-sizing rendered_html">
+          <p>
+            It might make sense to define the dict outside the function so it doesn't recreate it every time in practice. Feel free to take this and do whatever to it, and I am open to hearing how people would improve it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<p>&lt;/div&gt;  **</p>
+:ET

@@ -1,7 +1,7 @@
 ---
 id: 624
 title: 'In Honor of MLK: &#8220;I Have A Dream&#8221; Wordcloud Example in R'
-date: 2018-01-16T01:56:10-05:00
+date: 2018-01-16
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=624

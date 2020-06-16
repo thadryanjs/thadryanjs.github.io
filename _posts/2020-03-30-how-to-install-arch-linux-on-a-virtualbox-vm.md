@@ -1,7 +1,7 @@
 ---
 id: 945
 title: How to install Arch Linux on a VirtualBox VM
-date: 2020-03-30T08:01:49-04:00
+date: 2020-03-30
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=945

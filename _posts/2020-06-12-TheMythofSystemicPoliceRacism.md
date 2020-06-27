@@ -20,7 +20,7 @@ A recent op-ed that ran in the Wall Street Journal contains numerous severe stat
 3) The piece also cites well-known research out of context which actually contradicts their claim when taken in context
 
 
-4) The author appears to fabricate a quote to make the piece sound more definitive.
+4) The author appears to fabricate a quote to make the piece sound more definitive (or something).
 
 
 <iframe width="1000" height="600" src="https://www.youtube.com/embed/S2pmGjso6gI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

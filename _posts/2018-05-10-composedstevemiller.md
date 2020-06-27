@@ -1,7 +1,7 @@
 ---
 id: 695
 title: Some light-hearted OOP (or, Some Circumstantial Evidence That I am Still Alive)
-date: 2018-05-10
+date: 2018-05-10T11:49:39-04:00
 author: admin
 layout: revision
 guid: http://pythoninthewyld.com/2018/05/10/689-revision-v1/

@@ -27,8 +27,14 @@ a:hover {
     text-decoration: underline;
 }
 
-h1, h2, h3, h4 {
+h1, h3, h4 {
     font-size: 3em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+h2 {
+    font-size: 2em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color: rgb(204, 204, 204); /* "Hi there!... */
 }
@@ -62,6 +68,33 @@ ul.posts li {
     border-top: 1px solid #d5d5d5;
 }
 
+ul.home { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
+    border-top: 1px solid #d5d5d5;
+}
+
+ul.home li {
+    list-style: none;
+    border-top: 1px solid #d5d5d5;
+}
+
 span {
     color: rgb(204, 204, 204); /* I'm */
 }
+
+#profile-pic {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+    display:block;
+    margin:auto;
+}
+
+/* #home-intro {
+    align:center;  
+} */

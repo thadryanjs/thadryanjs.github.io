@@ -1,7 +1,7 @@
 ---
 id: 678
 title: Dict-based Find and Replace Deluxe
-date: 2018-03-12
+date: 2018-03-12T12:03:08-04:00
 author: admin
 layout: revision
 guid: http://pythoninthewyld.com/2018/03/12/674-revision-v1/

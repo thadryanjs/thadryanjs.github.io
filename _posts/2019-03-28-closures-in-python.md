@@ -1,7 +1,7 @@
 ---
 id: 779
 title: 'Closures in Python'
-date: 2019-03-28
+date: 2019-03-28T09:29:12-04:00
 author: admin
 layout: revision
 guid: http://pythoninthewyld.com/2019/03/28/778-revision-v1/

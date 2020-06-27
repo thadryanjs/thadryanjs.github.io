@@ -1,7 +1,7 @@
 ---
 id: 782
 title: Seasonality in Gun Deaths
-date: 2019-08-30
+date: 2019-08-30T16:28:56-04:00
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=782

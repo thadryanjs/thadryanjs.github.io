@@ -1,7 +1,7 @@
 ---
 id: 553
 title: 'Twitter Metadata Classifier: Trump or Clinton?'
-date: 2018-01-09
+date: 2018-01-09T17:06:47-05:00
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=553

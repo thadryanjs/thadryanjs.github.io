@@ -1,7 +1,7 @@
 ---
 id: 762
 title: Perl for the Impatient
-date: 2018-10-04
+date: 2018-10-04T17:42:20-04:00
 author: admin
 layout: post
 guid: http://pythoninthewyld.com/?p=762

@@ -23,4 +23,4 @@ A recent op-ed that ran in the Wall Street Journal contains numerous severe stat
 4) The author appears to fabricate a quote to make the piece sound more definitive.
 
 
-<iframe width="800" height="600" src="https://www.youtube.com/embed/S2pmGjso6gI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1000" height="600" src="https://www.youtube.com/embed/S2pmGjso6gI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

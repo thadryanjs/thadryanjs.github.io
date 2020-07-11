@@ -10,7 +10,7 @@ In a recent [Op-ed](https://www.wsj.com/articles/the-myth-of-systemic-police-rac
 
 > "no significant evidence of antiblack disparity in the likelihood of being fatally shot by police"
 
-This quote does not appear in [Johnson et al](https://www.pnas.org/content/116/32/15877https://www.pnas.org/content/116/32/15877).
+This quote does not appear in [Johnson et al](https://www.pnas.org/content/116/32/15877https://www.pnas.org/content/116/32/15877), the study she cites.
 
 The quote comes from a pre-print (before peer review) reply to a letter criticizing the methodology.
 

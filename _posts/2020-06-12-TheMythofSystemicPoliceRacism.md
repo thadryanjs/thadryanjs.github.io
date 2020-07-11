@@ -6,7 +6,9 @@ date: 2020-06-27
 published: true
 ---
 
-UPDATE: One of the articles misused in the piece has been [retracted](https://twitter.com/ThadryanJS/status/1280520204414603269?s=20), with the authors calling out Mac Donald by name as misusing their work.
+>UPDATE: One of the articles misused in the piece has been [retracted](https://twitter.com/ThadryanJS/status/1280520204414603269?s=20), with the authors calling out Mac Donald by name as misusing their work.
+
+>UPDATE (07/11/2020): The mysterious quote has been found and unleashed a new error. Brief rundown [here](https://sweeney-th.github.io/blog/2020/07/11/FactCheckHMDQuote), details to follow. 
 
 A recent op-ed that ran in the Wall Street Journal contains numerous severe statistical and journalistic errors and makes an enormous claim which is fails to defend. I've created a YouTube video showing my research, explaining the errors, and placing them in context.
 

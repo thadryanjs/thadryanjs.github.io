@@ -3,7 +3,7 @@ author: admin
 layout: post
 title: "Fact Check: The Quote Heather Mac Donald presents when discussing Johnson et al comes from a passage of a pre-print that does not appear in the published work."
 date: 2020-07-11
-published: false
+published: true
 ---
 
 In a recent [Op-ed](https://www.wsj.com/articles/the-myth-of-systemic-police-racism-11591119883) Heather Mac Donald presents the following quote:

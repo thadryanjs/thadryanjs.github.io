@@ -6,6 +6,10 @@ date: 2020-07-09
 published: true
 ---
 
+>UPDATE: One of the articles misused in the piece has been [retracted](https://twitter.com/ThadryanJS/status/1280520204414603269?s=20), with the authors calling out Mac Donald by name as misusing their work.
+
+>UPDATE (07/11/2020): The mysterious quote has been found and unleashed a new error. Brief rundown [here](https://sweeney-th.github.io/blog/2020/07/11/FactCheckHMDQuote), details to follow. 
+
 A few weeks ago, I published a [video](https://sweeney-th.github.io/blog/2020/06/27/TheMythofSystemicPoliceRacism) and a summary of some pretty egregious lying with statistics that was published in [The Wall Street Journal](https://www.wsj.com/articles/the-myth-of-systemic-police-racism-11591119883). I was not the only [person](https://www.patheos.com/blogs/tippling/2020/06/08/the-myth-of-heather-macdonalds-the-myth-of-systematic-police-racism/) to observer this. Since then, authors of one of the studies cited have asked for a [retraction](https://retractionwatch.com/2020/07/06/authors-of-study-on-race-and-police-killings-ask-for-its-retraction-citing-continued-misuse-in-the-media/), saying they were careless in ways that allowed for misuse of their work. They also call out Heather Mac Donald, the author of the Op-ed, by name.
 
 I'd written an essay-style version of my original critique as well, which follows:

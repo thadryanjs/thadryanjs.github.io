@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html>
+I"Ž”<html>
 <head><meta charset="utf-8" />
 
-<title>testNB</title>
+<title>ScalaHandshake</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13046,7 +13045,7 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
+<link rel="stylesheet" href="custom.css" />
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -13074,15 +13073,79 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://www.scala-lang.org/">Scala</a> is a JVM language that seeks to marry functional and object-oriented programming styles. It was was Designed by <a href="https://en.wikipedia.org/wiki/Martin_Odersky">Martin Odersky</a> and first appeared in 2004. While I think many projects that aspire to "best of both worlds" status end up ugly and chimeric, my explorations with Scala have revealed a really thoughtful and lovely creation that elegantly merges different paradigms. While it isn't one of the top-tier languages for for production code job hunting (think Java, C++, Python, JavaScript, etc), it made the <a href="https://www.businessinsider.com/the-9-most-popular-programming-languages-according-to-the-facebook-for-programmers-2017-10#14-scala-2">GitHub top 15 list</a> for most common languages recently. I suspect much of this is because it's <a href="https://activewizards.com/blog/top-15-scala-libraries-for-data-science/">becoming popular as a language for data science</a> as a happy medium language between the breezy-to-write-but-relatively-slow Python and the incumbent production veteran Java that is faster but comes with a notoriously verbose syntax (still very much worth learning though!). Scala aims to be approachable and quick to develop as well as fast (some tests <a href="https://www.theregister.com/2011/06/03/google_paper_on_cplusplus_java_scala_go/">show it performing at Java speed or better)</a>, thus avoiding the need to "productionize" slower, exploratory code if a project grows (The name "Scala" is a shortening of the "Scalable Language", after all). Nobody is going to be putting Java out of business any time soon (just <a href="https://www.neowin.net/news/major-coding-boot-camp-drops-ruby-on-rails-and-replaces-it-with-a-java-course">ask the flashier start-up favorite Ruby</a>, but Scala joins Python, Java, and R as a helpful tool for data and general purpose coding.  After spending a good amount of time with the Scala home page, <a href="https://www.amazon.com/Scala-Impatient-Cay-S-Horstmann/dp/0321774094?SubscriptionId=AKIAILSHYYTFIVPWUY6Q&amp;tag=duckduckgo-ffab-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0321774094">"Scala for the Impatient"</a>by Cay S. Horstmann, and Bruce Eckel's classic <a href="https://www.amazon.com/Thinking-Java-4th-Bruce-Eckel/dp/0131872486">"Thinking in Java"</a>, I opted to create an overview for my own edification and for some people I know who are newcomers to the language. Happy Hacking,</p>
+<p>PyWy</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Hello-Scala">Hello Scala<a class="anchor-link" href="#Hello-Scala">&#182;</a></h1><p>Firstly, we will take a look at the Hello World program written in Scala. It shows us a good deal about the language given the use of an object and a main.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">helloNotebook</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello Notebook&quot;</span><span class="p">)</span>
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// hello world in Scala </span>
+<span class="k">object</span> <span class="nc">helloWorld</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 
-<span class="n">helloNotebook</span><span class="p">()</span>
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">object</span> <span class="ansi-cyan-fg">helloWorld</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In Scala, a program takes place in a "singleton object". This is an object of which only one iteration can exist. This is slightly different than Java, where it would be written as "class helloWorld {".</p>
+<p>Next we see a "main" method defined like in Java. Also like Java, this function takes an Array of Strings as an argument ( args: Array[String]) ). The more unusual part is "Unit". This is the Scala's version of "void", which means that the function doesn't return anything (it just executes the code inside it).</p>
+<p>After that, there is a println() call that will look familiar to Java coders that prints the message.</p>
+<p>Because we are using a notebook, we can write snippets of code outside an object like this, but keep in mind if we were writing a program in a more typical format it would need to be inside that object.</p>
+<p>From now on, we can just write:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="n">println</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">)</span>
 </pre></div>
 
     </div>
@@ -13099,7 +13162,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello Notebook
+<pre>Hello World
 </pre>
 </div>
 </div>
@@ -13107,6 +13170,2157 @@ div#notebook {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Declaration">Declaration<a class="anchor-link" href="#Declaration">&#182;</a></h2><p>In Scala, variables are declared as "Val" or "Var", for "Value" or "Variable". A item declared as a "Val" cannot be changed (it is said to be "immutable", where as a "Var" can (it is "mutable"). This a key part of Scala's functional programming background.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// mutable </span>
+<span class="k">var</span> <span class="n">x</span> <span class="k">=</span> <span class="mi">1</span>
+
+<span class="c1">// immutable </span>
+<span class="k">val</span> <span class="n">y</span> <span class="k">=</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div class="jp-RenderedText">
+<pre><code><span style="color: rgb(0, 187, 187)"><span class="ansi-cyan-fg">x</span></span>: <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">Int</span></span> = <style>@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }</style><span style="animation: fadein 2s;"><span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">2</span></span></span>
+<span style="color: rgb(0, 187, 187)"><span class="ansi-cyan-fg">y</span></span>: <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">Int</span></span> = <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">2</span></span></code></pre>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This means we could change x but we could not change y:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// this is perfectly legal </span>
+<span class="n">x</span> <span class="k">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">println</span><span class="o">(</span><span class="n">x</span><span class="o">)</span>
+
+<span class="c1">// this would kick a &quot;reassignment to val&quot; error </span>
+<span class="c1">// y = y + 1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next line of code demonstrates that Scala's type declarations are "backwards" compared to more traditional languages. Scala would say "val age: Int = 10" not "Int age = 10". According to Cay S. Horstmann, the author or "Scala for the Impatient", this makes it easier to read the code when large, complicated functions are used. While this isn't typical, Scala's designers aren't the only ones who think so:</p>
+<p><a href="https://blog.golang.org/gos-declaration-syntax">https://blog.golang.org/gos-declaration-syntax</a></p>
+<p>It takes a bit of getting used to but is not a huge deal, and the clarity pays off later. I think of this as the programming equivalent of Romance languages that say "The dress red" instead of "The red dress".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">nameDeclared</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&quot;Charli Declared&quot;</span> <span class="c1">// not &quot;val String: name = &quot;Charli&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">nameDeclared</span>: <span class="ansi-green-fg">String</span> = <span class="ansi-green-fg">&#34;Charli Declared&#34;</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Also, Scala has type inference, so we could use this shorthand:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// no type declaration</span>
+<span class="k">val</span> <span class="n">nameInffered</span> <span class="k">=</span> <span class="s">&quot;Charli Infered&quot;</span>
+<span class="n">println</span><span class="o">(</span><span class="n">nameDeclared</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">nameInffered</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Charli Declared Charli Infered
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">nameInffered</span>: <span class="ansi-green-fg">String</span> = <span class="ansi-green-fg">&#34;Charli Infered&#34;</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Types">Types<a class="anchor-link" href="#Types">&#182;</a></h2><p>Given it's descent from Java and it's intent to build large systems securely, Scala uses strong, static typing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">wholeNumber</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">val</span> <span class="n">decimalNumber</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">10.1</span>
+
+<span class="c1">// specify float </span>
+<span class="k">val</span> <span class="n">floatDecimalNumber</span><span class="k">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">10.1f</span>
+
+<span class="k">val</span> <span class="n">bigNumber</span><span class="k">:</span> <span class="kt">Long</span> <span class="o">=</span> <span class="mi">100000000</span>
+
+<span class="c1">// note double quotes </span>
+<span class="k">val</span> <span class="n">string</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&quot;Heya&quot;</span>
+
+<span class="c1">// note single quotes </span>
+<span class="k">val</span> <span class="n">aLetter</span><span class="k">:</span> <span class="kt">Char</span> <span class="o">=</span> <span class="sc">&#39;A&#39;</span>
+
+<span class="k">val</span> <span class="n">answer</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="kc">true</span>
+
+<span class="c1">// will be convere</span>
+<span class="k">val</span> <span class="n">doubleOverridesInt</span> <span class="k">=</span> <span class="n">wholeNumber</span> <span class="o">+</span> <span class="n">decimalNumber</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">wholeNumber</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">10</span>
+<span class="ansi-cyan-fg">decimalNumber</span>: <span class="ansi-green-fg">Double</span> = <span class="ansi-green-fg">10.1</span>
+<span class="ansi-cyan-fg">floatDecimalNumber</span>: <span class="ansi-green-fg">Float</span> = <span class="ansi-green-fg">10.1F</span>
+<span class="ansi-cyan-fg">bigNumber</span>: <span class="ansi-green-fg">Long</span> = <span class="ansi-green-fg">100000000L</span>
+<span class="ansi-cyan-fg">string</span>: <span class="ansi-green-fg">String</span> = <span class="ansi-green-fg">&#34;Heya&#34;</span>
+<span class="ansi-cyan-fg">aLetter</span>: <span class="ansi-green-fg">Char</span> = <span class="ansi-green-fg">&#39;A&#39;</span>
+<span class="ansi-cyan-fg">answer</span>: <span class="ansi-green-fg">Boolean</span> = true
+<span class="ansi-cyan-fg">doubleOverridesInt</span>: <span class="ansi-green-fg">Double</span> = <span class="ansi-green-fg">20.1</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Scala types are built as classes, so it offers some convenience methods for conversion:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="mf">100.</span><span class="n">toString</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">res21</span>: <span class="ansi-green-fg">String</span> = <span class="ansi-green-fg">&#34;100&#34;</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Arithmetic-Operators">Arithmetic Operators<a class="anchor-link" href="#Arithmetic-Operators">&#182;</a></h2><p>Arithmetic operators are fairly traditional in Scala:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Exponents are handled via Scala's math library.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">var</span> <span class="n">x</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1">// call the power function from &#39;math&#39;</span>
+<span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="o">(</span><span class="n">x</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div class="jp-RenderedText">
+<pre><code><span style="color: rgb(0, 187, 187)"><span class="ansi-cyan-fg">x</span></span>: <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">Int</span></span> = <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">10</span></span>
+<span style="color: rgb(0, 187, 187)"><span class="ansi-cyan-fg">res22_1</span></span>: <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">Double</span></span> = <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">100.0</span></span></code></pre>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Strings-+-Iteration">Strings + Iteration<a class="anchor-link" href="#Strings-+-Iteration">&#182;</a></h2><p>Let's look at some simple string manipulations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">name</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&quot;Jade&quot;</span>
+
+<span class="c1">// println at an index</span>
+<span class="n">println</span><span class="o">(</span><span class="n">name</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>J
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">name</span>: <span class="ansi-green-fg">String</span> = <span class="ansi-green-fg">&#34;Jade&#34;</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the () is used, not the traditional []. This is due to Scala's functional outlook, looking at the String as a function that maps an element to the String location of that element.</p>
+<p>Let's change the case. Notice there are no () at the end of this method calls. If the method has parenthesis, they are optional if arguments are not being passed (if the method is declared with no parenthesis, however, you must follow suit).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// change to upper case</span>
+<span class="n">name</span><span class="o">.</span><span class="n">toUpperCase</span>
+
+<span class="c1">// to lower </span>
+<span class="n">name</span><span class="o">.</span><span class="n">toLowerCase</span><span class="o">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[25]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">res24_0</span>: <span class="ansi-green-fg">String</span> = <span class="ansi-green-fg">&#34;JADE&#34;</span>
+<span class="ansi-cyan-fg">res24_1</span>: <span class="ansi-green-fg">String</span> = <span class="ansi-green-fg">&#34;jade&#34;</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Iterating over a string reveals some interesting traits of Scala. The String class has a "foreach" method, which, paired with the "default variable" and a bit of syntax, allows for iteration.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// foreach is a method of the String name </span>
+<span class="n">name</span><span class="o">.</span><span class="n">foreach</span><span class="o">{</span> <span class="n">letter</span> <span class="k">=&gt;</span>
+    <span class="n">println</span><span class="o">(</span><span class="n">letter</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>J
+a
+d
+e
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also use and index. It has an R-like arrow assignment to the i, and then an obvious, English-like syntax for "0 until the end of the length" of the name.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// for i in until the end of the length </span>
+<span class="k">for</span><span class="o">(</span><span class="n">i</span> <span class="k">&lt;-</span> <span class="mi">0</span> <span class="n">until</span> <span class="n">name</span><span class="o">.</span><span class="n">length</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">&quot;Letter at index &quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot; is &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="o">(</span><span class="n">i</span><span class="o">))</span>
+<span class="o">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Letter at index 0 is J
+Letter at index 1 is a
+Letter at index 2 is d
+Letter at index 3 is e
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This can also be accomplished using the "indices" method.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">for</span><span class="o">(</span><span class="n">i</span> <span class="k">&lt;-</span> <span class="n">name</span><span class="o">.</span><span class="n">indices</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="n">name</span><span class="o">(</span><span class="n">i</span><span class="o">))</span>
+<span class="o">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>J
+a
+d
+e
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In Scala 2.1+ you can interpolate strings with the s + $ syntax</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="n">println</span><span class="o">(</span><span class="s">s&quot;Hello there, my name is </span><span class="si">$name</span><span class="s">&quot;</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello there, my name is Jade
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This also works with floats, using a C-style syntax specifying the number of decimals:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">height</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="c1">// note the f</span>
+<span class="n">println</span><span class="o">(</span><span class="s">f&quot;height: </span><span class="si">$height</span><span class="s">%.5f&quot;</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>height: 1.50000
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">height</span>: <span class="ansi-green-fg">Double</span> = <span class="ansi-green-fg">1.5</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Arrays">Arrays<a class="anchor-link" href="#Arrays">&#182;</a></h2><p>Scala arrays are traditional in tha they are static; once you declare one to be a certain length, it can't be changed. Interestingly, the individual elements of the array can be change:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// declare and array - this uses type inference</span>
+<span class="k">val</span> <span class="n">numbers</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">6</span><span class="o">,</span><span class="mi">8</span><span class="o">,</span><span class="mi">10</span><span class="o">)</span>
+
+<span class="c1">// could also be</span>
+<span class="c1">// val numbers: Array[Int] = Array(2,4,6,8,10)</span>
+
+<span class="c1">// access it by index (starting at 0)</span>
+<span class="n">println</span><span class="o">(</span><span class="n">numbers</span><span class="o">(</span><span class="mi">4</span><span class="o">))</span>
+
+<span class="c1">// it also has the foreach method</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">foreach</span> <span class="o">{</span> <span class="n">number</span> <span class="k">=&gt;</span>
+    <span class="n">println</span><span class="o">(</span><span class="n">number</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">// update by index </span>
+<span class="n">numbers</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="k">=</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10
+2
+4
+6
+8
+10
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">numbers</span>: <span class="ansi-green-fg">Array</span>[<span class="ansi-green-fg">Int</span>] = <span class="ansi-yellow-fg">Array</span>(<span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">6</span>, <span class="ansi-green-fg">8</span>, <span class="ansi-green-fg">10</span>)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Array class has the basic methods you might expect:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="n">numbers</span><span class="o">.</span><span class="n">sum</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">min</span>
+<span class="n">numbers</span><span class="o">.</span><span class="n">max</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">res31_0</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">28</span>
+<span class="ansi-cyan-fg">res31_1</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">2</span>
+<span class="ansi-cyan-fg">res31_2</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">10</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mapping-Arrays">Mapping Arrays<a class="anchor-link" href="#Mapping-Arrays">&#182;</a></h3><p>Given Scala's functional heritage, it's common to see map function used to transform data structures.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// delcare an array</span>
+<span class="k">val</span> <span class="n">numbers</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">6</span><span class="o">,</span><span class="mi">9</span><span class="o">,</span><span class="mi">12</span><span class="o">,</span><span class="mi">15</span><span class="o">)</span>
+
+<span class="c1">// map each &quot;x&quot; in the list to &quot;x * 2&quot; </span>
+<span class="k">val</span> <span class="n">doubledNumbers</span> <span class="k">=</span> <span class="n">numbers</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[33]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">numbers</span>: <span class="ansi-green-fg">Array</span>[<span class="ansi-green-fg">Int</span>] = <span class="ansi-yellow-fg">Array</span>(<span class="ansi-green-fg">3</span>, <span class="ansi-green-fg">6</span>, <span class="ansi-green-fg">9</span>, <span class="ansi-green-fg">12</span>, <span class="ansi-green-fg">15</span>)
+<span class="ansi-cyan-fg">doubledNumbers</span>: <span class="ansi-green-fg">Array</span>[<span class="ansi-green-fg">Int</span>] = <span class="ansi-yellow-fg">Array</span>(<span class="ansi-green-fg">6</span>, <span class="ansi-green-fg">12</span>, <span class="ansi-green-fg">18</span>, <span class="ansi-green-fg">24</span>, <span class="ansi-green-fg">30</span>)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You might be wondering if we can add conditionals to this basic idea to get generators or comprehensions. You bet, using yield.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// create a new array</span>
+<span class="k">val</span> <span class="n">numbers</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span><span class="mi">10</span><span class="o">,</span><span class="mi">15</span><span class="o">,</span><span class="mi">20</span><span class="o">,</span><span class="mi">25</span><span class="o">,</span><span class="mi">30</span><span class="o">)</span>
+
+<span class="c1">// conditional in parenthesis if </span>
+<span class="k">val</span> <span class="n">over15</span> <span class="k">=</span> <span class="k">for</span><span class="o">(</span><span class="n">element</span> <span class="k">&lt;-</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">element</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="o">)</span> <span class="k">yield</span> <span class="n">element</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[34]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">numbers</span>: <span class="ansi-green-fg">Array</span>[<span class="ansi-green-fg">Int</span>] = <span class="ansi-yellow-fg">Array</span>(<span class="ansi-green-fg">5</span>, <span class="ansi-green-fg">10</span>, <span class="ansi-green-fg">15</span>, <span class="ansi-green-fg">20</span>, <span class="ansi-green-fg">25</span>, <span class="ansi-green-fg">30</span>)
+<span class="ansi-cyan-fg">over15</span>: <span class="ansi-green-fg">Array</span>[<span class="ansi-green-fg">Int</span>] = <span class="ansi-yellow-fg">Array</span>(<span class="ansi-green-fg">20</span>, <span class="ansi-green-fg">25</span>, <span class="ansi-green-fg">30</span>)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dynamic-Arrays">Dynamic Arrays<a class="anchor-link" href="#Dynamic-Arrays">&#182;</a></h3><p>What about a dynamic array? Scala's standard library provides a Java-like ArrayBuffer:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// import the data structure </span>
+<span class="k">import</span> <span class="nn">scala.collection.mutable.ArrayBuffer</span>  
+
+<span class="c1">// declare one, empty </span>
+<span class="k">val</span> <span class="n">dynamic</span> <span class="k">=</span> <span class="nc">ArrayBuffer</span><span class="o">[</span><span class="kt">Int</span><span class="o">]()</span>
+
+<span class="n">println</span><span class="o">(</span><span class="n">dynamic</span><span class="o">.</span><span class="n">length</span><span class="o">)</span>
+
+<span class="c1">// note handy &quot;by&quot; option letting us count by &quot;2&quot;</span>
+<span class="k">for</span><span class="o">(</span><span class="n">i</span> <span class="k">&lt;-</span> <span class="mi">2</span> <span class="n">to</span> <span class="mi">10</span> <span class="n">by</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">dynamic</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="o">}</span>
+<span class="n">println</span><span class="o">(</span><span class="n">dynamic</span><span class="o">.</span><span class="n">length</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+5
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-green-fg">import </span><span class="ansi-cyan-fg">scala.collection.mutable.ArrayBuffer  
+
+// declare one, empty 
+</span>
+<span class="ansi-cyan-fg">dynamic</span>: <span class="ansi-green-fg">ArrayBuffer</span>[<span class="ansi-green-fg">Int</span>] = <span class="ansi-yellow-fg">ArrayBuffer</span>(<span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">4</span>, <span class="ansi-green-fg">6</span>, <span class="ansi-green-fg">8</span>, <span class="ansi-green-fg">10</span>)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Generally speaking, Scala is very syntactically consistent; the basic methods have the same names as the regular array:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="n">dynamic</span><span class="o">.</span><span class="n">sum</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="n">min</span>
+<span class="n">dynamic</span><span class="o">.</span><span class="n">max</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">res35_0</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">30</span>
+<span class="ansi-cyan-fg">res35_1</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">2</span>
+<span class="ansi-cyan-fg">res35_2</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">10</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Logic,-Comparisons,-and-Control-Flow">Logic, Comparisons, and Control Flow<a class="anchor-link" href="#Logic,-Comparisons,-and-Control-Flow">&#182;</a></h2><p>The control flow in Scala is traditional and straightforward, strongly resembling and C-family language. The comparison operators will also seem familiar.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">val</span> <span class="n">numbers</span> <span class="k">=</span> <span class="nc">Array</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">,</span><span class="mi">6</span><span class="o">,</span><span class="mi">7</span><span class="o">,</span><span class="mi">8</span><span class="o">,</span><span class="mi">9</span><span class="o">,</span><span class="mi">10</span><span class="o">)</span>
+
+<span class="n">numbers</span><span class="o">.</span><span class="n">foreach</span><span class="o">{</span> <span class="n">number</span> <span class="k">=&gt;</span>
+    <span class="c1">// check for even/odd with &quot;==&quot;</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
+        <span class="n">println</span><span class="o">(</span><span class="s">&quot;The number is even&quot;</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="c1">// scala uses ! for negative comparisons</span>
+    <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">){</span>
+        <span class="n">println</span><span class="o">(</span><span class="s">&quot;The number is odd&quot;</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="c1">// final condition, not activated here </span>
+    <span class="k">else</span><span class="o">{</span>
+        <span class="n">println</span><span class="o">(</span><span class="s">&quot;Does not compute!&quot;</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The number is odd
+The number is even
+The number is odd
+The number is even
+The number is odd
+The number is even
+The number is odd
+The number is even
+The number is odd
+The number is even
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">numbers</span>: <span class="ansi-green-fg">Array</span>[<span class="ansi-green-fg">Int</span>] = <span class="ansi-yellow-fg">Array</span>(<span class="ansi-green-fg">1</span>, <span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">3</span>, <span class="ansi-green-fg">4</span>, <span class="ansi-green-fg">5</span>, <span class="ansi-green-fg">6</span>, <span class="ansi-green-fg">7</span>, <span class="ansi-green-fg">8</span>, <span class="ansi-green-fg">9</span>, <span class="ansi-green-fg">10</span>)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Functions">Functions<a class="anchor-link" href="#Functions">&#182;</a></h2><p>A simple function in Scala looks a bit like lambda expressions in other languages and can be defined like this:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// think of =&gt; as &quot;yields&quot;</span>
+<span class="k">val</span> <span class="n">addTwoNumbers</span> <span class="k">=</span> <span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> 
+
+<span class="n">addTwoNumbers</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[38]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">addTwoNumbers</span>: (<span class="ansi-green-fg">Int</span>, <span class="ansi-green-fg">Int</span>) =&gt; <span class="ansi-green-fg">Int</span> = ammonite.$sess.cmd37$Helper$$Lambda$2445/0x0000000800bb7840@141dc6e0
+<span class="ansi-cyan-fg">res37_1</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">9</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using def is for making a method (in this case of the main object)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// notice there is a &quot;:&quot; now </span>
+<span class="k">def</span> <span class="n">introduceYourself</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">s&quot;Hello there, my name is </span><span class="si">$name</span><span class="s">&quot;</span><span class="o">)</span> <span class="c1">// note s + $ for string interpolation - we&#39;ll see this again</span>
+<span class="o">}</span>
+
+<span class="n">introduceYourself</span><span class="o">(</span><span class="s">&quot;Russ&quot;</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello there, my name is Russ
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[39]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">function</span> <span class="ansi-cyan-fg">introduceYourself</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Default-Arguments">Default Arguments<a class="anchor-link" href="#Default-Arguments">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Scala uses a Python-like default arguments to avoid method overloading (we use () because there is an arguments list in this function):</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// Simply add &#39; = &quot;Bonnie&quot;&#39; and you&#39;re good to go</span>
+<span class="k">def</span> <span class="n">introduceYourself</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&quot;Bonnie&quot;</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">s&quot;Hello there, my name is </span><span class="si">$name</span><span class="s">&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="n">introduceYourself</span><span class="o">()</span> <span class="c1">// defaults to Bonnie </span>
+<span class="n">introduceYourself</span><span class="o">(</span><span class="s">&quot;NotBonnie&quot;</span><span class="o">)</span> <span class="c1">// uses input we specify</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello there, my name is Bonnie
+Hello there, my name is NotBonnie
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">function</span> <span class="ansi-cyan-fg">introduceYourself</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Maps-(Paired-Data)">Maps (Paired Data)<a class="anchor-link" href="#Maps-(Paired-Data)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// store keys and values </span>
+<span class="k">var</span> <span class="n">stars</span> <span class="k">=</span> <span class="nc">Map</span><span class="o">(</span><span class="s">&quot;Lee&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;Pace&quot;</span><span class="o">,</span>
+                <span class="s">&quot;Kerry&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;Bishe&#39;&quot;</span><span class="o">,</span>
+                <span class="s">&quot;MaKenzie&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;Davis&quot;</span><span class="o">)</span>
+
+<span class="c1">// or</span>
+<span class="c1">// Map[String, String] = Map(&quot;Lee&quot; -&gt; &quot;Pace&quot;, &quot;Kerry&quot; -&gt; &quot;Bishe&#39;&quot;, &quot;MaKenzie&quot; -&gt; &quot;Davis&quot;)</span>
+
+<span class="n">println</span><span class="o">(</span><span class="n">stars</span><span class="o">(</span><span class="s">&quot;Lee&quot;</span><span class="o">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Pace
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div class="jp-RenderedText">
+<pre><code><span style="color: rgb(0, 187, 187)"><span class="ansi-cyan-fg">stars</span></span>: <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">Map</span></span>[<span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">String</span></span>, <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">String</span></span>] = <style>@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }</style><span style="animation: fadein 2s;"><span style="color: yellow"><span class="ansi-yellow-fg">HashMap</span></span>(
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Scoot&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;McNairy&quot;</span></span>,
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Kerry&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Bishe'&quot;</span></span>,
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;MaKenzie&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Davis&quot;</span></span>,
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Toby&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Huss&quot;</span></span>,
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Lee&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Pace&quot;</span></span>
+)</span></code></pre>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is easy to add new entries:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// the += syntax carries over</span>
+<span class="n">stars</span> <span class="o">+=</span> <span class="o">(</span><span class="s">&quot;Scoot&quot;</span> <span class="o">-&gt;</span> <span class="s">&quot;McNairy&quot;</span><span class="o">)</span>
+<span class="n">stars</span> <span class="o">+=</span> <span class="o">(</span><span class="s">&quot;Toby&quot;</span>  <span class="o">-&gt;</span> <span class="s">&quot;Huss&quot;</span><span class="o">)</span>
+
+<span class="c1">// using keys yields and array which also has &quot;foreach&quot;</span>
+<span class="n">stars</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">foreach</span><span class="o">{</span> <span class="n">actor</span> <span class="k">=&gt;</span>
+    <span class="n">println</span><span class="o">(</span><span class="n">actor</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">stars</span><span class="o">(</span><span class="n">actor</span><span class="o">))</span>
+<span class="o">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Scoot McNairy
+Kerry Bishe&#39;
+MaKenzie Davis
+Toby Huss
+Lee Pace
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is also a "values" method:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="n">stars</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[43]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">res42</span>: <span class="ansi-green-fg">Iterable</span>[<span class="ansi-green-fg">String</span>] = <span class="ansi-yellow-fg">Iterable</span>(<span class="ansi-green-fg">&#34;McNairy&#34;</span>, <span class="ansi-green-fg">&#34;Bishe&#39;&#34;</span>, <span class="ansi-green-fg">&#34;Davis&#34;</span>, <span class="ansi-green-fg">&#34;Huss&#34;</span>, <span class="ansi-green-fg">&#34;Pace&#34;</span>)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's also simple to reverse a mapped/paired structure using mapping</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// simply yield &quot;v&quot;, &quot;k&quot;, for every &quot;k&quot;, &quot;v&quot;</span>
+<span class="k">var</span> <span class="n">reversedStars</span> <span class="k">=</span> <span class="k">for</span><span class="o">((</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="k">&lt;-</span> <span class="n">stars</span><span class="o">)</span> <span class="k">yield</span> <span class="o">(</span><span class="n">v</span><span class="o">,</span> <span class="n">k</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<div class="jp-RenderedText">
+<pre><code><span style="color: rgb(0, 187, 187)"><span class="ansi-cyan-fg">reversedStars</span></span>: <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">Map</span></span>[<span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">String</span></span>, <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">String</span></span>] = <span style="color: yellow"><span class="ansi-yellow-fg">HashMap</span></span>(
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Pace&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Lee&quot;</span></span>,
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;McNairy&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Scoot&quot;</span></span>,
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Bishe'&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Kerry&quot;</span></span>,
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Davis&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;MaKenzie&quot;</span></span>,
+  <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Huss&quot;</span></span> -&gt; <span style="color: rgb(0, 187, 0)"><span class="ansi-green-fg">&quot;Toby&quot;</span></span>
+)</code></pre>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Object-Oriented-Programming">Object Oriented Programming<a class="anchor-link" href="#Object-Oriented-Programming">&#182;</a></h2><p>We've mostly seen simple imperative programming and hints of Scala's functional origin but it also an Object Oriented language.</p>
+<h3 id="Case-Clases">Case Clases<a class="anchor-link" href="#Case-Clases">&#182;</a></h3><p>The most simple version of OO Scala is the case class. While a bit foreign to Java folks, they are quite handy. Case classes are generally small, simple, immutable structures, like points on a graph. Let's define one:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// define a case class with an x and y value </span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Point</span><span class="o">(</span><span class="n">x</span><span class="k">:</span><span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">Point</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's it. It's disarmingly simple compared to a Java object, but it works. Part of this is because it assumes that you want immutable fields unless otherwise specified (part of the functional meets OO approach). Creating one is straightforward and largely familiar to Java folks:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// make a new Point</span>
+<span class="k">val</span> <span class="n">myLocation</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Point</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span>
+
+<span class="c1">// access the memebers</span>
+<span class="n">myLocation</span><span class="o">.</span><span class="n">x</span>
+<span class="n">myLocation</span><span class="o">.</span><span class="n">y</span>
+
+<span class="c1">//// can&#39;t do this:</span>
+<span class="c1">// myLocation.x = 5</span>
+<span class="c1">//// unless it was defined like this, specifiying they could vary</span>
+<span class="c1">// case class Point(var x:Int, var y:Int)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre><span class="ansi-cyan-fg">myLocation</span>: <span class="ansi-green-fg">Point</span> = <span class="ansi-yellow-fg">Point</span>(<span class="ansi-green-fg">1</span>, <span class="ansi-green-fg">2</span>)
+<span class="ansi-cyan-fg">res45_1</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">1</span>
+<span class="ansi-cyan-fg">res45_2</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">2</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Traditional-Classes">Traditional Classes<a class="anchor-link" href="#Traditional-Classes">&#182;</a></h3><p>We will make a simple Person class that has a private value (available only to the class) to represent its age and a String for a name. We will include methods for it to get older and to display the current age. Classes are public by default.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// define a class</span>
+<span class="k">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="c1">// set a field</span>
+    <span class="k">private</span> <span class="k">var</span> <span class="n">age</span> <span class="k">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="n">name</span> <span class="k">=</span> <span class="s">&quot;&quot;</span>
+    
+    <span class="c1">// method to increase age</span>
+    <span class="k">def</span> <span class="n">getOlder</span> <span class="o">{</span> <span class="n">age</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">}</span>
+    
+    <span class="c1">// method to say age</span>
+    <span class="k">def</span> <span class="n">sayAge</span> <span class="o">{</span> <span class="n">println</span><span class="o">(</span><span class="n">age</span><span class="o">)</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// make a new instance </span>
+<span class="k">val</span> <span class="n">rando</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Person</span>
+
+<span class="c1">// show age before and after method call </span>
+<span class="n">rando</span><span class="o">.</span><span class="n">sayAge</span>
+<span class="n">rando</span><span class="o">.</span><span class="n">getOlder</span>
+<span class="n">rando</span><span class="o">.</span><span class="n">sayAge</span>
+
+<span class="c1">// give the person a name </span>
+<span class="n">rando</span><span class="o">.</span><span class="n">name</span> <span class="k">=</span> <span class="s">&quot;Abakus&quot;</span>
+<span class="n">println</span><span class="o">(</span><span class="n">rando</span><span class="o">.</span><span class="n">name</span><span class="o">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+Abakus
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">Person</span>
+<span class="ansi-cyan-fg">rando</span>: <span class="ansi-green-fg">Person</span> = ammonite.$sess.cmd46$Helper$Person@7a6a9a45</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What if we wanted to make mandatory fields? We can include them in the parenthesis in a move that will look familiar to Python coders.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// define a person with a name and an age</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="k">val</span> <span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="k">var</span> <span class="n">age</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+
+<span class="c1">//// this would crash &quot;not enough arguments for constructor&quot;:</span>
+<span class="c1">//&gt; val kanye = new Person(name = &quot;Kanye&quot;)</span>
+<span class="c1">///...because it doesn&#39;t have the arguments that we told it were needed.</span>
+
+<span class="c1">// make a new instance of the class named kanye</span>
+<span class="k">val</span> <span class="n">kanye</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Person</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="s">&quot;Kanye&quot;</span><span class="o">,</span> <span class="n">age</span> <span class="k">=</span> <span class="mi">35</span><span class="o">)</span>
+
+<span class="c1">// show values </span>
+<span class="n">kanye</span><span class="o">.</span><span class="n">name</span>
+<span class="n">kanye</span><span class="o">.</span><span class="n">age</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">Person</span>
+<span class="ansi-cyan-fg">kanye</span>: <span class="ansi-green-fg">Person</span> = ammonite.$sess.cmd47$Helper$Person@3778800f
+<span class="ansi-cyan-fg">res47_2</span>: <span class="ansi-green-fg">String</span> = <span class="ansi-green-fg">&#34;Kanye&#34;</span>
+<span class="ansi-cyan-fg">res47_3</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">35</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Constructors">Constructors<a class="anchor-link" href="#Constructors">&#182;</a></h4><p>Constructors allow the writer to dictate behavior that takes place whenever an instance of the class is created (for the uninitiated, the footnotes of this page contain a brief explanation). It's common, for instance, for an object that reads a file to do so upon to construction. This saves the time of creating the object and then calling a method to have it read the file. In C++ and Java, the constructor is a method of the class that has the same name as the class. In Scala however, it just executes the code immediately inside the class definition. Let's take a look at a simple example:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">class</span> <span class="nc">TinyHuman</span> <span class="o">{</span>
+    <span class="c1">// this is constructor behavior</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">&quot;I have been born and am alive!&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">// this will print it&#39;s greeting even thought we didn&#39;t call anything</span>
+<span class="k">val</span> <span class="n">newborn</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">TinyHuman</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I have been born and am alive!
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">TinyHuman</span>
+<span class="ansi-cyan-fg">newborn</span>: <span class="ansi-green-fg">TinyHuman</span> = ammonite.$sess.cmd48$Helper$TinyHuman@5c8d5834</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Getters-and-Setters">Getters and Setters<a class="anchor-link" href="#Getters-and-Setters">&#182;</a></h4><p>Getters and Setters are built into classes by Scala (for the unfamiliar, the footnotes of this page contain a brief explanation). While this might seem wild, the programmer can control them using "var", "val", and the "private" keyword to restrict how they are used, allowing full control of the class. The auto-generator methods are "foo" and "foo_" in the Java Virtual Machine code made by compiling Scala.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">class</span> <span class="nc">Year</span> <span class="o">{</span>
+    <span class="k">var</span> <span class="n">month</span> <span class="k">=</span> <span class="mi">1</span> <span class="c1">// starts in Jan </span>
+<span class="o">}</span>
+
+<span class="k">val</span> <span class="n">thisYear</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Year</span><span class="o">()</span>
+<span class="n">thisYear</span><span class="o">.</span><span class="n">month</span>            <span class="c1">// this will call the internal &quot;foo&quot;, in this case, &quot;month&quot;</span>
+<span class="n">thisYear</span><span class="o">.</span><span class="n">month</span> <span class="k">=</span> <span class="mi">2</span>        <span class="c1">// this calls the &quot;foo_&quot;, in this case &quot;month_&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">Year</span>
+<span class="ansi-cyan-fg">thisYear</span>: <span class="ansi-green-fg">Year</span> = ammonite.$sess.cmd49$Helper$Year@500a7511
+<span class="ansi-cyan-fg">res49_2</span>: <span class="ansi-green-fg">Int</span> = <span class="ansi-green-fg">1</span></pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Scala will also allow you to define "foo" and "foo_" yourself if you want to (or just foo).</p>
+<p>To make Scala write only a getter method declare that value with "val". Because vals cannot change, it will not bother with setter method.</p>
+<p>To make Scala create a getter and a setter, declare an attribute with "var" - an attribute that can change will require a getter and a setter.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Private-Attributes">Private Attributes<a class="anchor-link" href="#Private-Attributes">&#182;</a></h4><p>Private attributes work in a Java-like way. Here, we use private to make an attribute that can be incremented by the user but not set to whatever they want as they can't access it directly:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">class</span> <span class="nc">Year</span> <span class="o">{</span>
+    <span class="k">private</span> <span class="k">var</span> <span class="n">month</span> <span class="k">=</span> <span class="mi">1</span>
+    <span class="k">def</span> <span class="n">incrementMonth</span> <span class="o">{</span> <span class="n">month</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">}</span>
+    <span class="k">def</span> <span class="n">showCurrentMonth</span> <span class="k">=</span> <span class="n">println</span><span class="o">(</span><span class="n">month</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="k">val</span> <span class="n">now</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Year</span>
+
+<span class="n">now</span><span class="o">.</span><span class="n">incrementMonth</span>
+<span class="n">now</span><span class="o">.</span><span class="n">showCurrentMonth</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">Year</span>
+<span class="ansi-cyan-fg">now</span>: <span class="ansi-green-fg">Year</span> = ammonite.$sess.cmd50$Helper$Year@7ba592a6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Constructors">Constructors<a class="anchor-link" href="#Constructors">&#182;</a></h4><p>Scala generates a standard constructor for all the classes you define.</p>
+<p>We can do so using what Scala calls a "Primary Constructor". This is like a constructor in other languages except that is is implicitly created as part of the class definition.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">class</span> <span class="nc">Child</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">&quot;I am alive!&quot;</span><span class="o">)</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">&quot;I have a constructor and it is the best!&quot;</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">// the message will just occur</span>
+<span class="k">val</span> <span class="n">kiddie</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Child</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I am alive!
+I have a constructor and it is the best!
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[52]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">Child</span>
+<span class="ansi-cyan-fg">kiddie</span>: <span class="ansi-green-fg">Child</span> = ammonite.$sess.cmd51$Helper$Child@4a0c1a74</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Inheritance">Inheritance<a class="anchor-link" href="#Inheritance">&#182;</a></h4><p>Scala provides a predictable means of single inheritance (Like Java, Scala does not implement multiple inheritance)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// class and method definition in a single line? Say whaaaaaat?</span>
+<span class="k">class</span> <span class="nc">Kid</span> <span class="o">{</span> <span class="k">def</span> <span class="n">talk</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span> <span class="n">println</span><span class="o">(</span><span class="s">&quot;I say the damnest things&quot;</span><span class="o">)</span> <span class="o">}}</span>
+
+<span class="k">class</span> <span class="nc">PreTeen</span> <span class="k">extends</span> <span class="nc">Kid</span><span class="o">{}</span>
+
+<span class="c1">// will automatically have the method from Kid even though it is a preteen</span>
+<span class="k">val</span> <span class="n">newKid</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">PreTeen</span>
+
+<span class="n">newKid</span><span class="o">.</span><span class="n">talk</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I say the damnest things
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[53]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">Kid</span>
+defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">PreTeen</span>
+<span class="ansi-cyan-fg">newKid</span>: <span class="ansi-green-fg">PreTeen</span> = ammonite.$sess.cmd52$Helper$PreTeen@1dbd9b92</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Java coders: note that Scala constructors do not require the use of super(), though the languages does support it for access superclass methods in general and it is used the same way as in Java.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Composition">Composition<a class="anchor-link" href="#Composition">&#182;</a></h4><p>Scala offers "mixins" for composing classes based on functionality.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="c1">// define a lover that loves</span>
+<span class="k">trait</span> <span class="nc">lover</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">love</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">&quot;I am a lover!&quot;</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// define a fihgter that fights </span>
+<span class="k">trait</span> <span class="nc">fighter</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">fight</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">&quot;I am a fighter!&quot;</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// mix them together to make a rouge </span>
+<span class="k">class</span> <span class="nc">rouge</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="n">lover</span> <span class="k">with</span> <span class="n">fighter</span> <span class="o">{</span>
+  <span class="c1">// the rouge can call both of methods from the mixins</span>
+  <span class="k">def</span> <span class="n">enGarde</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">love</span>
+    <span class="n">fight</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">&quot;I am &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;!&quot;</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">val</span> <span class="n">zoro</span> <span class="k">=</span> <span class="k">new</span> <span class="n">rouge</span><span class="o">(</span><span class="s">&quot;Zoro&quot;</span><span class="o">)</span>            <span class="c1">// make a new rouge</span>
+<span class="n">zoro</span><span class="o">.</span><span class="n">enGarde</span>                            <span class="c1">// put foes on notice!</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I am a lover!
+I am a fighter!
+I am Zoro!
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[54]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">trait</span> <span class="ansi-cyan-fg">lover</span>
+defined <span class="ansi-green-fg">trait</span> <span class="ansi-cyan-fg">fighter</span>
+defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">rouge</span>
+<span class="ansi-cyan-fg">zoro</span>: <span class="ansi-green-fg">rouge</span> = ammonite.$sess.cmd53$Helper$rouge@50a331b</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Overriding-a-method">Overriding a method<a class="anchor-link" href="#Overriding-a-method">&#182;</a></h4><p>Scala supports the "override" keyword to specify a new method behavior. Let's make a subspecies of Rouge with his own enGarde() protocol:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-scala"><pre><span></span><span class="k">class</span> <span class="nc">revengeSeeker</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">warning</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="n">rouge</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// override the dfinition of enGarge</span>
+  <span class="k">override</span> <span class="k">def</span> <span class="n">enGarde</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>                                        
+    <span class="n">love</span> 
+    <span class="n">fight</span>
+    <span class="n">println</span><span class="o">(</span><span class="s">&quot;I am &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">warning</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">val</span> <span class="n">inigo</span> <span class="k">=</span> <span class="k">new</span> <span class="n">revengeSeeker</span><span class="o">(</span><span class="n">name</span> <span class="k">=</span> <span class="s">&quot;Inigo Montoya&quot;</span><span class="o">,</span>
+                              <span class="n">warning</span> <span class="k">=</span> <span class="s">&quot;Prepare to die!&quot;</span><span class="o">)</span>
+<span class="n">inigo</span><span class="o">.</span><span class="n">enGarde</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I am a lover!
+I am a fighter!
+I am Inigo Montoya Prepare to die!
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[55]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>defined <span class="ansi-green-fg">class</span> <span class="ansi-cyan-fg">revengeSeeker</span>
+<span class="ansi-cyan-fg">inigo</span>: <span class="ansi-green-fg">revengeSeeker</span> = ammonite.$sess.cmd54$Helper$revengeSeeker@4cddfe53</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Footnotes">Footnotes<a class="anchor-link" href="#Footnotes">&#182;</a></h2><p>What's a Constructor?</p>
+<p>For the unfamiliar, a constructor is a special method that activates when a class is created. They keep the user from having to specify behavior for each object created after it is initialized.</p>
+<h2 id="What-are-Getters-and-Setters?">What are Getters and Setters?<a class="anchor-link" href="#What-are-Getters-and-Setters?">&#182;</a></h2><p>Getters and Setters are worth a discussion in their own right, but for a working knowledge, they are methods to access or change object attributes. They are used when there is a reason to conceal the traits from the end-user. A good example of when to use a Getter would be in a class where a Person class with and "age" attribute that should not be able to get younger (as provided in "Scala for the Impatient"). It's easy for the programmer of the class to write code to keep the age from running if it doesn't fit the criteria designated by the Setter.</p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
@@ -13116,3 +15330,4 @@ div#notebook {
 
 
 </html>
+:ET

@@ -1,3 +1,11 @@
+I"•<!-- ---
+id: 762
+title: A Handshake with Scala
+date: 2018-10-04T17:42:20-04:00
+author: admin
+layout: post
+--- -->
+
 <html>
 <head><meta charset="utf-8" />
 
@@ -13045,7 +13053,7 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
+<link rel="stylesheet" href="custom.css" />
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -15330,3 +15338,4 @@ I am Inigo Montoya Prepare to die!
 
 
 </html>
+:ET

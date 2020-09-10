@@ -2,14 +2,34 @@
 layout: default
 title: CV
 ---
+
 <h1>{{ page.title }}</h1>
-<ul class="posts">
 
-  {% for post in site.posts %}
-	<li>
-		<span> [ {{ post.date | date_to_string }} ] </span>
-		 <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-	</li>
-  {% endfor %}
+	<h2>Scientific Papers</h2>
+		<h3>Manuscripts in Preparation:</h3>
+			<ul class="posts">
+				<li><span>A Study of Lateral Flow Assays for SARS-CoV2-Antibodies</span></li>
+				<li><span>A Study of Canine Mitral Value Disorders</span></li>
+				<li><span>An Atlas of miRNAs by Tissue Type</span></li>
+			</ul>
 
-</ul>
+	<h2>Published Software</h2>
+		<ul class="posts">
+			<a href="https://covid.omics.kitchen/"> An Interactive Bayesian Tool for Aiding in SARS-CoV2-Antibody Test Interpretation</a>
+		</ul>
+
+	<h2>Teaching</h2>
+		<ul id="papers" class="posts">
+			<li><span>Instructor - Bioinformatics Computational Methods I, Northeastern University, Fall 2020 (Online)</span></li>
+			<li><span>Instructor - Bioinformatics Computational Methods I, Northeastern University, Spring 2020 (Online)</span></li>
+		</ul>
+
+	<h2>Blog Posts</h2>
+		<ul class="posts">
+		{% for post in site.posts %}
+			<li>
+				<span> [ {{ post.date | date_to_string }} ] </span>
+				<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+		</ul>

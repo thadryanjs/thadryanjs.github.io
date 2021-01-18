@@ -1,0 +1,12 @@
+I"�<p>Hello Everyone!</p>
+
+<p>I would like to wish everyone a happy MLK day. It isn’t much, but as an act of respect and commemoration, I though I would share an example of how a beautiful speech can, with relative ease, be turned into a striking visual. We will, of course, be working with the monolithic “I Have a Dream” speech.</p>
+
+<p>I used the R programming language for this, as I have worked more extensively with text with it than Python, and don’t use it as often and want to keep up my skills. If you’d like to see the <a href="http://i.imgur.com/YQv88cp.png">rundown</a>, here is the <a href="http://pythoninthewyld.com/wp-content/uploads/2018/01/workbook.html">workbook</a>, if not, the final product is below!</p>
+
+<p>Enjoy, and once again, happy Martin Luther King day!</p>
+
+<p><img src="/assets/dream.png" alt="wordcloud" /></p>
+
+<p>Note: This post was published on Jan 15 at approximately 9pm. The error on the date was due to a time settings curiosity I had not seen before.</p>
+:ET

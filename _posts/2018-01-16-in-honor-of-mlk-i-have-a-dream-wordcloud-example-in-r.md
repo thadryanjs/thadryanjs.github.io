@@ -19,6 +19,6 @@ I used the R programming language for this, as I have worked more extensively wi
 
 Enjoy, and once again, happy Martin Luther King day!
 
-<img class="alignnone size-full wp-image-629" src="http://pythoninthewyld.com/wp-content/uploads/2018/01/Screenshot_2018-01-15_20-44-21.png" alt="" width="658" height="545" srcset="http://pythoninthewyld.com/wp-content/uploads/2018/01/Screenshot_2018-01-15_20-44-21.png 658w, http://pythoninthewyld.com/wp-content/uploads/2018/01/Screenshot_2018-01-15_20-44-21-300x248.png 300w" sizes="(max-width: 658px) 100vw, 658px" /> 
+![wordcloud](/assets/dream.png)
 
 Note: This post was published on Jan 15 at approximately 9pm. The error on the date was due to a time settings curiosity I had not seen before.

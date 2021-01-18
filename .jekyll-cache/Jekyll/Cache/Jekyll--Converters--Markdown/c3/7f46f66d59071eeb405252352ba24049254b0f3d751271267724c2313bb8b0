@@ -1,0 +1,4 @@
+I"c<p>A few years ago, I wrote an <a href="https://pythoninthewyld.com/2018/01/16/in-honor-of-mlk-i-have-a-dream-wordcloud-example-in-r/">MLK day post</a> on creating a wordcloud from the legendary “I Have a Dream” speech. I thought I would continue the tradition by doing another for Letter From Birmingham Jail. The code is available <a href="https://github.com/sweeney-th/PITW/tree/master/Posts/MLK">here</a>. It’s a simple project, but can be a compelling way to quickly highlight themes from the original text to pique the interest of readers.</p>
+
+<p><img src="/assets/jail.png" alt="wordcloud" /></p>
+:ET

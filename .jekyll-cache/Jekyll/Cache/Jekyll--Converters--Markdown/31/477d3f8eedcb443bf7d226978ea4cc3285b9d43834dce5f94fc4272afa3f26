@@ -1,0 +1,3 @@
+I"•<p>I recently saw a <a href="https://twitter.com/RetractionWatch/status/1350098097695842310?s=20">tweet</a> about retracted papers that still pick up citations so I thought Iâ€™d create a tool to help researchers double check themselves. I call it <a href="https://github.com/sweeney-th/Rygor">Rygor</a>. It takes a file of paper names, auotomatically submits them to RWDB, and generates a report stating if it found each paper to be at risk for matching a retracted one. I may add more features to it depending on time, such as automatically pulling th citations from a web page, etc, depending on the availability of structured citation data, APIs, etc.</p>
+
+:ET

@@ -5,14 +5,15 @@ title: Thadryan Sweeney, Computational Biologist
 
 <div>
 
-	<h1 id="home-intro" align="center"> Hi there, I'm Thadryan! </h1>
+	<h1 id="home-intro" align="center"> Hello there, I'm Thadryan! </h1>
 
 	<!-- <div> <img src="images/me.png" align="center" height="200" width="140"></div> -->
 	<img id="profile-pic" src="images/me.png" align="center">
 
 	<p>
-		I'm a computational scientist interested in statistics, programming, and biology. My most recent project is available 
-		<a href="https://covid.omics.kitchen/">here.</a> To read about my previous work, 
+		I'm a computational scientist interested in statistics, programming, and biology. My most recent project is
+		available
+		<a href="https://covid.omics.kitchen/">here.</a> To read about my previous work,
 		<a href="/blog">click here...</a>
 	</p>
 
@@ -23,10 +24,10 @@ title: Thadryan Sweeney, Computational Biologist
 	<div>
 		<ul class="posts">
 			{% for post in site.posts limit: 3 %}
-				<li>
+			<li>
 				<span> [ {{ post.date | date_to_string }} ] </span>
 				<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-				</li>
+			</li>
 			{% endfor %}
 		</ul>
 	</div>

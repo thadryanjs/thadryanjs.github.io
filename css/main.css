@@ -28,19 +28,19 @@ a:hover {
 }
 
 h1, h4 {
-    font-size: 3em;
+    font-size: 5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color: rgb(204, 204, 204); /* "Hi there!... */
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 4em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color: rgb(204, 204, 204); /* "Hi there!... */
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color: rgb(204, 204, 204); /* "Hi there!... */
 }

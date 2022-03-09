@@ -28,13 +28,13 @@ a:hover {
 }
 
 h1 {
-    font-size: 6em;
+    font-size: 5em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color: rgb(204, 204, 204); /* "Hi there!... */
 }
 
 h2 {
-    font-size: 4em;
+    font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     color: rgb(204, 204, 204); /* "Hi there!... */
 }

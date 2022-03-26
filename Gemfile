@@ -9,3 +9,5 @@ gem "jekyll", "~> 4.0"
 # gem "rails"
 
 gem "webrick", "~> 1.7"
+
+gem "sassc", "~> 2.1.0"

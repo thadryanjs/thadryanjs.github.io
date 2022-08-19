@@ -58,9 +58,10 @@ I find it's one of the main ways I contribute to my team now. The bottom line
 is that not feeling like a 'math person' doesn't rule you out of a productive
 career for a few reasons:
 
-1) (Bio)statistics is a quirky subfield of math - you can't necessarily assume
+   1) (Bio)statistics is a quirky subfield of math - you can't necessarily assume
 that having a tough time in trig is going to translate to a tough time here.
-2) You can make computers do the grunt work so you can focus on the concepts.
+ 
+   2) You can make computers do the grunt work so you can focus on the concepts.
 We often use code libraries for statistical procedures. **This doesn't mean you
 can stop trying to understand what is happening** but it does mean you can be
 effective without remembering what every Greek character in a formula stands

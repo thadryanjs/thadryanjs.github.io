@@ -17,6 +17,7 @@ other fields. I could be wrong but I decided to run it up the flag pole in case
 it's useful to anyone else. Learn from my biffs and triumphs.
 
 Updated 8-19-2022
+
 ___
 
 # Stuff I learned doing an MS in Bioinformatics (besides Bioinformatics).

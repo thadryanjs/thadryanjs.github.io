@@ -1,0 +1,126 @@
+/* css styles */
+html {
+    background-color: #242323; 
+}
+
+body {
+    background-color: #242323; 
+    margin: 60px auto;
+    width: 70%;
+}
+
+div.citation {
+    font-size: 1.25em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+nav ul, footer ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+
+nav ul li, footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(100, 155, 143);
+}
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+h2 {
+    font-size: 3em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+h3 {
+    font-size: 2.5em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+h4 {
+  font-size: 2em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+h5 {
+  font-size: 1.5em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+code {
+    background-color: #000000; 
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    color: rgb(8, 170, 185);
+}
+
+p {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    color: rgb(204, 204, 204); /* I'm */
+}
+
+footer {
+    font-size: .8em;
+}
+
+ul.posts { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
+    border-top: 1px solid #d5d5d5;
+}
+
+ul.posts li {
+    list-style: none;
+    border-top: 1px solid #d5d5d5;
+}
+
+ul.home { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
+    border-top: 1px solid #d5d5d5;
+}
+
+ul.home li {
+    list-style: none;
+    border-top: 1px solid #d5d5d5;
+}
+
+span {
+    color: rgb(204, 204, 204); /* I'm */
+}
+
+#profile-pic {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+    display:block;
+    margin:auto;
+}
+
+/* #home-intro {
+    align:center;  
+} */

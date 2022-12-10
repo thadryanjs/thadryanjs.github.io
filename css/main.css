@@ -7,6 +7,12 @@ body {
     width: 70%;
 }
 
+div.citation {
+    font-size: 1.25em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;

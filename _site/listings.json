@@ -2,6 +2,9 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2022-12-13-from-r-to-python-3/index.html",
+      "/posts/2022-12-13-from-r-to-python-2/index.html",
+      "/posts/2022-12-13-from-r-to-python-1/index.html",
       "/posts/2022-12-10-opiods/index.html",
       "/posts/2021-09-29-survival-guide/index.html",
       "/posts/2021-01-19-retraction-watch/index.html",

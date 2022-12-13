@@ -1,0 +1,161 @@
+---
+author: Thadryan
+title: "Stats Python in a Hurry Part 3: Basic Analysis & Modeling"
+date: 2022-12-13
+description: Transferring the basics of my R modeling knowledge back to my first language.
+bibliography: Part3.bib
+toc: true
+---
+
+# Statistics
+
+```{python}
+
+import pandas as pd
+import seaborn as sns
+
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+import numpy as np
+from numpy.random import default_rng
+
+from scipy import stats
+```
+
+```{python}
+
+df = sm.datasets.get_rdataset("mtcars", "datasets", cache = True).data
+```
+
+## Summary Stats
+
+```{python}
+
+# get the data as a vector
+v = df.mpg
+
+np.mean(v)
+# (https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mode.html)
+stats.mode(v, keepdims = False)
+np.median(v)
+np.var(v)
+```
+
+## Simulating Data
+
+After trying a few things, it looks like [numpy](https://numpy.org/doc/stable/reference/random/index.html) is king here.
+
+### Create an RNG Object
+
+To get started, create an RNG object that will make sure everything is initialized correctly.
+
+```{python}
+rng = default_rng()
+```
+
+We can now go through a list of common distributions, simulate from them, and visualize to make sure we're on the right track.
+
+### Normal/Guassian
+
+```{python}
+n = 1000
+
+# because calling the mean and sd the "mean" and "sd" would be too obvious
+v_norm = rng.normal(loc = 5, scale = 2.5, size = n)
+sns.kdeplot(v_norm)
+```
+
+### Uniform
+
+```{python}
+# this makes sense lol
+v_unif = rng.uniform(low = 0, high = 1, size = n)
+sns.kdeplot(v_unif)
+```
+
+### Poisson
+
+```{python}
+# lamda was too long I guess
+v_poisson = rng.poisson(lam = 1, size = n)
+sns.histplot(v_poisson)
+```
+
+### Bernoulli
+
+```{python}
+# bernoulli 
+# https://stackoverflow.com/questions/47012474/bernoulli-random-number-generator
+v_bernoulli = rng.binomial(n = 1, p = 0.5, size = n)
+sns.histplot(v_bernoulli)
+```
+
+### Binomial 
+
+```{python}
+# binomial
+v_binomial = rng.binomial(n = 4, p = 0.15, size = n)
+sns.histplot(v_binomial)
+```
+
+### Negative Binomial
+
+```{python}
+# this makes sense
+v_negative_binomial = rng.negative_binomial(n = 1, p = 0.25, size = n)
+sns.histplot(v_negative_binomial)
+```
+
+## Modeling
+
+### Linear Regression
+
+Another routine thing that will come up a lot is linear regression. It's not as obvious as R, but it's pretty straight-forward. 
+
+```{python}
+# you can use formula is you use smf 
+linear_model = smf.ols(formula = 'wt ~ disp + mpg', data = df).fit()
+```
+
+We can get the results using sume `summary()` method, and it will look pretty familiar to R users. 
+
+```{python}
+linear_model.summary()
+```
+
+### Logistic Regression
+
+The next logical step is logistic regression. No surprises here.
+
+```{python}
+# fit the model
+logistic_model = smf.glm("am ~ wt + mpg", data = df,
+  family = sm.families.Binomial()).fit()
+
+logistic_model.summary()
+```
+
+### ANOVA
+
+The next basic anaylsis I wanted to recreate was ANOVA. This is handled nicely by `statsmodels`, looking more or less like the previous models.
+
+```{python}
+# fit the initial model
+anova_model = smf.ols("cyl ~ mpg + disp", data = df).fit()
+
+anova = sm.stats.anova_lm(anova_model)
+anova
+```
+
+#### Tukey Test
+
+After an ANOVA, some sort of post-hoc test is usually preformed. This isn't as obvious as the ones above, requiring us to specify monovariate vectors instead of using a formla.
+
+```{python}
+# specify the groups without the formual
+tukey_results = sm.stats.multicomp.pairwise_tukeyhsd(endog = df["mpg"],
+  groups = df["cyl"])
+
+print(tukey_results)
+```

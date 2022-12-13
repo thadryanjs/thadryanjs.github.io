@@ -17,7 +17,7 @@ div.citation {
 }
 
 div.category {
-  font-size: 1.25em;
+  font-size: 0.95em;
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   color: rgb(204, 204, 204); /* "Hi there!... */
 }
@@ -40,18 +40,28 @@ div.listing-description {
   color: rgb(204, 204, 204)
 }
 
+div.quarto-title-meta-heading {
+  color:rgb(204, 204, 204)
+}
+
 div pre  {
    color: #5E5E5E;
 }
 
 div pre code  {
-  color: #5E5E5E
+  background-color: rgb(204, 204, 204);
+  color: black;
 }
 
+/* table.dataframe {
+  color: rgb(204, 204, 204)
+} */
 
+tbody {
+  background-color: rgb(204, 204, 204);
+}
 
 text {
-  
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   color: rgb(204, 204, 204); /* "Hi there!... */
 }
@@ -98,15 +108,15 @@ h3 {
 }
 
 h4 {
-font-size: 1.75em;
-font-family:'Helvetica', 'Arial', 'Sans-Serif';
-color: rgb(204, 204, 204); /* "Hi there!... */
+  font-size: 1.75em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
 }
 
 h5 {
-font-size: 1.5em;
-font-family:'Helvetica', 'Arial', 'Sans-Serif';
-color: rgb(204, 204, 204); /* "Hi there!... */
+  font-size: 1.5em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
 }
 
 code {

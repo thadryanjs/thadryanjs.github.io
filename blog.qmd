@@ -2,7 +2,9 @@
 title: "Drops of Jupyter"
 listing:
   contents: posts
-  sort: "date desc"
+  sort:
+    - "date desc"
+    - "title asc"
   type: default
   categories: true
   sort-ui: true

@@ -18,6 +18,5 @@ For most of the last few years, I've made wordclouds of famous speeches MLK to m
 ## Circle Cloud
 ![wordcloud](/assets/MLK/2021/dream-circle2.png)
 
-
 The source code leverages the [wordcloud](https://www.rdocumentation.org/packages/wordcloud/versions/2.6  ) and [wordcloud2](https://www.rdocumentation.org/packages/wordcloud2/versions/0.2.1) packages and is published [here](https://github.com/sweeney-th/MLK-wordclouds).
 

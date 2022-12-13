@@ -1,0 +1,97 @@
+---
+title: "Summarizing a review of contributors to the opioid epidemic"
+description: "A concise summary of Cerdá, et al with some additional fundamentals"
+author: "Thadryan"
+date: "12-10-2022"
+categories:
+  - opioids
+  - research
+bibliography: OpioidsSummary.bib
+csl: style.csl
+---
+
+A professor I'll be working with in the winter term of 2022 recommended I read a review[@cerda2021] of factors contributing to the opioid epidemic as part of my orientation to his work. It's very good, recent, and approachable. It can be found in full [here](https://www.annualreviews.org/doi/10.1146/annurev-publhealth-090419-102727). I'd highly recommend it to anyone interested in learning more about the epidemic. My summary (largely an exercise for my own learning) is below for those pressed for time.
+
+> NOTE: A citation appearing in a header indicates that all the sentences in that section are citing the indicated source.
+
+## What are opioids? [@Opioids2022]
+
+Opioids are a class of drugs used to treat pain by activating opioid receptors in the central nervous system. They are derived from the poppy plant, or are engineered to mimic substances that are. They are sometimes referred to as "narcotics", "painkillers", or "opiates".
+
+## What is opioid use disorder? [@OpioidUseDisorder2022]
+
+Opioid use disorder is characterized by compulsive use of opioid drugs that continues after a person wants to stop. It is characterized by cravings for opioids, risky use such as sharing needles, and withdrawal when they are not taken.
+
+## Overview of the opioid epidemic [@cerda2021]
+
+The opioid epidemic is a public health phenomenon in which the rates of opioid overdose deaths increased ninefold between 1999 and 2018.
+
+### Phase 1: Prescription use in urban white populations [@cerda2021]
+
+When the epidemic was first observed no particular racial trends were apparent. With time, the trend grew in white populations in urban regions with well developed supply chains. Evidence suggests black patients are less likely to receive opioids for similar conditions and pain levels than white patients, which is considered a possible explanation for this trend. Some increase in use was also noted in US Native populations. 
+
+### Phase 2: Illegal heroin, fentanyl, and demographic generalization. [@cerda2021]
+
+In the 2010s the trend extended to other demographics. State interventions aimed at decreasing prescription of opioids coincide with an increase in the use of illegal heroin, with some theorizing the regulations drove users to the underground market - evidence suggests a significant amount of illegal heroin users used prescription opioids first. The west coast illegal markets were largely based on "black tar" heroin from Mexico, whereas the east coast supply revolved around Columbian heroin. The east coast product was highly pure and less expensive, driving down the cost of the drug in general. In 2013 the illegal market saw the emergence of fentanyl, a drug that is easier to produce and 30-40 times stronger than heroin. This was especially true on the east coast and a surge of fentanyl-related deaths followed.
+
+### Geographic shifts [@cerda2021]
+
+As the epidemic evolved, the geographic regions changed, moving from urban regions to Appalachia, the Midwest, and the Northeast. Areas most affected by deindustrialization show the worst increase, though the trend is observed in all states.
+
+## Theories of supply and demand
+
+Some of the trends observed in the epidemic are consistent with basic economic theories.
+
+### Supply [@cerda2021]
+
+In the 1990s, medical associations urged physicians to prioritize pain control in an effort to reduce chronic pain. Around the same time Purdue Pharmaceuticals released OxyContin, an extended release version of oxycodone. The company funded campaigns promoting the use of opioids, and the industry as a whole spent tens of millions of dollars promoting their use to physicians.
+
+### Demand [@cerda2021]
+
+Opioid use disorder is associated with poor access to education and employment opportunities by a significant body of literature, as is drug use overall. Increase in opioid use disorder trends strongly with deindustrialization. Further understanding recent trends in other demographics is an area of need for research. 
+
+## Risk factors [@cerda2021]
+
+White males are particularly vulnerable to risk associated with loss of employment, in particular in manufacturing related fields. Individuals with disabilities are also at increased risk of opioid misuse. 
+
+## Policy
+
+Numerous laws have targeted legal and illegal opioid use [@cerda2021].
+
+### Supply-side [@cerda2021]
+
+Some laws target the prescribing of opioids. There is not currently a large body of evidence on these laws. Short-term evidence does not indicate an effect on misuse, and there is some evidence restrictions on prescribing increases demand in the illegal market. There is evidence programs that monitor prescribing closely decrease deaths from prescription drugs but are also associated with an increase in deaths from illegal opioids. As the epidemic evolved, providers became more aware and guidelines may have decreased prescribing overall.
+
+#### Criminalization [@cerda2021]
+
+Criminalization incentivizes the use of illegal drugs which are becoming cheaper and more dangerous. It is also the most widespread intervention. There are decades of evidence that the policies promoted by the War on Drugs have little impact on the use of drugs. Stricter laws theoretically intended to punish serious traffickers are used to charge friends and families of users nearly half the time they're used. Many incarcerated individuals used opioids prior to arrest, and individuals recently released from prison are at increased risk of overdose. 
+
+#### Harm reduction [@cerda2021]
+
+Harm reduction measures aim to promote use of drugs in ways that have a lower probability of a bad outcome. 
+
+##### "Good Samaritan" laws [@cerda2021]
+
+Good Samaritan Laws aim to increase the willingness of individuals using drugs to contact emergency services by offering them legal protections. In theory, someone using drugs and witnessing another individual overdose could get them medical attention with less fear of reprisal. Evidence of the effectiveness of these laws is limited and mixed. Understanding their impact is an area of research need.
+
+##### Naloxone access [@cerda2021]
+
+Naloxone (Narcan) is a drug that counteracts the respiratory effects of an overdose. Evidence from regions that implement laws to facilitate access to it shows a decrease in deaths from overdose. Concern that access to treatment with Naloxone or easing punishments for drug crimes will increase use it cited as a reason for hesitancy in these interventions. Initial evidence showed an increase in use in a before/after study of these interventions, though it was a single study and did not control for increasing use in general. Two more recent studies show no increase in use with access to this tool.
+
+##### Safer use practices [@cerda2021]
+
+Safer-use measures may take the form of needle exchanges or safe-use facilities where drugs are taken in a controlled environment. Safe use measures are associated with a decrease in deaths in other countries (non-US). There are currently campaigns to attempt these measures in New York and Philadelphia, though "NIMBYism" ("Not In My Back Yard"-ism)i is a possible barrier. Fentanyl detection strips allow users to asses if they have a product contaminated by stronger drugs. Evidence suggests the strips decrease use somewhat but individuals do not appear willing to dispose of the product overall.
+
+### Demand-side [@cerda2021]
+
+These approaches involve treatment of the disorder itself as a opposed to controlling the supply.
+
+#### Treatment [@cerda2021] 
+
+Medications that treat opioid use disorder have been studied and shown to reduce opioid use. There are three such medications: methadone, buprenorphine, and naltrexone. The first two are the gold standard of care given the amount of evidence accumulated over time to support their use, including multiple longitudinal studies. Crucially, however, the majority of those treated for opioid use disorder do not receive any such medications (commonly know as "Medications for opioid use disorder", or MOUD). Most programs do not offer them. Many patients who receive them stop taking them. Studies of barriers to adoption of medications among treatment providers show regulatory and fiscal obstacles as driver of this difficulty. Clinics offering methadone must receive a specific license from the Drug Enforcement Agency (DEA), and patients must visit the clinic daily. Buprenorphine can be given as a take-home treatment, but the DEA requires prescribing physicians to obtain a waiver for this use. Medication-based programs often have rigid compliance standards for additional services like therapy and some demand total abstinence from other substances, increasing the difficulty for some patients.
+
+## Future research [@cerda2021]
+
+More research is needed on the precise differences in usage across demographics so that the way the epidemic impacts different groups can be understood and addressed. The treatment of chronic pain must evolve such that people who need treatment are not left under-treated for fear of prescribing opioids. Research must engage with newer trends in fentanyl and multi-drug use, and other groups in addition to deindustrialized white communities. Further research is also needed in the area of stigma and how it informs policy, as evidence suggests that it is a barrier to adoption of certain treatments.
+
+> proof read: `@milliebotreads`

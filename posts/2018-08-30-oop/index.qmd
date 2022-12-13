@@ -1,0 +1,358 @@
+---
+author: "Thadryan"
+title: "Object-oriented Python: an overview"
+date: "2018-08-30"
+description: "An overview of object-oriented programming in Python."
+---
+
+Object-Oriented Programming is a huge topic, and a unit dedicated to it has been in the queue for PyWy for some time. In the mean time, here is a crash course to give you an idea of what to expect!
+
+## Object Oriented Programming (OOP)
+
+OOP is often considered a little weird to learn, but becomes very intuitive with some practice because it is used to model real things. It's used to imitate things from the real world and store data in the same way they do.
+
+A "class" is a model or blueprint for how to store that information. You might have a class to imitate "Students". Each INDIVIDUAL occurrence of a class is called and "object". If there was a class called "Student", you and I were students, we would be individual objects of the type "Student". In Python code this looks like this:
+
+
+```{python}
+# class "Student" is an object
+class Student(object):
+    # def is Python's version of sub - we're making a function acting on self                 
+    def say_what_you_are(self):          
+        # print out a message 
+        print("I am a student")          
+```
+
+## Initialization
+
+This is simply a way to say "creation". We've described to the computer how to make a Student, but keep in mind we didn't actually tell it to do so. We just told it HOW to do so. It's the blueprint NOT a building.
+
+Now let's make an individual object:
+
+```{python}
+Jiaojiao = Student() # Python doesn't require you to say new
+```
+
+That's it. Notice that there is no output. She's just sitting there. That's ok. We told her to be born as a student, we didn't tell her to do anything. Unless otherwise specified, an object will just sit there, existing. Let's make her do something:
+
+```{python}
+Jiaojiao.say_what_you_are()    # the "." notation is used to "call" things out of or from an object. 
+```
+
+That's all this student class can do. Not very interesting. We will write over thr first definition with a better one. Let's add an attribute:
+
+```{python}
+class Student(object):
+    # we've added an attribute "name", that starts blank
+    name = "" 
+    def say_what_you_are(self):
+        print("I am a student")
+```
+
+Now "Student"s have a name, set to nothing by default. Let's see how we would use that:
+
+```{python}
+
+# create Ashmi 
+Ashmi = Student()         
+
+# Will print an empty string. Not helpful!
+print(Ashmi.name)         
+
+# give her a name, because it starts as nothing. No (), because its not a function/method
+Ashmi.name = "Ashmmi"    
+
+# we can print her name now
+print(Ashmi.name)         
+```
+
+Let's make the class more usefull by adding an introduce itself. This requires us to understand "self" more. "self" is to explicity tell the object what to do and let it know it's talking about itself. It's as if you pass it to itself so it can do things to itself, like how Perl has "$self = shift". It's "self" aware, in that it can get to it's attibutes. This is a really powerful idea becaues it allows us to direct lots of objects with making each one.
+
+```{python}
+
+class Student(object):
+
+    name = ""
+    
+    # let it know who it will be talking about.
+    def say_what_you_are(self):    
+        print("I am a student")
+
+    # acces the name of self
+    def introduce_yourself(self):         
+        print("Hello, I am", self.name)   
+```
+
+Here is how we can use this and the objects will say their specific name.
+
+
+```{python}
+
+Nareh = Student()
+Nareh.name = "Nareh"
+
+Ashmi = Student()
+Ashmi.name = "Ashmi"
+
+# they will give their names with the same method call
+Nareh.introduce_yourself()     
+Ashmi.introduce_yourself()
+```
+
+## Contructor/Initializer/BUILD
+
+You make have noticed that it's annoying to specify the name after the object is created. We can make this automatic with a "contructor" or "initializer", a special function that triggers automatically whenever an object is initialized. in Perl/Moose this is called BUILD. In Python it's called "__init__" to differentiate it form other functions. We will add one. It will take an argument, like any other function might and use it to set the attributes of the class.
+
+
+```{python}
+
+class Student(object):
+    
+    # name is nothing, but will be set by __init__ (BUILD)
+    name = ""                   # <-------
+    
+    # define __init__ that acts on "self", and takes a "name"
+    def __init__(self, name):   
+        self.name = name        
+           
+    # set your name attribute (above) to the name that is given to you 
+    def say_what_you_are(self):
+        print("I am a student")
+        
+    def introduce_yourself(self):
+        print("Hello, I am", self.name) 
+```
+
+Now we can have behavior for the object from the moment it is created. This is super powerfull because we can give them some instructions and they will get along without us.
+
+
+```{python}
+
+# now we can just give the name from the start and don't have to mess with the object
+Nareh = Student("Nareh")    
+Ashmi = Student("Ashmi")  
+
+Nareh.introduce_yourself()
+Ashmi.introduce_yourself()
+```
+
+## Inheritance
+
+Sometimes it is usefull to have sub catagories that a variations on the same type. This is a fancy word that, fortunately, means the same thing in OPP as it does in te regular world. An new class of objects can "inherit" attribues from an ancestor called a "base class". Let's see if there would a way to use this for Student. There are different types of students that share similar traits. We will start with something simple.
+
+
+```{python}
+
+class Student(object):
+    def go_on_coop(self):
+        print("I will find a coop!")
+
+John = Student()
+John.go_on_coop()
+```
+
+Nothing new here yet. But now we'll make a subclass of Student calles a MastersStudent that does more specific things than a general Student. It will automatically get things that a student has because we will pass the "Student" class to its definition not just any generic object.
+
+
+```{python}
+
+# notice we pass in Student not object!!!!!!!
+class GradStudent(Student):               
+    # something more specific 
+    def complain_about_undergrads(self):
+        print("Stupid undergrads!")
+```
+
+Let's make an MS student:
+
+```{python}
+
+# make a MastersStudent
+Sara = GradStudent()          
+# we know she can complain about undergrads because we coded that above
+Sara.complain_about_undergrads() 
+```
+
+We're not suprised when we see she can use complain_about_undergrads() because we specifically told her how. But guess what else Sara can do:
+
+
+```{python}
+
+# she "inherited" this from the generic Student class
+Sara.go_on_coop()     
+```
+
+Sarah can use the methods from both classes becaues she is from MastersStudent that inherits things from regular Student. If we had written "class MastersStudent(object):", it would still make a class, but not one that had access to things that Student does.
+
+## Multiple Inheritance
+
+We don't have to stop there. Let's get a level more specific.
+
+
+```{python}
+
+# a PhD Student is a type of MastersStudnet, not just any Student
+class PhdStudent(GradStudent):
+    # they write dissertations (theortically)
+    def write_dissertation(self):     
+        print("Write, write, write!")
+```
+
+PhD Student gets "complain_about_undergrads()" from "GradStudent", but it also gets "go_on_coop()" from GradStudent because GradStudnet gets it from Student!
+
+
+```{python}
+
+# make a PhdStudent
+Chuck = PhdStudent()                  
+# look a all the shit I can do!
+Chuck.go_on_coop()
+# even though you didn't have to tell me in my class
+Chuck.complain_about_undergrads()    
+Chuck.write_dissertation()
+```
+
+If we really wanted to go nuts, we could add another level:
+
+
+```{python}
+
+class PostDoc(PhdStudent):
+    def moar_phd_type_stuff(self):
+        print("What the hell is wrong with me?")
+        
+Murillo = PostDoc()
+# can do ALL OF IT!!!
+Murillo.go_on_coop()
+Murillo.complain_about_undergrads()
+Murillo.write_dissertation()
+Murillo.moar_phd_type_stuff()
+```
+
+This saves us a lot of repetitive writing. But what if we wanted the tree to fork?
+
+
+```{python}
+
+### a class of masters student based on student 
+class MastersStudent(Student):
+    # MastersStudent - they're still based on Student
+    def panic_about_life(self):    
+        print("I should have just done a Phd")
+
+
+### a class of PhD student based on student 
+# PhdStudent - they're still based on Student
+class PhdStudent(Student):            
+    def panic_about_life(self):
+        print("I should have stopped at my Master's")
+```
+
+Now these different types of subtypes will both share all the things that Student has, but the will have slightly different behavior when it is time to panic(). Observe:
+
+
+```{python}
+
+# make a MastersStudent
+one_version_of_somone = MastersStudent()    
+# call the methods 
+one_version_of_somone.go_on_coop()         
+one_version_of_somone.panic_about_life()
+```
+
+Same thing but with a PhD:
+
+```{python}
+
+# make a PhdStudent
+other_version_of_somone = PhdStudent()      
+ # will be the same
+other_version_of_somone.go_on_coop()
+# will be DIFFERENT!
+other_version_of_somone.panic_about_life()  
+```
+
+Notice how they both can go on co-op and it is the same, but when they use panic because we redefined it.
+
+Here is another good example of "Polymorphic" behavior:
+
+https://stackoverflow.com/questions/3724110/practical-example-of-polymorphism
+
+## Composition/Traits
+
+Sometimes we want to mix and match traits without inheriting all of them. It make sense in one context for a class called "BiologicalLifeForm" pass on traits like "Eat", "Breathe", and "Reproduce". But if you had an Animals class and wanted to make "Birds" and "Dogs", it wouldn't make sense to have dogs that had the "Fly" attribute.
+
+To keep it in our student example, suppose we didn't want our PhD students to complain about undergrads anymore because they have to give lectures with them, but still let our MS students do it. We could make a "complainer" trait and give it to the MS students but not the PhDs. Perl calls these "roles". Most OOP systems call them "traits". Python doesn't have traits per se, you often just make another small class and "mix" it together with other ones to get what you want. For our purposes, We can make each "trait" into it's own class and pick only what we want.
+
+
+```{python}
+
+### here is a "trait"
+class GradStudent(object):
+    # a class of a grad student that will be the GradStudent "trait"
+    def do_things(self):
+        print("I study!")
+        
+### here is the other 
+class Complainer(object):         
+    # a class of a complainer that will be the complainer "trait"
+    def complain_about_undergrads(self):
+        print("Seriously, they are the WORST")
+```
+
+Let's mix and match! We'll make a class the has one trait, and another that has both.
+
+```{python}
+### a class "composed" of one trait
+class PhdStudent(GradStudent):  
+    # PhdStudents are GradStudents - we add "mix in" one trait to make the class
+    def say_hi(self):    
+        print("I am a PhD student. I can't kvetch about undergrads. That makes no sense.")
+        
+### a class "composed" of two traits - GradStudent and Complainer  
+class MastersStudent(GradStudent, Complainer): 
+    # Masters Students are GradStudents AND Complainers
+    # # we wix in two traits to make the class
+    def say_hi(self):
+        
+        print("I am a MS student, I CAN kvetch about undergrads. Watch:")
+```
+
+
+```{python}
+# make a MastersStudent
+us = MastersStudent()            
+# use their traits 
+us.say_hi()                      
+us.complain_about_undergrads()
+```
+
+```{python}
+# make a PhdStudent
+them = PhdStudent()               
+# will work
+them.say_hi()
+# will not if uncommented - didn't get composed with complain_about_undergrads()
+# them.complain_about_undergrads() 
+```
+
+It's a little abstract in theory, but very useful in practice. It's where design comes in - it's not always clear which is best, or both might be just fine. Gotta tinker. It's just odd because it requires to look at coding in abstraction not just technique. For more examples, imagine you were modeling the characters in a story. I might make three traits:
+
+Lover
+
+Fighter
+
+Asshole
+
+The Hero of the story could be a Lover + Fighter. The Villian of the story would be a Fighter + Asshole. That way you could keep a trait from going where you don't want it. A less abstract example would be in something like our final. You could make traits like:
+
+Reader
+
+Writer
+
+Generator
+
+Displayer
+
+Objects that read in sequence data and made new subseq objects might have the traits "Reader" and "Generator", and have the _getGenbankSeqs method. The ones that wrote new fasta files might be "Writer" and have writeFasta. You could add "Displayer" to whatever one you wanted to see terminal output from (it would probably have printResults).
+

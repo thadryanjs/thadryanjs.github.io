@@ -1,14 +1,30 @@
 ---
-title: "Drops of Jupyter"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "About"
+layout: article
+image: assets/pic.jpg
+about:
+  template: jolla 
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/thadryanjs
+    - icon: mastodon
+      text: Mastodon
+      href: https://fediscience.org/@thadryanjs
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/ThadryanJS
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/thadryan-sweeney-10b938a/
 ---
+I'm a Firefighter and Human Services Professional turned Data Scientist interested in statistics, interactive visualization, and biomarker discovery. I do statistically oriented biology research using R, Python, and JavaScript. I'm currently pursing a PhD in <a href="https://geiselmed.dartmouth.edu/qbs/">Quantitative Biomedical Sciences</a>.
 
+Before starting my doctorate, I was at Mass General Hospital where I worked in the <a href="https://www.actru.org/"> Alzheimer's Clinical & Translational Research Unit.</a> 
+Before moving to ACTRU, I did statistics and web app development for studies of SARS-Cov-2 and various heart diseases
+at the <a href="https://cvrc.massgeneral.org/"> Cardiovascular Research Center.</a> 
 
+I also taught an introductory class in the 
+<a href="https://www.northeastern.edu/graduate/program/master-of-science-in-bioinformatics-online-14245/">Bioinformatics MS </a>
+program at Northeastern University. If you're interested in seeing what I'm working on professionally, check out my <a href="/CV"> CV </a> or my <a href=https://www.linkedin.com/in/thadryan-sweeney-10b938a> LinkedIn. </a>
+When I'm not doing science-y stuff, I play RPGs, write music, or make cartoons.

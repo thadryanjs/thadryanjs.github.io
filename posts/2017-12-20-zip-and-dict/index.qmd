@@ -1,0 +1,56 @@
+---
+author: "Thadryan"
+title: "zip and dict"
+date: "2017-12-20"
+description: "The peanutbetter and jelly of paired data."
+---
+
+# The peanut-butter and jelly of paired data: zip() and dict()
+
+Paired data in Python is user-friendly and efficient, and I find myself using it all the time. Sometimes in the course of a workflow, we end up with with multiple simple lists of information that would be easier managed as paired data. If you find yourself in this situation, there are two simple tools that work in a really intuitive way to “zip” the lists together such that the first item of list A is paired with the first item of list B. If the lists were [“Bruce”, “Peter”] and [“Wayne”, “Paker”] the out put would match them to {“Bruce”:”Wayne”, “Peter”:”Parker”}. *note that Python will also accept {“Miles”:”Morales”} 🙂
+
+Let's say we have two lists of names and want to store them as paired data in a dictionary. All we need to do to get a nice, tidy, dictionary out of it is the following (I'll show the running code and then go through it afterwards with a more realistic use case).
+
+
+```{python}
+# here are our two lists
+first = ["A","B","C"]
+second = ["1","2","3"]
+
+# make a dict from the output of zipping the two iterables
+third = dict(zip(first, second))
+
+# iterate thorough and show we got what we were looking for
+for item in third:
+    print(item, third[item])
+```
+
+That's it. What's going on here? Let's take a closer look.
+
+Python has a "zip" function that will return a zip object of tuples (don't worry if that sounds weird; it just means it is a zip class and has our data stored in a way such that it can't be modified). It takes iteratable objects like lists as arguments, in our case, just two. It goes through the lists in order, and "zips" them together, first item to first item, second to second, and so on.
+
+```{python}
+# here are our to lists
+first = ["Christopher","Jo-Vaughn","Sean","Sir Robert Bryson"]
+last = ["Wallace","Scott","Carter","Hall II"]
+
+# call the zip function that takes iteratable structure 
+names = zip(first, last)
+
+# if we print it out, we see we have a zip object and memory address
+print(names)
+print(type(names))
+```
+
+While they are in the object, we can't use them as paired data directly. Fortunately, the dict() function will take a list of tuples and return a dictionary.
+
+```{python}
+# use the dict function on the zip object
+names = dict(names)
+
+# print out the evidence
+for item in names:
+    print(item, names[item])
+```
+
+Note that this will also work with ints and floats. That's all there is to it. Thanks for reading.

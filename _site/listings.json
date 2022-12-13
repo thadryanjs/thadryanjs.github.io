@@ -1,0 +1,34 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/2022-12-10-opiods/index.html",
+      "/posts/2021-09-29-survival-guide/index.html",
+      "/posts/2021-01-19-retraction-watch/index.html",
+      "/posts/2021-01-26-mlk/index.html",
+      "/posts/2021-01-08-preprint-and-app/index.html",
+      "/posts/2020-07-11-fact-check-quote/index.html",
+      "/posts/2020-07-10-hmd-removed-quote/index.html",
+      "/posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html",
+      "/posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html",
+      "/posts/2020-04-27-r-type-error/index.html",
+      "/posts/2020-03-30-arch-linux-virtual-box/index.html",
+      "/posts/2020-01-20-mlk/index.html",
+      "/posts/2019-08-30-seasonality-in-gun-deaths/index.html",
+      "/posts/2019-03-28-closures-in-python/index.html",
+      "/posts/2019-01-31-more-rigorous-ash/index.html",
+      "/posts/2018-10-04-perl-for-the-impatient/index.html",
+      "/posts/2018-09-30-python-imports/index.html",
+      "/posts/2018-08-30-oop/index.html",
+      "/posts/2018-07-20-scala/index.html",
+      "/posts/2018-05-10-oop-lighthearted/index.html",
+      "/posts/2018-03-12-find-and-replace/index.html",
+      "/posts/2018-02-20-ash/index.html",
+      "/posts/2018-02-06-simple-date-conversion/index.html",
+      "/posts/2018-01-16-mlk/index.html",
+      "/posts/2018-01-09-twitter-metadata-classifier/index.html",
+      "/posts/2017-12-21-python-for-perl-users/index.html",
+      "/posts/2017-12-20-zip-and-dict/index.html"
+    ]
+  }
+]

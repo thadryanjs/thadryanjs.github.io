@@ -1,0 +1,14 @@
+---
+author: "Thadryan"
+title: "Trump v. Clinton: Twitter metadata classifier"
+date: "2018-01-09"
+description: "Classifiying tweets as Hilary or Trump."
+---
+
+Hello all!
+
+I did a project for a data science class in which I classified tweets as being from @realDonaldTrump vs @HillaryClinton. I found a dataset on this on [Kaggle](https://www.kaggle.com/benhamner/clinton-trump-tweets). Because words and context trip up even the most clever programs on occasion, I decided to see if I could write and entirely numerical classifier. It read length of words, average words per sentence, that sort of thing. I wrote a Python function that engineers these features and a script to implement it that adds them to the original dataset. Below is the video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ILCTxK-ZXJ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Please feel free to [get in touch](http://pythoninthewyld.com/home/contact/) if you'd like to see a copy of the PDF.

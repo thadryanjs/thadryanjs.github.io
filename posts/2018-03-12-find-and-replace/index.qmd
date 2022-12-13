@@ -3,6 +3,9 @@ author: "Thadryan"
 title: "Find and replace in Python"
 date: "2018-03-12"
 description: "Like ctrl-f with for Python."
+categories:
+  - Python
+  - Data Processing
 ---
 
 

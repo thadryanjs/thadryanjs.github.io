@@ -4,6 +4,9 @@ layout: post
 title: "A Survival Guide for Students Starting an MS in Bioinformatics"
 date: 2021-09-29
 description: "Some lessons learned in grad school."
+categories:
+  - Academia
+  - Advice
 ---
 
 I'd been toying with the idea of making a survival guide for my students for a

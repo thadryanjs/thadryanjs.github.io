@@ -3,6 +3,10 @@ author: "Thadryan"
 title: "Matrin Luther King Day"
 date: "2018-01-16"
 description: "Marking the occasion with word clouds."
+categories:
+  - Sociopolitical
+  - R
+  - NLP
 ---
 
 Hello Everyone!

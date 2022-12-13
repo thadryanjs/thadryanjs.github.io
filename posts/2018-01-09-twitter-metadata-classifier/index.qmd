@@ -3,6 +3,10 @@ author: "Thadryan"
 title: "Trump v. Clinton: Twitter metadata classifier"
 date: "2018-01-09"
 description: "Classifiying tweets as Hilary or Trump."
+cattegories:
+  - Classification
+  - R
+  - Machine Learning
 ---
 
 Hello all!

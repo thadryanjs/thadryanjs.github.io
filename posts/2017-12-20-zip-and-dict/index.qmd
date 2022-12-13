@@ -3,6 +3,9 @@ author: "Thadryan"
 title: "zip and dict"
 date: "2017-12-20"
 description: "The peanutbetter and jelly of paired data."
+categories:
+  - Perl
+  - Python
 ---
 
 # The peanut-butter and jelly of paired data: zip() and dict()

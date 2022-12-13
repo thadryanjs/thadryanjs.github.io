@@ -2,7 +2,10 @@
 author: "Thadryan"
 title: Evidence Heather Mac Donald Presented A Pre-print Claim That Was Remove In Peer Review As Scientific
 date: "2020-07-10"
-description: "More details on a previously observed biff from HMD"
+description: "More details on a previously observed biff from HMD."
+categories:
+ - Sociopolitical
+ - Analysis
 ---
 
 Lately I've been practicing some statistical skepticism in regards to a recent [op-ed](https://www.wsj.com/articles/the-myth-of-systemic-police-racism-11591119883) that contained a lot of very obvious [statistical and journalistic errors](https://sweeney-th.github.io/blog/2020/06/27/TheMythofSystemicPoliceRacism).

@@ -4,8 +4,8 @@ description: "A concise summary of Cerdá, et al with some additional fundamenta
 author: "Thadryan"
 date: "12-10-2022"
 categories:
-  - opioids
-  - research
+  - Opioids
+  - Research
 bibliography: OpioidsSummary.bib
 csl: style.csl
 ---

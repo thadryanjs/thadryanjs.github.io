@@ -3,6 +3,9 @@ author: "Thadryan"
 title: "Object-oriented Python: an overview"
 date: "2018-08-30"
 description: "An overview of object-oriented programming in Python."
+categories:
+  - Python
+  - Object-Oriented Programming
 ---
 
 Object-Oriented Programming is a huge topic, and a unit dedicated to it has been in the queue for PyWy for some time. In the mean time, here is a crash course to give you an idea of what to expect!

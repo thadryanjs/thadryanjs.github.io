@@ -3,6 +3,9 @@ author: "Thadryan"
 title: "Some light-hearted oop"
 date: "2018-05-10"
 description: "...or: circumstantial evidence that I am still alive."
+categories:
+ - Python
+ - Object-Oriented Programming
 ---
 
 Hello there! I am writing to let you know that I have cleared the summit of a couple of beastly projects and will be back to working on the site at at the usual semi-regular pace soon. I am also working on some pieces that are a little larger and more detailed than usual, but the delays should (hopefully) be offset with quality. In the meantime, enjoy some easy-going code humor that doesn't want to hurt no one as evidence I am still around.

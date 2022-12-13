@@ -2,7 +2,9 @@
 author: "Thadryan"
 title: "Perl for the impatient"
 date: "2018-10-04"
-description: "A dangerously fast introduction to a dangerously consice language."
+description: "A dangerously fast introduction to a dangerously concise language."
+categories:
+ - Perl
 ---
 
 Maybe you want something a little more purpose-built than Bash to mine some text and need a refresher. Perhaps you're in Bioinformatics and want to extract some patterns from DNA (the original weird programming language). Maybe the eccentric, neck-bearded, regex-wizard in your office just retired and you've inherited a couple of scripts. Whatever the reason, you need to get (re)acquainted with [Perl](https://www.perl.org/). I've got you covered with a slew of [in-context examples of working code](https://github.com/sweeney-th/PITW/tree/master/PFTI).
@@ -14,7 +16,3 @@ Perl also established itself as an influential language in the trend toward high
 Perl's flexibility will allow you to make yourself a mess (it is, after all, a feature, not a bug according to it's creator), but a competent programmer can make clean, robust systems with it (almost of as fast as a novice could make ugly, fragile ones in a cleaner language). You'll also have it at your disposal out-of-the-box on the majority us Unix based systems (including many Macs).
 
 If you're curious, you can check out the repository [here](https://github.com/sweeney-th/PITW/tree/master/PFTI).
-
-&nbsp;
-
-&nbsp;

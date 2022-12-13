@@ -3,6 +3,8 @@ author: "Thadryan"
 title: "Python imports: Sample Project + Explanations"
 date: "2018-09-30"
 description: "Answering a question on using imports in Python pograms"
+categories:
+  - Python
 ---
 
 Salutations!  

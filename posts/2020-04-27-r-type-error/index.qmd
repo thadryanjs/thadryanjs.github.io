@@ -2,7 +2,13 @@
 author: Thadryan
 title: A Case study in Silent Data Corruption in an RNA-Seq Experiment
 date: 2020-04-27
-description: "How a subtle bug and misleading error message can transform your RNA-Seq data.  "
+description: "How a subtle bug and misleading error message can transform your RNA-Seq data."
+categories:
+ - R
+ - Bioinformatics
+ - Statistics
+ - Differential Expression
+ - Tools
 ---
 During a recent differential gene expression analysis I had a few issues converge in such a way that the code would run fine from top to bottom but would silently compromise the analysis and produce bogus results. Essentially it was a combination of a bugged error message in a package I was using, a bad row in an input file I was given, and some weird behavior of R (and of course, my initial carelessness in not noticing sooner). I caught this issues with some included QC functions.
 

@@ -4,6 +4,9 @@ title: "Closures in Python"
 date: "2019-03-28"
 description: "Makeshift type checking in Python and when I find it handy."
 error: true
+categories:
+  - Python
+  - Functional Programming
 ---
 
 ## Closures in Python: What they are, and a practical application for type-checking objects

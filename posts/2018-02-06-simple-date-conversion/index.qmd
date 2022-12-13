@@ -3,6 +3,9 @@ author: "Thadryan"
 title: "Simple date-string conversion"
 date: "2018-02-06"
 description: "Answering a question an dates and strings."
+categories:
+  - Python
+  - Data Processing
 ---
 
 # Simple Date Strings Conversion: split-process-join¶

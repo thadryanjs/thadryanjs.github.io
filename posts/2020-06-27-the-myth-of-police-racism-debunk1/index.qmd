@@ -3,6 +3,9 @@ author: "Thadryan"
 title: Video - "The Myth of Systemic Police Racism" is full of statistical and journalistic errors
 date: 2020-06-27
 description: "Applying some skepticism to a recent WSJ Op-ed"
+categories:
+ - Sociopolitical
+ - Analysis
 ---
 
 >UPDATE: One of the articles misused in the piece has been [retracted](https://twitter.com/ThadryanJS/status/1280520204414603269?s=20), with the authors calling out Mac Donald by name as misusing their work.

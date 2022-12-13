@@ -1,6 +1,6 @@
 ---
 title: "Summarizing a review of contributors to the opioid epidemic"
-description: "A concise summary of Cerdá, et al with some additional fundamentals"
+description: "A concise summary of Cerdá, et al with some additional fundamentals."
 author: "Thadryan"
 date: "12-10-2022"
 categories:

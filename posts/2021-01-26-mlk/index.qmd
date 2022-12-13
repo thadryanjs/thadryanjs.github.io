@@ -1,0 +1,21 @@
+---
+title: 'In Honor of MLK 2021: “I Have A Dream" Wordclouds Revisited'
+date: 2021-01-18 
+author: "Thadryan"
+description: "Some more wordclouds to celebrate the day."
+---
+
+For most of the last few years, I've made wordclouds of famous speeches MLK to mark the holiday that bears his name - they're [here](https://sweeney-th.github.io/2018/01/16/in-honor-of-mlk-i-have-a-dream-wordcloud-example-in-r/) and [here](https://sweeney-th.github.io/2020/01/20/in-honor-of-mlk-2020-i-have-a-dream-wordcloud-example-in-r/). This year, I revisted the "I Have A Dream" speech with some new knowledge and tools and created the following as I reflected on the importance of the legacy of the day.
+
+## Initials
+![wordcloud](/assets/MLK/2021/initials.png)
+
+## Face
+![wordcloud](/assets/MLK/2021/mlk-face.png)
+
+## Circle Cloud
+![wordcloud](/assets/MLK/2021/dream-circle2.png)
+
+
+The source code leverages the [wordcloud](https://www.rdocumentation.org/packages/wordcloud/versions/2.6  ) and [wordcloud2](https://www.rdocumentation.org/packages/wordcloud2/versions/0.2.1) packages and is published [here](https://github.com/sweeney-th/MLK-wordclouds).
+

@@ -1,0 +1,144 @@
+---
+author: "Thadryan"
+title: "Closures in Python"
+date: "2019-03-28"
+description: "Makeshift type checking in Python and when I find it handy."
+error: true
+---
+
+## Closures in Python: What they are, and a practical application for type-checking objects
+
+A closure is technique that allows functions to bundle variables in their local scope for access at a later time. If there was a variable x with the value of ten in the namespace for instance, even after that code executed, we could refer back to the namespace and x would still be 10. That's a little dry; fortunately the idea is easier to illustrate in code using a function with a function inside it.
+
+```{python}
+def add_ten_to_things():
+    # inside this function is a scope
+    # we'll call it "outer scope"
+    x = 10
+    def inner(y):
+        # this function has a scope
+        # we'll call it "inner scope"
+        return x + y
+    return inner
+```
+
+Notice how in the inner function we refer to the outer scope (to the variable x) and then return the inner scope? This is the mechanism that allows closures to work: that x is now packaged into the returned inner(). Let's see how it can be accessed:
+
+```{python}
+# we call the original add_ten_to_things() function that returns the inner function/namespace
+add_ten = add_ten_to_things()
+
+# we pass something for "y" and it will still be able to add 10 to it
+print(add_ten(20))
+```
+
+Because 10 is stored in the local namespace of the outer function that produces the new function, 10 can still be accessed by it. A function that makes functions that add ten to things isn't especially useful, however:
+
+```{python}
+def add_x_to_things(x):
+    def adder(y):
+        return x + y
+    return adder
+
+increase_by_five = add_x_to_things(5)
+increase_by_ten = add_x_to_things(10)
+
+one_plus_five = increase_by_five(1)
+one_plus_ten = increase_by_ten(6)
+
+print(one_plus_five, one_plus_ten)
+```
+
+You'd be forgiven for wondering what the point of that would be. It makes more sense once you realize you can pass arguments to the outer function and that they will be accessible to the inner one. To illustrate, consider the following example, where a function can make several types of greeter builders depending on what is passed to the outer function.
+
+```{python}
+# the outer function
+def greeter_maker(greeting):
+    # inner function
+    def greeter(name):
+        print(greeting + ",", name)
+    # outer function returns the inner 
+    return greeter
+
+
+formal_greeter = greeter_maker("Hello, pleased to meet you")
+casual_greeter = greeter_maker("Heyo")
+```
+
+In action:
+
+```{python}
+casual_greeter("Josh")
+formal_greeter("Sruthi")
+```
+
+Another builder:
+
+While this show some flexibility that could be made into something useful, it can be hard to see just what a powerful idea this idea is without some context, so we will look at one more example. Consider the following class:
+
+```{python}
+class Person(object):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+```
+
+This is an extremely simple Python class that models a Person with a name and age. It's probably obvious to any hypothetical user of this class that "name" is a string and "age' is an integer (or at least a number or some kind). However, as Python is dynamically typed, there is nothing in the language itself to enforce this. Consider the following:
+
+
+```{python}
+# everything goes according to plan...
+christian = Person("Christian Slater", 49)
+
+# whoops, wrong order...
+rami = Person(37, "Rami Malek")
+
+# gets nane 
+print(christian.name)
+# not what we though we'd get
+print(rami.name)
+```
+
+This program will run just fine until sometime downstream when someone tries to do a computation a involving rami's name or age but has the wrong type of data (ie, age += 1 and finds it's a string). Consider the following usage of a closure to prevent this (this is much simpler than it seems once you see it in context so hang on):
+
+```{python}
+# takes a dictionary of attributes->types, and a model
+def typechecking_builder(required_params, model):
+    
+    def _builder(attributes_passed):
+        # iterate through the dict that was passed to the outer function
+        for k in attributes_passed.keys():
+            current_param = attributes_passed[k]
+            type_required = required_params[k]
+            # ensure they're what we've been told to expect
+            try:
+                assert type(current_param) == type_required
+                print("Type check passed for", current_param, "of type", type_required)
+            # raise an error if they're not
+            except AssertionError:
+                print("\tfound", current_param, "of type", type(current_param), "Required:", type_required)
+                raise TypeError("Type check failed for:", k) # whatever you want to do for exception handling
+    # return the type checking function
+    return _builder
+```
+
+We can now make a builder that will type check for us, telling the function what it should expect when it is called:
+
+```{python}
+# make people, thier name is a string, thier age is an int, they're of type Person
+person_builder = typechecking_builder({"name": str, "age":int}, Person)
+```
+
+When we use this, it will check the types we passed:
+
+```{python}
+carly = person_builder({"name": "Carly Chaikin", "age": 28})
+```
+
+Now, if we make the simple mistake from before, we get feedback right away:
+
+```{python}
+sunita = person_builder({"name": 32, "age": "Sunita Mani"})
+```
+
+...and every Person we build will be type checked!

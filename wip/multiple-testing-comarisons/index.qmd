@@ -1,0 +1,176 @@
+---
+author: Thadryan
+title: "Multiple testing correction for family-wise error-rate and false discovery rate"
+toc: true
+---
+
+## Preliminaries
+
+```{python}
+
+import pandas as pd
+import numpy as np
+import seaborn as sns
+
+import statsmodels
+import statsmodels.api as sm
+
+from statsmodels.stats.multitest import fdrcorrection
+from numpy.random import default_rng
+```
+
+## Simulating a motivating example
+
+```{python}
+
+rng = default_rng(seed = 8675309)
+
+def simulation(mu1, sd1, mu2, sd2, draws = 100, n = 1000):
+    # generate different populations 
+    pop1 = rng.normal(loc = mu1, scale = sd1, size = draws)
+    pop2 = rng.normal(loc = mu2, scale = sd2, size = draws)
+    # this returns three things, we only need the middle one
+    tstat, pval, degf = sm.stats.ttest_ind(pop1, pop2)
+
+    return pval
+```
+
+
+Now we can test it:
+
+```{python}
+
+# set parameters for our populations.
+mu1 = 5
+sd1 = 2.5
+
+mu2 = 5
+sd2 = 2.5
+
+simulation(mu1, sd1, mu2, sd2)
+```
+
+Note that we've "simulated under the null" - we've specified that the parameters are the same for both distributions. Thus, we assume any positives are false. We can now repeat this a bunch of times to get a distribution of p values. 
+
+```{python}
+
+# set a seed
+rng = default_rng(seed = 8675309)
+
+# run a thousand simulations
+pvals = [simulation(mu1, sd1, mu2, sd2) for i in range(0,1001)]
+
+# get the ones below alpha
+sig_vals = [p for p in pvals if p <= 0.05]
+
+# calculate the percent that are "significant"
+sig_percent = (len(sig_vals)/len(pvals))*100
+
+# percent significant hits
+round(sig_percent, 4)
+```
+
+We can see that we have a small but non-trivial amount of hits flagged as significant. If we think about the definition of a p value though, this makes sense. 
+
+> p value: The probability of seeing evidence against the null that is this extreme or more given the null is true (given our modeling assumptions are met)
+
+If we're operating at $\alpha = 0.05$, we've accepting that we will be wrong about 5% of the time. In experiments where we're testing a lot of hypotheses though, this adds up to a lot of mistakes.
+
+For example, consider a differential expression experiment involving 20,000 genes:
+
+```{python}
+
+# 5 percent wrong in this case...
+0.05 * 20000
+```
+
+...we're talking about being wrong a thousand times. This is why multiple testing correction exists. We will consider two types with one example each.
+
+## Controlling Family-wise Error Rate (FWER) with the Bonferroni method
+
+Bonferroni is perhaps the most common method for controlling FWER. It's simple, reliable, and effective. 
+
+```{python}
+
+adj_pvals = [p * len(pvals) for p in pvals]
+
+sig_adj_pvals = [p for p in adj_pvals if p < 0.05]
+
+sig_percent_adj = len(sig_adj_pvals)/len(adj_pvals)
+
+print("percent significant (adj):", round(sig_percent_adj, 4))
+```
+
+## False Discovery Rate (FDR)
+
+It's something of a blunt instrument however, and there are some situations where another common method Benjamini-Hochberg, is preferable.
+
+```{python}
+
+def calc_bh_threshold(vector, alpha = 0.05):
+
+    # the number of hypotheses
+    m = len(vector)
+    q = alpha
+    sorted_pvals = sorted(vector)
+
+    critical_vals = []
+    for i in range(0, len(sorted_pvals)):
+        rank = i+1
+        critical_val = (rank/m)*q
+        critical_vals.append(critical_val)
+
+    df_res = pd.DataFrame({
+        "pvalue": sorted_pvals,
+        "critical_value": critical_vals
+    })
+
+    df_res_p_less_crit = df_res.query("pvalue <= critical_value").\
+        sort_values(by = "pvalue", ascending = False)
+
+    return df_res_p_less_crit["pvalue"].max()
+```
+
+```{python}
+
+bh_threshold = calc_bh_threshold(pvals)
+
+df_res = pd.DataFrame({"pval": pvals})
+
+df_res["bg_reject"] = df_res.pval.apply(lambda x: x <= bh_threshold)
+
+sig_adj_bh = df_res.query("bg_reject == True")
+
+len(sig_adj_bh)/len(pvals)
+```
+
+
+```{python}
+
+mu1 = 5
+sd1 = 1
+
+mu2 = 5.5
+sd2 = 1
+
+pvals = [simulation(mu1, sd1, mu2, sd2) for i in range(0,1000)]
+
+print(len([p for p in pvals if p < 0.05]))
+
+df_check = pd.DataFrame({"pval": pvals})
+
+df_check["sample_id"] = ["sample" + str(i+1) for i in range(0, len(pvals))]
+
+bh_threshold_check = calc_bh_threshold(df_check["pval"])
+
+df_check["bh_reject_custom"] = df_check.pval.apply(lambda x: x <= bh_threshold_check)
+
+df_check["bh_reject_default"] = fdrcorrection(df_check["pval"])[0]
+
+df_check["agreement"] = \
+    df_check["bh_reject_custom"] == df_check["bh_reject_default"]
+
+[i for i in df_check["agreement"] if i == False]
+```
+
+

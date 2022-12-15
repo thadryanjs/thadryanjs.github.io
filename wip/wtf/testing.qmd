@@ -1,0 +1,15 @@
+
+
+
+```{python}
+var = 1
+```
+
+```{python}
+def inc(x):
+    return x+1
+```
+
+```{python}
+inc(var)
+```

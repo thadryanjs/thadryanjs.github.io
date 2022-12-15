@@ -551,5 +551,61 @@
     "title": "About",
     "section": "",
     "text": "I’m a Firefighter and Human Services Professional turned Data Scientist interested in statistics, interactive visualization, and biomarker discovery. I do statistically oriented biology research using R, Python, and JavaScript. I’m currently pursing a PhD in Quantitative Biomedical Sciences.\nBefore starting my doctorate, I was at Mass General Hospital where I worked in the  Alzheimer’s Clinical & Translational Research Unit. Before moving to ACTRU, I did statistics and web app development for studies of SARS-Cov-2 and various heart diseases at the  Cardiovascular Research Center.\nI also taught an introductory class in the Bioinformatics MS  program at Northeastern University. If you’re interested in seeing what I’m working on professionally, check out my  CV  or my  LinkedIn.  When I’m not doing science-y stuff, I play RPGs, write music, or make cartoons."
+  },
+  {
+    "objectID": "wip/multiple-testing-comarisons/index.html",
+    "href": "wip/multiple-testing-comarisons/index.html",
+    "title": "Multiple testing correction for family-wise error-rate and false discovery rate",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nimport seaborn as sns\n\nimport statsmodels\nimport statsmodels.api as sm\n\nfrom statsmodels.stats.multitest import fdrcorrection\nfrom numpy.random import default_rng"
+  },
+  {
+    "objectID": "wip/multiple-testing-comarisons/index.html#family-wise-error-rate-fwer",
+    "href": "wip/multiple-testing-comarisons/index.html#family-wise-error-rate-fwer",
+    "title": "Multiple testing correction for family-wise error-rate and false discovery rate",
+    "section": "Family-wise Error Rate (FWER)",
+    "text": "Family-wise Error Rate (FWER)\n\nadj_pvals = [p * len(pvals) for p in pvals]\n\nsig_adj_pvals = [p for p in adj_pvals if p < 0.05]\n\nsig_percent_adj = len(sig_adj_pvals)/len(adj_pvals)\n\nprint(\"percent significant (adj):\", round(sig_percent_adj, 4))\n\npercent significant (adj): 0.0"
+  },
+  {
+    "objectID": "wip/multiple-testing-comarisons/index.html#false-discovery-rate-fdr",
+    "href": "wip/multiple-testing-comarisons/index.html#false-discovery-rate-fdr",
+    "title": "Multiple testing correction for family-wise error-rate and false discovery rate",
+    "section": "False Discovery Rate (FDR)",
+    "text": "False Discovery Rate (FDR)\nIt’s something of a blunt instrument however, and there are some situations where another common method Benjamini-Hochberg, is preferable.\n\ndef calc_bh_threshold(vector, alpha = 0.05):\n\n    # the number of hypotheses\n    m = len(vector)\n    q = alpha\n    sorted_pvals = sorted(vector)\n\n    critical_vals = []\n    for i in range(0, len(sorted_pvals)):\n        rank = i+1\n        critical_val = (rank/m)*q\n        critical_vals.append(critical_val)\n\n    df_res = pd.DataFrame({\n        \"pvalue\": sorted_pvals,\n        \"critical_value\": critical_vals\n    })\n\n    df_res_p_less_crit = df_res.query(\"pvalue <= critical_value\").\\\n        sort_values(by = \"pvalue\", ascending = False)\n\n    return df_res_p_less_crit[\"pvalue\"].max()\n\n\nbh_threshold = calc_bh_threshold(pvals)\n\ndf_res = pd.DataFrame({\"pval\": pvals})\n\ndf_res[\"bg_reject\"] = df_res.pval.apply(lambda x: x <= bh_threshold)\n\nsig_adj_bh = df_res.query(\"bg_reject == True\")\n\nlen(sig_adj_bh)/len(pvals)\n\n0.0\n\n\n\nmu1 = 5\nsd1 = 1\n\nmu2 = 5.5\nsd2 = 1\n\npvals = [simulation(mu1, sd1, mu2, sd2) for i in range(0,1000)]\n\nprint(len([p for p in pvals if p < 0.05]))\n\ndf_check = pd.DataFrame({\"pval\": pvals})\n\ndf_check[\"sample_id\"] = [\"sample\" + str(i+1) for i in range(0, len(pvals))]\n\nbh_threshold_check = calc_bh_threshold(df_check[\"pval\"])\n\ndf_check[\"bh_reject_custom\"] = df_check.pval.apply(lambda x: x <= bh_threshold_check)\n\ndf_check[\"bh_reject_default\"] = fdrcorrection(df_check[\"pval\"])[0]\n\ndf_check[\"agreement\"] = \\\n    df_check[\"bh_reject_custom\"] == df_check[\"bh_reject_default\"]\n\n[i for i in df_check[\"agreement\"] if i == False]\n\n940\n\n\n[]"
+  },
+  {
+    "objectID": "wip/wtf/testing.html",
+    "href": "wip/wtf/testing.html",
+    "title": "Thadryan J. Sweeney, MS",
+    "section": "",
+    "text": "var = 1\n\n\ndef inc(x):\n    return x+1\n\n\ninc(var)\n\n2"
+  },
+  {
+    "objectID": "wip/multiple-testing-comarisons/index.html#simulating-a-motivating-example",
+    "href": "wip/multiple-testing-comarisons/index.html#simulating-a-motivating-example",
+    "title": "Multiple testing correction for family-wise error-rate and false discovery rate",
+    "section": "Simulating a motivating example",
+    "text": "Simulating a motivating example\n\nrng = default_rng(seed = 8675309)\n\ndef simulation(mu1, sd1, mu2, sd2, draws = 100, n = 1000):\n    # generate different populations \n    pop1 = rng.normal(loc = mu1, scale = sd1, size = draws)\n    pop2 = rng.normal(loc = mu2, scale = sd2, size = draws)\n    # this returns three things, we only need the middle one\n    tstat, pval, degf = sm.stats.ttest_ind(pop1, pop2)\n\n    return pval\n\nNow we can test it:\n\n# set parameters for our populations.\nmu1 = 5\nsd1 = 2.5\n\nmu2 = 5\nsd2 = 2.5\n\nsimulation(mu1, sd1, mu2, sd2)\n\n0.9021886736832374\n\n\nNote that we’ve “simulated under the null” - we’ve specified that the parameters are the same for both distributions. Thus, we assume any positives are false. We can now repeat this a bunch of times to get a distribution of p values.\n\n# set a seed\nrng = default_rng(seed = 8675309)\n\n# run a thousand simulations\npvals = [simulation(mu1, sd1, mu2, sd2) for i in range(0,1001)]\n\n# get the ones below alpha\nsig_vals = [p for p in pvals if p <= 0.05]\n\n# calculate the percent that are \"significant\"\nsig_percent = (len(sig_vals)/len(pvals))*100\n\n# percent significant hits\nround(sig_percent, 4)\n\n4.8951\n\n\nWe can see that we have a small but non-trivial amount of hits flagged as significant. If we think about the definition of a p value though, this makes sense.\n\np value: The probability of seeing evidence against the null that is this extreme or more given the null is true (given our modeling assumptions are met)\n\nIf we’re operating at \\(\\alpha = 0.05\\), we’ve accepting that we will be wrong about 5% of the time. In experiments where we’re testing a lot of hypotheses though, this adds up to a lot of mistakes.\nFor example, consider a differential expression experiment involving 20,000 genes:\n\n# 5 percent wrong in this case...\n0.05 * 20000\n\n1000.0\n\n\n…we’re talking about being wrong a thousand times. This is why multiple testing correction exists. We will consider two types with one example each."
+  },
+  {
+    "objectID": "wip/multiple-testing-comarisons/index.html#controlling-family-wise-error-rate-fwer-with-bonferonni",
+    "href": "wip/multiple-testing-comarisons/index.html#controlling-family-wise-error-rate-fwer-with-bonferonni",
+    "title": "Multiple testing correction for family-wise error-rate and false discovery rate",
+    "section": "controlling Family-wise Error Rate (FWER) with Bonferonni",
+    "text": "controlling Family-wise Error Rate (FWER) with Bonferonni\n\nadj_pvals = [p * len(pvals) for p in pvals]\n\nsig_adj_pvals = [p for p in adj_pvals if p < 0.05]\n\nsig_percent_adj = len(sig_adj_pvals)/len(adj_pvals)\n\nprint(\"percent significant (adj):\", round(sig_percent_adj, 4))\n\npercent significant (adj): 0.0"
+  },
+  {
+    "objectID": "wip/multiple-testing-comarisons/index.html#controlling-family-wise-error-rate-fwer-with-bonferroni",
+    "href": "wip/multiple-testing-comarisons/index.html#controlling-family-wise-error-rate-fwer-with-bonferroni",
+    "title": "Multiple testing correction for family-wise error-rate and false discovery rate",
+    "section": "controlling Family-wise Error Rate (FWER) with Bonferroni",
+    "text": "controlling Family-wise Error Rate (FWER) with Bonferroni\n\nadj_pvals = [p * len(pvals) for p in pvals]\n\nsig_adj_pvals = [p for p in adj_pvals if p < 0.05]\n\nsig_percent_adj = len(sig_adj_pvals)/len(adj_pvals)\n\nprint(\"percent significant (adj):\", round(sig_percent_adj, 4))\n\npercent significant (adj): 0.0"
+  },
+  {
+    "objectID": "wip/multiple-testing-comarisons/index.html#controlling-family-wise-error-rate-fwer-with-the-bonferroni-method",
+    "href": "wip/multiple-testing-comarisons/index.html#controlling-family-wise-error-rate-fwer-with-the-bonferroni-method",
+    "title": "Multiple testing correction for family-wise error-rate and false discovery rate",
+    "section": "Controlling Family-wise Error Rate (FWER) with the Bonferroni method",
+    "text": "Controlling Family-wise Error Rate (FWER) with the Bonferroni method\nBonferroni is perhaps the most common method for controlling FWER. It’s simple, reliable, and effective.\n\nadj_pvals = [p * len(pvals) for p in pvals]\n\nsig_adj_pvals = [p for p in adj_pvals if p < 0.05]\n\nsig_percent_adj = len(sig_adj_pvals)/len(adj_pvals)\n\nprint(\"percent significant (adj):\", round(sig_percent_adj, 4))\n\npercent significant (adj): 0.0"
   }
 ]

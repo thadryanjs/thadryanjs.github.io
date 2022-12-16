@@ -85,6 +85,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -198,6 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#simulating-a-motivating-example" id="toc-simulating-a-motivating-example" class="nav-link" data-scroll-target="#simulating-a-motivating-example">Simulating a motivating example</a></li>
   <li><a href="#controlling-family-wise-error-rate-fwer-with-the-bonferroni-method" id="toc-controlling-family-wise-error-rate-fwer-with-the-bonferroni-method" class="nav-link" data-scroll-target="#controlling-family-wise-error-rate-fwer-with-the-bonferroni-method">Controlling Family-wise Error Rate (FWER) with the Bonferroni method</a></li>
   <li><a href="#false-discovery-rate-fdr" id="toc-false-discovery-rate-fdr" class="nav-link" data-scroll-target="#false-discovery-rate-fdr">False Discovery Rate (FDR)</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -270,7 +290,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>sd2 <span class="op">=</span> <span class="fl">2.5</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>simulation(mu1, sd1, mu2, sd2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="cell-output cell-output-display" data-execution_count="66">
 <pre><code>0.9021886736832374</code></pre>
 </div>
 </div>
@@ -290,20 +310,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># percent significant hits</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(sig_percent, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div class="cell-output cell-output-display" data-execution_count="67">
 <pre><code>4.8951</code></pre>
 </div>
 </div>
 <p>We can see that we have a small but non-trivial amount of hits flagged as significant. If we think about the definition of a p value though, this makes sense.</p>
 <blockquote class="blockquote">
-<p>p value: The probability of seeing evidence against the null that is this extreme or more given the null is true (given our modeling assumptions are met)</p>
+<p>p value: The probability of seeing evidence against the null that is this extreme or more given the null is true <span class="citation" data-cites="MultipleComparisonsHandbook">[<a href="#ref-MultipleComparisonsHandbook" role="doc-biblioref">1</a>]</span> - given our modeling assumptions are met</p>
 </blockquote>
 <p>If we’re operating at <span class="math inline">\(\alpha = 0.05\)</span>, we’ve accepting that we will be wrong about 5% of the time. In experiments where we’re testing a lot of hypotheses though, this adds up to a lot of mistakes.</p>
 <p>For example, consider a differential expression experiment involving 20,000 genes:</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5 percent wrong in this case...</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fl">0.05</span> <span class="op">*</span> <span class="dv">20000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="68">
 <pre><code>1000.0</code></pre>
 </div>
 </div>
@@ -311,7 +331,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="controlling-family-wise-error-rate-fwer-with-the-bonferroni-method" class="level2">
 <h2 class="anchored" data-anchor-id="controlling-family-wise-error-rate-fwer-with-the-bonferroni-method">Controlling Family-wise Error Rate (FWER) with the Bonferroni method</h2>
-<p>Bonferroni is perhaps the most common method for controlling FWER. It’s simple, reliable, and effective. It controls the Family-wise error rate, which is the probability of making at least one false finding (given our modeling assumptions are correct). In this method we simply multiply the p value we have by the number of tests we’ve done. In the differential expression example, we multiply the observed (“raw”) p values by 20,000. We’d then re-evaluate them to see if they were still lower than alpha. Because it’s based on the number of tests, the more tests we do, the stricter we are about making sure we don’t get an error by mistake. We know we’re wrong in nearly 5% of cases in our current p value simulation. Applying Bonferroni we should get that down to 0, or close to it. We apply it below:</p>
+<p>Bonferroni is perhaps the most common method for controlling FWER. It’s simple, reliable, and effective. It controls the Family-wise error rate, which is the probability of making at least one false finding <span class="citation" data-cites="MultipleComparisonsHandbook">[<a href="#ref-MultipleComparisonsHandbook" role="doc-biblioref">1</a>]</span>. In this method we simply multiply the p value we have by the number of tests we’ve done. In the differential expression example, we multiply the observed (“raw”) p values by 20,000. We’d then re-evaluate them to see if they were still lower than alpha. Because it’s based on the number of tests, the more tests we do, the stricter we are about making sure we don’t get an error by mistake. We know we’re wrong in nearly 5% of cases in our current p value simulation. Applying Bonferroni we should get that down to 0, or close to it. We apply it below:</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make a list of Bonferroni-adjusted p values</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>adj_pvals <span class="op">=</span> [p <span class="op">*</span> <span class="bu">len</span>(pvals) <span class="cf">for</span> p <span class="kw">in</span> pvals]</span>
@@ -324,7 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect </span></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(sig_percent_adj, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="42">
+<div class="cell-output cell-output-display" data-execution_count="69">
 <pre><code>0.0</code></pre>
 </div>
 </div>
@@ -332,7 +352,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="false-discovery-rate-fdr" class="level2">
 <h2 class="anchored" data-anchor-id="false-discovery-rate-fdr">False Discovery Rate (FDR)</h2>
-<p>While Bonferroni is tried and true, it’s something of a blunt instrument however, and there are some situations where another common method Benjamini-Hochberg (BH), is preferable. The Benjamini-Hochberg controls the False-discovery rate, which is the percent of the time we’re making a false positive. This is useful in situations where the strictness of Bonferroni might be limiting (more on comparing the two later). The method involves:</p>
+<p>While Bonferroni is tried and true, it’s something of a blunt instrument however, and there are some situations where another common method Benjamini-Hochberg <span class="citation" data-cites="benjaminiControllingFalseDiscovery1995">[<a href="#ref-benjaminiControllingFalseDiscovery1995" role="doc-biblioref">2</a>]</span>, often abbreviated “BH”, is preferable. The Benjamini-Hochberg controls the False-discovery rate <span class="citation" data-cites="benjaminiControllingFalseDiscovery1995">[<a href="#ref-benjaminiControllingFalseDiscovery1995" role="doc-biblioref">2</a>]</span>, which is the percent of the time we’re making a false positive. This is useful in situations where the strictness of Bonferroni might be limiting (more on comparing the two later). The method involves:</p>
 <ul>
 <li>Ranking the p values from lowest to highest.</li>
 <li>Computing a critical value for each one.</li>
@@ -375,7 +395,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>sig_adj_bh <span class="op">=</span> df_res.query(<span class="st">"bg_reject == True"</span>)</span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(sig_adj_bh)<span class="op">/</span><span class="bu">len</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div class="cell-output cell-output-display" data-execution_count="71">
 <pre><code>0.0</code></pre>
 </div>
 </div>
@@ -407,15 +427,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-stdout">
 <pre><code>940</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="72">
 <pre><code>[]</code></pre>
 </div>
 </div>
+</section>
+<section id="references" class="level2">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-MultipleComparisonsHandbook" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1 </div><div class="csl-right-inline">McDonald JH. Multiple comparisons - <span>Handbook</span> of <span>Biological Statistics</span>. <a href="http://www.biostathandbook.com/multiplecomparisons.html">http://www.biostathandbook.com/multiplecomparisons.html</a> (accessed 16 Dec 2022).</div>
+</div>
+<div id="ref-benjaminiControllingFalseDiscovery1995" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2 </div><div class="csl-right-inline">Benjamini Y, Hochberg Y. Controlling the <span>False Discovery Rate</span>: <span>A Practical</span> and <span>Powerful Approach</span> to <span>Multiple Testing</span>. <em>Journal of the Royal Statistical Society Series B (Methodological)</em> 1995;<strong>57</strong>:289–300.<a href="https://www.jstor.org/stable/2346101">https://www.jstor.org/stable/2346101</a></div>
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

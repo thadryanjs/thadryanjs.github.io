@@ -278,6 +278,7 @@ df_check.bh_reject_default.value_counts()
 ```
 
 Let's asses the agreement by making a column based on their comparison:
+
 ```{python}
 
 # do they agree?

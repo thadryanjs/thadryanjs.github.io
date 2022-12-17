@@ -2,6 +2,7 @@
 author: Thadryan
 title: "Multiple testing correction for family-wise error-rate and false discovery rate"
 description: "Re-implementing for knowledge and profit!(?)"
+date: 2022-12-17
 toc: true
 bibliography: MultipleTesting.bib
 csl: style.csl

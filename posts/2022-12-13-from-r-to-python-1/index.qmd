@@ -7,6 +7,8 @@ bibliography: Part1.bib
 toc: true
 ---
 
+> update: 12-17-22 - added sorting and table.
+
 # Data Manipulation 
 
 ```{python}
@@ -305,7 +307,7 @@ df[["mpg", "disp", "cyl"]].\
 
 ### Iterating over a df
 
-For mutating the dataframe apply/map is reccomended, but I'm showing how to do this for completeness.
+For mutating the dataframe apply/map is recommended, but I'm showing how to do this for completeness.
 
 ```{python}
 for i, j in df.iterrows():

@@ -139,6 +139,22 @@ df.query("cyl == 6")
 df.query("cyl == 6 & hp > 105")
 ```
 
+## Sorting
+
+### Ascending
+
+```{python}
+df.mpg.sort_values().head(10)
+```
+
+### Descending
+
+There is no 'descending' per se, just set `ascending` to False.
+
+```{python}
+df.mpg.sort_values(ascending = False).head(10)
+```
+
 ## Applying functions
 
 ### Map a function with no arguments to a single column
@@ -268,6 +284,14 @@ df_long
 ```
 
 ## Misc
+
+### Counts of values (like `table` in R)
+
+```{python}
+# shows how many there are of each factor
+df.cyl.value_counts()
+```
+
 
 ### Formatting long chains
 

@@ -217,6 +217,7 @@ div.csl-indent {
   <li><a href="#simulating-a-motivating-example" id="toc-simulating-a-motivating-example" class="nav-link" data-scroll-target="#simulating-a-motivating-example">Simulating a motivating example</a></li>
   <li><a href="#controlling-family-wise-error-rate-fwer-with-the-bonferroni-method" id="toc-controlling-family-wise-error-rate-fwer-with-the-bonferroni-method" class="nav-link" data-scroll-target="#controlling-family-wise-error-rate-fwer-with-the-bonferroni-method">Controlling Family-wise Error Rate (FWER) with the Bonferroni method</a></li>
   <li><a href="#false-discovery-rate-fdr" id="toc-false-discovery-rate-fdr" class="nav-link" data-scroll-target="#false-discovery-rate-fdr">False Discovery Rate (FDR)</a></li>
+  <li><a href="#when-to-use-these-methods" id="toc-when-to-use-these-methods" class="nav-link" data-scroll-target="#when-to-use-these-methods">When to use these methods?</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -304,7 +305,7 @@ div.csl-indent {
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># get a single p value</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>simulation(mu1, sd1, mu2, sd2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="147">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>0.9993893617043748</code></pre>
 </div>
 </div>
@@ -324,20 +325,20 @@ div.csl-indent {
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># percent significant hits</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(sig_percent, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="148">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>6.2937</code></pre>
 </div>
 </div>
 <p>We can see that we have a small but non-trivial amount of hits flagged as significant. If we think about the definition of a p value though, this makes sense.</p>
 <blockquote class="blockquote">
-<p>p value: The probability of seeing evidence against the null that is this extreme or more given the null is true <span class="citation" data-cites="MultipleComparisonsHandbook">[<a href="#ref-MultipleComparisonsHandbook" role="doc-biblioref">1</a>]</span> - given our modeling assumptions are met.</p>
+<p>p value: The probability of seeing evidence against the null that is this extreme or more given the null is true <span class="citation" data-cites="HypothesisTestingHandbook">[@ <a href="#ref-HypothesisTestingHandbook" role="doc-biblioref">1</a>]</span> - given our modeling assumptions are met.</p>
 </blockquote>
 <p>If we’re operating at <span class="math inline">\(\alpha = 0.05\)</span>, we’ve accepting that we will be wrong about 5% of the time. In experiments where we’re testing a lot of hypotheses though, this adds up to a lot of mistakes.</p>
 <p>For example, consider a differential expression experiment involving 20,000 genes:</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 5 percent wrong in this case...</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fl">0.05</span> <span class="op">*</span> <span class="dv">20000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="149">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>1000.0</code></pre>
 </div>
 </div>
@@ -345,7 +346,7 @@ div.csl-indent {
 </section>
 <section id="controlling-family-wise-error-rate-fwer-with-the-bonferroni-method" class="level2">
 <h2 class="anchored" data-anchor-id="controlling-family-wise-error-rate-fwer-with-the-bonferroni-method">Controlling Family-wise Error Rate (FWER) with the Bonferroni method</h2>
-<p>Bonferroni is perhaps the most common method for controlling the Family-wise error rate, which is the probability of making at least one false finding <span class="citation" data-cites="MultipleComparisonsHandbook">[<a href="#ref-MultipleComparisonsHandbook" role="doc-biblioref">1</a>]</span>. In this method we simply establish a new threshold for significance by dividing <span class="math inline">\(\alpha\)</span> by the number of tests.</p>
+<p>Bonferroni is perhaps the most common method for controlling the Family-wise error rate, which is the probability of making at least one false finding <span class="citation" data-cites="MultipleComparisonsHandbook">[<a href="#ref-MultipleComparisonsHandbook" role="doc-biblioref">2</a>]</span>. In this method we simply establish a new threshold for significance by dividing <span class="math inline">\(\alpha\)</span> by the number of tests.</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a function to apply the correction</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_bonferroni_threshold(vector, alpha <span class="op">=</span> <span class="fl">0.5</span>):</span>
@@ -357,7 +358,7 @@ div.csl-indent {
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># new threshold</span></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>bonferroni_threshold</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="150">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>0.0004995004995004995</code></pre>
 </div>
 </div>
@@ -370,7 +371,7 @@ div.csl-indent {
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># inspect </span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(sig_percent_adj, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="151">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>0.0</code></pre>
 </div>
 </div>
@@ -383,7 +384,7 @@ div.csl-indent {
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>check_trues <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> check[<span class="dv">0</span>] <span class="cf">if</span> i <span class="op">==</span> <span class="va">True</span>]</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(check_trues)<span class="op">/</span><span class="bu">len</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="152">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>0.0</code></pre>
 </div>
 </div>
@@ -391,7 +392,7 @@ div.csl-indent {
 </section>
 <section id="false-discovery-rate-fdr" class="level2">
 <h2 class="anchored" data-anchor-id="false-discovery-rate-fdr">False Discovery Rate (FDR)</h2>
-<p>While Bonferroni is tried and true, it’s something of a blunt instrument however, and there are some situations where another common method Benjamini-Hochberg <span class="citation" data-cites="benjaminiControllingFalseDiscovery1995">[<a href="#ref-benjaminiControllingFalseDiscovery1995" role="doc-biblioref">2</a>]</span>, often abbreviated “BH”, is preferable. The Benjamini-Hochberg controls the False-discovery rate <span class="citation" data-cites="benjaminiControllingFalseDiscovery1995">[<a href="#ref-benjaminiControllingFalseDiscovery1995" role="doc-biblioref">2</a>]</span>, which is the percent of the time we’re making a false positive. This is useful in situations where the strictness of Bonferroni might be limiting (more on comparing the two later). The method involves:</p>
+<p>While Bonferroni is tried and true, it’s something of a blunt instrument however, and there are some situations where another common method Benjamini-Hochberg <span class="citation" data-cites="benjaminiControllingFalseDiscovery1995">[<a href="#ref-benjaminiControllingFalseDiscovery1995" role="doc-biblioref">3</a>]</span>, often abbreviated “BH”, is preferable. The Benjamini-Hochberg controls the False-discovery rate <span class="citation" data-cites="benjaminiControllingFalseDiscovery1995">[<a href="#ref-benjaminiControllingFalseDiscovery1995" role="doc-biblioref">3</a>]</span>, which is the percent of the time we’re making a false positive. This is useful in situations where the strictness of Bonferroni might be limiting (more on comparing the two later). The method involves:</p>
 <ul>
 <li>Ranking the p values from lowest to highest.</li>
 <li>Computing a critical value for each one.</li>
@@ -442,7 +443,7 @@ c = (\frac{r}{n})\alpha
 <span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>bh_threshold <span class="op">=</span> calc_bh_threshold(pvals)</span>
 <span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>bh_threshold</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="153">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>0</code></pre>
 </div>
 </div>
@@ -459,48 +460,96 @@ c = (\frac{r}{n})\alpha
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># get the new percent</span></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(sig_adj_bh)<span class="op">/</span><span class="bu">len</span>(pvals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="154">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>0.0</code></pre>
 </div>
 </div>
-<p>We see we no longer get significant p values. Just to make sure we’re correct.</p>
+<p>We see we no longer get significant p values. Just to make sure we’re correct, we can simulate where the mean actually is different and see if our implementation agrees with the official one.</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mu1 <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sd1 <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>mu2 <span class="op">=</span> <span class="fl">5.5</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>sd2 <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>pvals <span class="op">=</span> [simulation(mu1, sd1, mu2, sd2) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">1000</span>)]</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>([p <span class="cf">for</span> p <span class="kw">in</span> pvals <span class="cf">if</span> p <span class="op">&lt;</span> <span class="fl">0.05</span>]))</span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># here, the means are different</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>mu1 <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>sd1 <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>mu2 <span class="op">=</span> <span class="fl">5.5</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>sd2 <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># create a another simulated vector of p values</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>pvals <span class="op">=</span> [simulation(mu1, sd1, mu2, sd2) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">1000</span>)]</span>
 <span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>df_check <span class="op">=</span> pd.DataFrame({<span class="st">"pval"</span>: pvals})</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>df_check[<span class="st">"sample_id"</span>] <span class="op">=</span> [<span class="st">"sample"</span> <span class="op">+</span> <span class="bu">str</span>(i<span class="op">+</span><span class="dv">1</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(pvals))]</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>bh_threshold_check <span class="op">=</span> calc_bh_threshold(df_check[<span class="st">"pval"</span>])</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>bh_threshold_check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>937</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="155">
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># organize it</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>df_check <span class="op">=</span> pd.DataFrame({<span class="st">"pval"</span>: pvals})</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># put some ids to identify them by for better comparison</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>df_check[<span class="st">"sample_id"</span>] <span class="op">=</span> [<span class="st">"sample"</span> <span class="op">+</span> <span class="bu">str</span>(i<span class="op">+</span><span class="dv">1</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(pvals))]</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># get a new threshold</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>bh_threshold_check <span class="op">=</span> calc_bh_threshold(df_check[<span class="st">"pval"</span>])</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>bh_threshold_check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>0.04645320875671015</code></pre>
 </div>
 </div>
+<p>We’ve got our new threshold, now we can compare the p values to it.</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df_check[<span class="st">"bh_reject_custom"</span>] <span class="op">=</span> df_check.pval.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x <span class="op">&lt;=</span> bh_threshold_check)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>df_check[<span class="st">"bh_reject_default"</span>] <span class="op">=</span> fdrcorrection(df_check[<span class="st">"pval"</span>])[<span class="dv">0</span>]</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>df_check[<span class="st">"agreement"</span>] <span class="op">=</span> <span class="op">\</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    df_check[<span class="st">"bh_reject_custom"</span>] <span class="op">==</span> df_check[<span class="st">"bh_reject_default"</span>]</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> df_check[<span class="st">"agreement"</span>] <span class="cf">if</span> i <span class="op">==</span> <span class="va">False</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="156">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compare the values in the pval function to the new criteria and see how many we get</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df_check[<span class="st">"bh_reject_custom"</span>] <span class="op">=</span> df_check.pval.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x <span class="op">&lt;=</span> bh_threshold_check)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a count of reject true/false</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>df_check.bh_reject_custom.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>True     931
+False     69
+Name: bh_reject_custom, dtype: int64</code></pre>
+</div>
+</div>
+<p>Now we compare that to the statsmodels implementation:</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the statsmodels function to the p values</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df_check[<span class="st">"bh_reject_default"</span>] <span class="op">=</span> fdrcorrection(df_check[<span class="st">"pval"</span>])[<span class="dv">0</span>]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a table of reject true/false</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>df_check.bh_reject_default.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>True     931
+False     69
+Name: bh_reject_default, dtype: int64</code></pre>
+</div>
+</div>
+<p>Let’s asses the agreement by making a column based on their comparison:</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># do they agree?</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>df_check[<span class="st">"agreement"</span>] <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    df_check[<span class="st">"bh_reject_custom"</span>] <span class="op">==</span> df_check[<span class="st">"bh_reject_default"</span>]</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># see where they disagree</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>[i <span class="cf">for</span> i <span class="kw">in</span> df_check[<span class="st">"agreement"</span>] <span class="cf">if</span> i <span class="op">==</span> <span class="va">False</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>[]</code></pre>
 </div>
 </div>
+<p>No disagreement. Just to be absolutely safe, we check the IDs of the rejected p values.</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset where the custom rejects</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df_check_custom_agree <span class="op">=</span> df_check.query(<span class="st">"bh_reject_custom == True"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a subset where the default rejects</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>df_check_default_agree <span class="op">=</span> df_check.query(<span class="st">"bh_reject_default == True"</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># compare the ids</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>agreement <span class="op">=</span> df_check_custom_agree.sample_id <span class="op">==</span> <span class="op">\</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  df_check_default_agree.sample_id</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co"># observe the concordance</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>agreement.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>True    931
+Name: sample_id, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="when-to-use-these-methods" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-use-these-methods">When to use these methods?</h2>
+<p>This will depend on the particulars of the experiment in question and must be evaluated on a case-by-case basis. In rough terms however, it depends on if you need to be absolutely sure about a particular result vs if you’re willing to get a few false positives. For example, if you’re conducting a follow-up study to confirm a result before committing a large amount of time and money to a line of research, Bonferroni makes more sense - making even a single error is costly, and this is what the FWER tells us (the probability of even a single mistake). If you’re doing a preliminary experiment to nominate targets for further study, then a few false positives might be fine. You might nominate 10-15 targets to be followed up on in the lab, and if only a few pan out, that’s ok, they’re the new focus. This is common if differential expression experiments <span class="citation" data-cites="HypothesisTestingHandbook">[<a href="#ref-HypothesisTestingHandbook" role="doc-biblioref">1</a>]</span>.</p>
 </section>
 <section id="references" class="level2">
 
@@ -510,11 +559,14 @@ c = (\frac{r}{n})\alpha
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-HypothesisTestingHandbook" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1 </div><div class="csl-right-inline">McDonald JH. Hypothesis testing - <span>Handbook</span> of <span>Biological Statistics</span>. <a href="https://www.biostathandbook.com/hypothesistesting.html">https://www.biostathandbook.com/hypothesistesting.html</a> (accessed 16 Dec 2022).</div>
+</div>
 <div id="ref-MultipleComparisonsHandbook" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">1 </div><div class="csl-right-inline">McDonald JH. Multiple comparisons - <span>Handbook</span> of <span>Biological Statistics</span>. <a href="http://www.biostathandbook.com/multiplecomparisons.html">http://www.biostathandbook.com/multiplecomparisons.html</a> (accessed 16 Dec 2022).</div>
+<div class="csl-left-margin">2 </div><div class="csl-right-inline">McDonald JH. Multiple comparisons - <span>Handbook</span> of <span>Biological Statistics</span>. <a href="http://www.biostathandbook.com/multiplecomparisons.html">http://www.biostathandbook.com/multiplecomparisons.html</a> (accessed 16 Dec 2022).</div>
 </div>
 <div id="ref-benjaminiControllingFalseDiscovery1995" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">2 </div><div class="csl-right-inline">Benjamini Y, Hochberg Y. Controlling the <span>False Discovery Rate</span>: <span>A Practical</span> and <span>Powerful Approach</span> to <span>Multiple Testing</span>. <em>Journal of the Royal Statistical Society Series B (Methodological)</em> 1995;<strong>57</strong>:289–300.<a href="https://www.jstor.org/stable/2346101">https://www.jstor.org/stable/2346101</a></div>
+<div class="csl-left-margin">3 </div><div class="csl-right-inline">Benjamini Y, Hochberg Y. Controlling the <span>False Discovery Rate</span>: <span>A Practical</span> and <span>Powerful Approach</span> to <span>Multiple Testing</span>. <em>Journal of the Royal Statistical Society Series B (Methodological)</em> 1995;<strong>57</strong>:289–300.<a href="https://www.jstor.org/stable/2346101">https://www.jstor.org/stable/2346101</a></div>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

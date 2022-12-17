@@ -93,7 +93,7 @@ round(sig_percent, 4)
 
 We can see that we have a small but non-trivial amount of hits flagged as significant. If we think about the definition of a p value though, this makes sense. 
 
-> p value: The probability of seeing evidence against the null that is this extreme or more given the null is true [@MultipleComparisonsHandbook] - given our modeling assumptions are met.
+> p value: The probability of seeing evidence against the null that is this extreme or more given the null is true [@@HypothesisTestingHandbook] - given our modeling assumptions are met.
 
 If we're operating at $\alpha = 0.05$, we've accepting that we will be wrong about 5% of the time. In experiments where we're testing a lot of hypotheses though, this adds up to a lot of mistakes.
 
@@ -230,39 +230,84 @@ sig_adj_bh = df_res.query("bg_reject == True")
 len(sig_adj_bh)/len(pvals)
 ```
 
-We see we no longer get significant p values. Just to make sure we're correct.
+We see we no longer get significant p values. Just to make sure we're correct, we can simulate where the mean actually is different and see if our implementation agrees with the official one.
 
 ```{python}
 
+# here, the means are different
 mu1 = 5
 sd1 = 1
 
 mu2 = 5.5
 sd2 = 1
 
+# create a another simulated vector of p values
 pvals = [simulation(mu1, sd1, mu2, sd2) for i in range(0,1000)]
 
-print(len([p for p in pvals if p < 0.05]))
-
+# organize it
 df_check = pd.DataFrame({"pval": pvals})
 
+# put some ids to identify them by for better comparison
 df_check["sample_id"] = ["sample" + str(i+1) for i in range(0, len(pvals))]
 
+# get a new threshold
 bh_threshold_check = calc_bh_threshold(df_check["pval"])
 bh_threshold_check
 ```
 
+We've got our new threshold, now we can compare the p values to it.
+
 ```{python}
 
+# compare the values in the pval function to the new criteria and see how many we get
 df_check["bh_reject_custom"] = df_check.pval.apply(lambda x: x <= bh_threshold_check)
 
+# a count of reject true/false
+df_check.bh_reject_custom.value_counts()
+```
+
+Now we compare that to the statsmodels implementation:
+
+```{python}
+
+# apply the statsmodels function to the p values
 df_check["bh_reject_default"] = fdrcorrection(df_check["pval"])[0]
 
+# a table of reject true/false
+df_check.bh_reject_default.value_counts()
+```
+
+Let's asses the agreement by making a column based on their comparison:
+```{python}
+
+# do they agree?
 df_check["agreement"] = \
     df_check["bh_reject_custom"] == df_check["bh_reject_default"]
 
+# see where they disagree
 [i for i in df_check["agreement"] if i == False]
 ```
 
+No disagreement. Just to be absolutely safe, we check the IDs of the rejected p values.
+
+```{python}
+
+# subset where the custom rejects
+df_check_custom_agree = df_check.query("bh_reject_custom == True")
+
+# a subset where the default rejects
+df_check_default_agree = df_check.query("bh_reject_default == True")
+
+# compare the ids
+agreement = df_check_custom_agree.sample_id == \
+  df_check_default_agree.sample_id
+
+# observe the concordance
+agreement.value_counts()
+```
+
+## When to use these methods?
+
+This will depend on the particulars of the experiment in question and must be evaluated on a case-by-case basis. In rough terms however, it depends on if you need to be absolutely sure about a particular result vs if you're willing to get a few false positives. For example, if you're conducting a follow-up study to confirm a result before committing a large amount of time and money to a line of research, Bonferroni makes more sense - making even a single error is costly, and this is what the FWER tells us (the probability of even a single mistake). If you're doing a preliminary experiment to nominate targets for further study, then a few false positives might be fine. You might nominate 10-15 targets to be followed up on in the lab, and if only a few pan out, that's ok, they're the new focus. This is common if differential expression experiments [@HypothesisTestingHandbook].
 
 ## References 

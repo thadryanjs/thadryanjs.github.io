@@ -12,3 +12,7 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
+
+> Tidbits on statistics, programming, science, and their collision with the world.
+
+&nbsp;

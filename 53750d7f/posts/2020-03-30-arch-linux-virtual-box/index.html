@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Thadryan">
+<meta name="dcterms.date" content="2020-03-30">
+<meta name="description" content="Testing Arch before you wreck your computer installing it.">
+
+<title>Thadryan J. Sweeney, MS - How to install Arch Linux on a VirtualBox VM</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Thadryan J. Sweeney, MS</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">What I Work On</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html">
+ <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Drops of Jupyter</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/thadryanjs"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text">Github</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://fediscience.org/@thadryanjs"><i class="bi bi-mastodon" role="img">
+</i> 
+ <span class="menu-text">Mastodon</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/ThadryanJS"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text">LinkedIn</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">How to install Arch Linux on a VirtualBox VM</h1>
+                  <div>
+        <div class="description">
+          Testing Arch before you wreck your computer installing it.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Linux</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Thadryan </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 30, 2020</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="how-to-install-arch-linux-on-virtualbox" class="level1">
+<h1>How to install Arch Linux on VirtualBox</h1>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_loadScreen.png" class="img-fluid"></p>
+<p>There have been several walkthroughs on installing <a href="https://wiki.archlinux.org/index.php/Arch_Linux">Arch Linux</a> on VMs, like <a href="https://www.howtoforge.com/tutorial/install-arch-linux-on-virtualbox/">this one</a> for example. However, I noticed there have been some changes that call for a few updates, so I thought I’d post a procedure that included them. As of the date of this post, this guide will produce a working system from the ground up. I also added some tweaks to get the most out of the VM, creating and adding users, and installing a desktop environment.</p>
+<section id="pros-and-cons-or-arch" class="level2">
+<h2 class="anchored" data-anchor-id="pros-and-cons-or-arch">Pros and Cons or Arch</h2>
+<p><em>TL;DNR: Arch is great is you want a well-documented, minimal system that you can customize, has up-to-date software, and will teach you about Linux. It’s not great if you want something up and running quickly with out-of-the-box features or something that doesn’t update often.</em></p>
+<p>The benefits and downsides or Arch have been debated extensively (ad nauseam?) all over the internet. This is my take on summarizing them in as briefly as possible while still giving a good enough overview that people can choose for themselves (this is purely from a practical standpoint and doesn’t get into more <a href="https://www.reddit.com/r/linux/comments/5n069y/why_do_people_not_like_systemd/">philosphical stuff</a> like <code>systemd</code>).</p>
+<section id="pros" class="level3">
+<h3 class="anchored" data-anchor-id="pros">Pros</h3>
+<blockquote class="blockquote">
+<p>Minimal - Arch installs a minimal system without even so much as a desktop environment and not a lot of stuff to slow your system down. The user doesn’t have the hassle of tracking down extra software and figuring if it’s bloat or important.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Customizable - This minimal approach means you can install whatever you want. In particular, you get to choose a desktop without depending on that has been made into a flavor/edition/spin.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Well-documented - The much-hyped <a href="https://wiki.archlinux.org/">Arch Wiki</a> is, in fact, great.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Transparent - It’s often said Arch is good if you want to learn more about GNU/Linux and how it works. Arch is helpful for this in my experience - I learned a lot tinkering under the hood.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Current - Arch is a rolling release distro know for getting updates quickly.</p>
+</blockquote>
+</section>
+<section id="cons" class="level3">
+<h3 class="anchored" data-anchor-id="cons">Cons</h3>
+<blockquote class="blockquote">
+<p>(Relatively) Complex to install - Arch has a more involved installation process that other distros; the minimal system doesn’t come without a trade-off. It’s less geared to getting a system setup quickly and easily than other distros.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Requires some maintenance - every now and then (a handful of times a year maybe) a package will requires you to manually run a command or two to update properly. They’ll be noted on the front page of the Arch website, but if you let them build up, things can get weird. In theory, this increases the chances that some update will screw up your machine and require you too boot into a live medium and fix it.</p>
+</blockquote>
+</section>
+</section>
+<section id="procedure" class="level2">
+<h2 class="anchored" data-anchor-id="procedure">Procedure</h2>
+<p>Head over to the <a href="https://www.archlinux.org/download/">Arch Linux download page</a> and either torrent yourself an ISO or download one from one of the mirrors.</p>
+<section id="the-virtualbox-part" class="level3">
+<h3 class="anchored" data-anchor-id="the-virtualbox-part">The VirtualBox Part</h3>
+<p>VirtualBox can be downloaded <a href="https://www.virtualbox.org/wiki/Downloads">here</a>. For Windows/Mac people, select the installer from the list. When on Linux I prefer to go with my distro-specific package manager.</p>
+<section id="setting-up-a-virtual-machine" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-a-virtual-machine">Setting up a virtual machine</h4>
+<p>There are a few steps to the VM setup but they’re simple and the defaults will work in most cases. Once you’ve got VirtualBox running, click “New” to get things started.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_1.png" class="img-fluid"></p>
+<p>Give your machine a snappy name! VirtualBox will detect what system it is if it starts with “Arch”. If it doesn’t, you can select it from the dropdown. Choose “Arch Linux (64-bit)”.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_2.png" class="img-fluid"></p>
+<p>VBox will ask what you want for memory size. I usually double this just to make sure the machine isn’t sluggish, then click “Next”.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_3.png" class="img-fluid"></p>
+<p>We want to create a disk, not load an existing one. Just click “Create”.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_4.png" class="img-fluid"></p>
+<p>We can accept the default drive type and click “Next”.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_5.png" class="img-fluid"></p>
+<p>I use dynamically allocated by default, and it will work fine for our purposes.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_6.png" class="img-fluid"></p>
+<p>I put the size up to 24 GB in case we want to build out the system and try it for a daily driver for a while or something. It’s just a VM, so <a href="https://i.kym-cdn.com/entries/icons/original/000/021/311/free.jpg">it’s no big deal!</a></p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_7.png" class="img-fluid"></p>
+<p>We will now see the machine on the VBox menu on the left side of the screen.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_8.png" class="img-fluid"></p>
+<p>Before we go ahead and start it and select our ISO, a few little tweaks make the VBox experience a lot more pleasant and fast. Click “Settings”. You’ll see a menu like this:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_7b.png" class="img-fluid"></p>
+<p>Navigate to “System”.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_7c.png" class="img-fluid"></p>
+<p>Choose the “Processor” tab, and increase the number of CPUs the VM is allowed to use (assuming you have more than one on the host machine). Then move over to “Display” on the menu on the left side of the screen.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_7d.png" class="img-fluid"></p>
+<p>I like to increase the video to max as well. Exit the “Settings” menu by clicking “Ok”. We’re ready to fire up the machine and connect it to our Arch ISO. In the top menu click the green “Start” button.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_9.png" class="img-fluid"></p>
+<p>VBox will now ask you where your bootable media is. Click the folder icon. You’ll see a screen like this:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_10.png" class="img-fluid"></p>
+<p>Click the “Add” symbol in the left of the menu, navigate to wherever you downloaded your ISO, and select it with “Choose”, then click “Start”.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/virtualbox_11.png" class="img-fluid"></p>
+<p>Select the first option, which boots us into a live Arch system. When you boot in, a series of message will flash by and then you’ll see something like this:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_00.png" class="img-fluid"></p>
+<p><em>Note: If the terminal seems cluttered, pressing ctl-l between commands will clear the screen. If the amount of black space on your screen looks different than mine it’s probably just that I’ve done this.</em></p>
+<p>Here goes!</p>
+</section>
+</section>
+<section id="the-arch-part" class="level3">
+<h3 class="anchored" data-anchor-id="the-arch-part">The Arch part</h3>
+<section id="partitioning" class="level4">
+<h4 class="anchored" data-anchor-id="partitioning">Partitioning</h4>
+<p>This is where we prepare the hard drive for installation. There are many ways to do this, with separate partitions for boot, swap, etc, but for a simple test VM, we’re just going to install it all into one partition. We prepare it using the following command.</p>
+<pre><code>cfdisk</code></pre>
+<p>This starts a partitioning tool. You’ll be given an option to select “label type” by moving the arrows up and down. We’re looking for <code>dos</code>.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_0.png" class="img-fluid"></p>
+<p>Next you will see a screen like the one below. You can move left and write with arrow keys to make a selection. Move to “New”, and hit “enter” to make a new partition of the virtual hard rive.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_gp1.png" class="img-fluid"></p>
+<p>Hit enter to use all 24G.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_gp2.png" class="img-fluid"></p>
+<p>Select “primary” when asked for type (extended partitions allow for sub-dividing space, which isn’t a concern since we’re using the whole virtual disk for one thing).</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_gp3.png" class="img-fluid"></p>
+<p>Now move to the “Bootable” option on the left side of the screen and hit enter.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_gp4.png" class="img-fluid"></p>
+<p>Navigate to “Write” and hit enter to make these changes actually happen. If we were on a real machine, this would be the point of no return where we had erased the underlying system.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_gp5.png" class="img-fluid"></p>
+<p>You will have to type “yes” to consent to the operation. The top of the screen should show a partition of 24G on /dev/sda1 with a <code>*</code> under “Boot”.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_gp7.png" class="img-fluid"></p>
+<p>Now we can head over to “Quit” and exit the partition editor tool.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_gp8.png" class="img-fluid"></p>
+</section>
+<section id="file-systems" class="level4">
+<h4 class="anchored" data-anchor-id="file-systems">File systems</h4>
+<p>Next, we assign the file system type to the newly partitioned drive partition. <code>ext4</code> is the default file system for Linux.</p>
+<pre><code>mkfs.ext4 /dev/sda1</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_2.png" class="img-fluid"></p>
+<p>You will see some output from the results of the command. Now we mount the drive so we can install the base system:</p>
+<pre><code>mount /dev/sda1 /mnt</code></pre>
+</section>
+<section id="the-base-system" class="level4">
+<h4 class="anchored" data-anchor-id="the-base-system">The Base System</h4>
+<p>Arch uses a utility called <code>pacstrap</code> utility to install the base Arch system. <em>If you’re looking for an update, this is one place where things are different from previous tutorials.</em> In previous versions only <code>base</code> and <code>base-devel</code> were needed here. Failing to include <code>linux</code> and <code>linux-firmware</code> will cause a failure to boot later on because this is the actual Linux kernel and associated content. This step will most likely take several minutes.</p>
+<pre><code>pacstrap /mnt base base-devel linux linux-firmware</code></pre>
+<p>Initially, you’ll see:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_5.png" class="img-fluid"></p>
+<p>…and then something like:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_6.png" class="img-fluid"></p>
+<p>This is the normal display of Arch syncing and installing packages, the equivalent of the <code>apt update</code>, etc procedure in Debian based systems. Hit enter to continue when prompted.</p>
+<p>When it’s done, it will look like this:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_7.png" class="img-fluid"></p>
+<p>We now need to create a file system table. This is a record of our hard drive partitions assigned identifiers for efficient look-up. If you’re curious, you can view the help for the command like this:</p>
+<pre><code>genfstab -h</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_8.png" class="img-fluid"></p>
+<p>To use it, and redirect the output to the proper spot on our system, use this command:</p>
+<pre><code>genfstab /mnt &gt;&gt; /mnt/etc/fstab</code></pre>
+<p>Now we use the Arch version of <code>chroot</code>. This creates an isolated environment that doesn’t have access to the main system in case we biff something (the extra arguments are where to put this environment and what shell to use).</p>
+<pre><code>arch-chroot /mnt /bin/bash</code></pre>
+<p>You should notice a change in the terminal prompt:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_11.png" class="img-fluid"></p>
+<p>We will install <code>nano</code>, and simple text-editor, within <code>chroot</code> so we can do some manual configuration. <code>pacman</code> is the package manager for Arch. It’s fast, simple, and dearly beloved. <code>-S</code> means “sync”, as in “sync these packages with my machine”. <em>This is also a divergence from previous tutorials</em>.</p>
+<pre><code>pacman -S nano</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_12.png" class="img-fluid"></p>
+<p>Hit enter to accept the default and proceed with the installation. This should be quick.</p>
+</section>
+<section id="language" class="level4">
+<h4 class="anchored" data-anchor-id="language">Language</h4>
+<p>Now we’re free to edit some files:</p>
+<pre><code>nano /etc/locale.gen</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_14.png" class="img-fluid"></p>
+<p>We’re doing this setup for English language systems, use whatever you’re looking for. Basically we’re just un-commenting the language locale we want. If you’re configuring an English language system, scroll until you find…</p>
+<p><em>#en_US.UTF-8 UTF-8</em></p>
+<p>…and un-comment it.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_15.png" class="img-fluid"></p>
+<p>Press <code>ctr-x</code> to exit <code>nano</code>. You’ll be asked if you want to save the modified buffer.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_16.png" class="img-fluid"></p>
+<p>Type <code>y</code>, then hit enter when asked for the file name to save it as (it will default to the one we gave it using the <code>nano</code> command). We can now run the <code>locale-gen</code> command to generate the locale information.</p>
+<pre><code>locale-gen</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_17.png" class="img-fluid"></p>
+<p>We’ve generated to locale and made them available. Now we can set it as our choice. Enter the language info in a file called locale.conf.</p>
+<pre><code>nano /etc/locale.conf </code></pre>
+<p>Enter…</p>
+<p><em>LANG=en_US.UTF-8</em></p>
+<p>…into this file, and exit <code>nano</code> as before.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_18.png" class="img-fluid"></p>
+</section>
+<section id="time" class="level4">
+<h4 class="anchored" data-anchor-id="time">Time</h4>
+<p>Next up is time zones. We can see a list of the selections using this commands.</p>
+<pre><code>ls /usr/share/zoneinfo</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_19.png" class="img-fluid"></p>
+<p>You can see the options under each region using <code>ls</code> on one of the folders shown by the above command, ie…</p>
+<pre><code>ls /usr/share/zoneinfo/America</code></pre>
+<p>…to see which region you’re in:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_timezones.png" class="img-fluid"></p>
+<p>We then set the desired zone to our system localtime. This command creates a “symbolic link” from the zone info data, and associates that link with a new config file called <em>etc/localtime</em>. I’m in the northeastern US, so for me it’s:</p>
+<pre><code>ln –s /usr/share/zoneinfo/America/New_York /etc/localtime</code></pre>
+<p>This should just happen silently.</p>
+<p>Next is the “hardware” clock of our VM. Problems here can lead to trouble updating down the road, so it’s worth checking that it’s synced if you run into issues.</p>
+<pre><code>hwclock --systohc --utc</code></pre>
+<p>This command is also silent when successful.</p>
+</section>
+<section id="users-and-permissions" class="level4">
+<h4 class="anchored" data-anchor-id="users-and-permissions">Users and Permissions</h4>
+<p>Now we create a password for the root user.</p>
+<pre><code>passwd # set your root password</code></pre>
+<p>Here is what your screen should look like:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_21.png" class="img-fluid"></p>
+<p>Practically speaking, I think it’s worth making a main user at this point, though it isn’t technically required.</p>
+<pre><code>useradd -m -g users -G wheel -s /bin/bash username</code></pre>
+<p>The <code>-m</code> flag creates a <code>/home</code> directory for the new user. The <code>-g</code> flag specifies the group to add the user to. The <code>-G</code> flag refers to auxiliary groups to add the user to. In this case, they’re added to the <code>wheel</code> group, which will let them be a full admin. <code>/bin/bash</code> specifies what shell the user will have. It’s typical to use bash. Don’t forget to change <code>username</code> to the name you want.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_22.png" class="img-fluid"></p>
+<p>Give the user a password:</p>
+<pre><code>passwd username</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_23.png" class="img-fluid"></p>
+<p>Now, we allow our users in the wheel group to use <code>sudo</code>. The <code>visudo</code> command makes sure the edits to the file are syntactically legit so you don’t screw it up with a typo.</p>
+<pre><code>EDITOR=nano visudo</code></pre>
+<p>Find and un-comment the following line:</p>
+<p><em>%wheel ALL=(ALL) ALL</em></p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_25.png" class="img-fluid"></p>
+</section>
+<section id="hostname-network" class="level4">
+<h4 class="anchored" data-anchor-id="hostname-network">Hostname &amp; Network</h4>
+<p>Now to name the machine:</p>
+<pre><code>nano /etc/hostname</code></pre>
+<p>Enter the name you want and exit <code>nano</code>.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_26.png" class="img-fluid"></p>
+<p>Now we need to setup the network inside chroot so we can install the bootloader (up until now, we’ve been getting sweet internet goodness from the host machine, but we’re hidden away in <code>chroot</code> at the moment). We will install a network manager to enable this. <em>This is a divergence from previous tutorials as well</em>. Run the following command and hit enter to accept the install.</p>
+<pre><code>pacman -S dhcpcd</code></pre>
+<p>We’ve install the network manager, but we need to turn it on. We can do so using the <code>systemctl</code> command.</p>
+<pre><code>systemctl enable dhcpcd</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_27.png" class="img-fluid"></p>
+<p>Now we can install <code>grub</code>, which will allow us to boot into our system. <code>os-prober</code> is sometimes installed at this step. It detects other operating systems if you dual boot, though that won’t be an issue with a VM. It’s good to know it exists however.</p>
+<pre><code>pacman –S grub os-prober</code></pre>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_28.png" class="img-fluid"></p>
+<p>Now that we have <code>grub</code>, we can install to our <code>/dev/sda</code> drive where is will be able to “see” the rest of our system:</p>
+<pre><code>grub-install /dev/sda</code></pre>
+<p>It should tell you it installed with no errors. This command will create a config file for <code>grub</code> from which we can customize it later if desired.</p>
+<pre><code>grub-mkconfig –o /boot/grub/grub.cfg</code></pre>
+<p>You should see something like this:</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_grub-conf.png" class="img-fluid"></p>
+<p>This is important: what it says it’s detecting is the Linux kernel we installed earlier. This means <code>grub</code> knows where to look when it’s time to boot. We can now exit the <code>chroot</code> environment:</p>
+<pre><code>exit</code></pre>
+<p>We should have a working base system now. To test this, reboot:</p>
+<pre><code>reboot </code></pre>
+<p>You should be back at the boot screen. Now, try booting into the existing OS to see our system.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_33.png" class="img-fluid"></p>
+<p>You should see the <code>grub</code> login screen.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_35.png" class="img-fluid"></p>
+<p>Select “Arch Linux”. You’ll be asked to log in via terminal. Type your username and password.</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_36.png" class="img-fluid"></p>
+<p>We’re good! If you want a desktop, you can choose whichever you like, and set it up. I’m going to use Gnome for this because it’s my go-to, but the point of Arch is that you can use whatever you want and configure it however you like. This will usually entail installing the desktop, and, if it’s not included in the desktop package, a display manager. First the install (this takes a while - Gnome is full-size desktop):</p>
+<pre><code>sudo pacman -S gnome</code></pre>
+<p>You may see the following prompt (or a few like it):</p>
+<p><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_jack.png" class="img-fluid"></p>
+<p>They’re dependencies used by Gnome. Accepting the defaults is fine (In this case, it’s an audio component use in the Gnome package).</p>
+<p>Next, enable the Gnome display manager like this:</p>
+<pre><code>systemctl enable gdm.service</code></pre>
+<p>This will allow us to use the desktop after boot. Reboot, and you will be greeted with a the Gnome login screen.</p>
+<pre><code>reboot</code></pre>
+<p>You should now have a working VM. I’d recommend checking out the <a href="https://wiki.archlinux.org/index.php/VirtualBox">Arch Wiki</a> on tweaking the virtual machine for your host OS to allow for fullscreen, shared clipboard, and shared drives.</p>
+</section>
+<section id="references" class="level4">
+<h4 class="anchored" data-anchor-id="references">References:</h4>
+<p><code>https://wiki.archlinux.org/index.php/Installation_guide </code><br></p>
+<p><code>https://www.howtoforge.com/tutorial/install-arch-linux-on-virtualbox/ </code><br></p>
+<p><code># now retired apparently </code><br> <code>https://bigdaddylinux.com/easily-install-arch-linux-in-virtualbox/ </code><br></p>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,184 @@
+/* css styles */
+html {
+  /* background-color: #242323; */
+  background-color: #383d3f;
+}
+/* 181a1b; */
+body {
+  background-color: #242323; 
+  margin: 60px auto;
+  width: 70%;
+}
+
+div.citation {
+  font-size: 1.25em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+div.category {
+  font-size: 0.95em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+div.cell-output-display {
+  border:  1px solid black;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+div.listing-date {
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+div.listing-author {
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+div.listing-description {
+  color: rgb(204, 204, 204)
+}
+
+div.quarto-title-meta-heading {
+  color:rgb(204, 204, 204)
+}
+
+div pre  {
+   color: #5E5E5E;
+}
+
+div pre code  {
+  background-color: rgb(204, 204, 204);
+  color: black;
+}
+
+/* table.dataframe {
+  color: rgb(204, 204, 204)
+} */
+
+tbody {
+  background-color: rgb(204, 204, 204);
+}
+
+text {
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+nav ul, footer ul {
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  padding: 0px;
+  list-style: none;
+  font-weight: bold;
+}
+
+nav ul li, footer ul li {
+  color: rgb(204, 204, 204); /* "Hi there!... */
+  display: inline;
+  margin-right: 20px;
+}
+
+ul li {
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+a {
+  text-decoration: none;
+  color: rgb(100, 155, 143);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+  
+}
+
+h2 {
+  font-size: 2.25em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+h3 {
+  font-size: 2.0em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+h4 {
+  font-size: 1.75em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+h5 {
+  font-size: 1.5em;
+  font-family:'Helvetica', 'Arial', 'Sans-Serif';
+  color: rgb(204, 204, 204); /* "Hi there!... */
+}
+
+code {
+  background-color: #000000; 
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  color: rgb(8, 170, 185);
+}
+
+p {
+  font-size: 1.25em;
+  line-height: 1.4em;
+  color: rgb(204, 204, 204); /* I'm */
+}
+
+footer {
+  font-size: .8em;
+}
+
+ul.posts { 
+  margin: 20px auto 40px; 
+  font-size: 1.5em;
+  border-top: 1px solid #d5d5d5;
+}
+
+ul.posts li {
+  list-style: none;
+  border-top: 1px solid #d5d5d5;
+}
+
+ul.home { 
+  margin: 20px auto 40px; 
+  font-size: 1.5em;
+  border-top: 1px solid #d5d5d5;
+}
+
+ul.home li {
+  list-style: none;
+  border-top: 1px solid #d5d5d5;
+}
+
+span {
+  color: rgb(204, 204, 204); /* I'm */
+}
+
+#profile-pic {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  height: auto; 
+  width: auto; 
+  max-width: 300px; 
+  max-height: 300px;
+  display:block;
+  margin:auto;
+}
+
+/* #home-intro {
+  align:center;  
+} */

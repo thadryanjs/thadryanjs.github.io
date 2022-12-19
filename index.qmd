@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: ""
 layout: article
 image: assets/pic.jpg
 about:

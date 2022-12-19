@@ -1,6 +1,6 @@
 ---
 author: Thadryan
-title: "Stats Python in a Hurry Part 3: Basic Analysis & Modeling"
+title: "Stats Python in a Hurry Part 3: Simulation, Basic Analysis, & Modeling"
 date: 2022-12-13
 description: Transferring the basics of my R modeling knowledge back to my first language.
 bibliography: Part3.bib

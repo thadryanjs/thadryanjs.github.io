@@ -622,14 +622,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>&lt;AxesSubplot: xlabel='cyl', ylabel='value'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-7-output-2.png" width="585" height="434"></p>
+<p><img src="index_files/figure-html/cell-7-output-2.png" width="585" height="429"></p>
 </div>
 </div>
 <p>Or, use <code>lmplot</code> to git a linear model like you’d get with <code>geom_smooth(method = lm)</code>.</p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(df, x <span class="op">=</span> <span class="st">"mpg"</span>, y <span class="op">=</span> <span class="st">"disp"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f4836a325c0&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f5d567270d0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-8-output-2.png" width="470" height="470"></p>
@@ -721,7 +721,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># puts a historgram on each of them</span></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>grid.<span class="bu">map</span>(sns.histplot, <span class="st">"wt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f47ef993b20&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f5d55cf2590&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="index_files/figure-html/cell-15-output-2.png" width="566" height="566"></p>
@@ -732,7 +732,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># just typing it out gives the object metadata</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>grid</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f47ef993b20&gt;</code></pre>
+<pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f5d55cf2590&gt;</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="16">
@@ -763,7 +763,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>p_line.set_xticklabels(p_line.get_xticklabels(), rotation <span class="op">=</span> <span class="dv">45</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>p_line.figure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_70870/667538073.py:2: UserWarning: FixedFormatter should only be used together with FixedLocator
+<pre><code>/tmp/ipykernel_9407/667538073.py:2: UserWarning: FixedFormatter should only be used together with FixedLocator
   p_line.set_xticklabels(p_line.get_xticklabels(), rotation = 45)</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="18">
@@ -775,7 +775,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>p_line.set_xticklabels(p_line.get_xticklabels(), size <span class="op">=</span> <span class="dv">5</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>p_line.figure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_70870/3729791072.py:1: UserWarning: FixedFormatter should only be used together with FixedLocator
+<pre><code>/tmp/ipykernel_9407/3729791072.py:1: UserWarning: FixedFormatter should only be used together with FixedLocator
   p_line.set_xticklabels(p_line.get_xticklabels(), size = 5)</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -818,7 +818,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sns.color_palette(<span class="st">"mako"</span>, as_cmap <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
-<div style="vertical-align: middle;"><strong>mako</strong> </div><div class="cmap"><img alt="mako colormap" title="mako" style="border: 1px solid #555;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAABACAYAAABsv8+/AAAAE3RFWHRUaXRsZQBtYWtvIGNvbG9ybWFwf+ab6gAAABl0RVh0RGVzY3JpcHRpb24AbWFrbyBjb2xvcm1hcPRUC3IAAAAwdEVYdEF1dGhvcgBNYXRwbG90bGliIHYzLjYuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZ3HOVV8AAAAydEVYdFNvZnR3YXJlAE1hdHBsb3RsaWIgdjMuNi4yLCBodHRwczovL21hdHBsb3RsaWIub3JnX2jKeAAAAg1JREFUeJzt1juS2zAURcEHsBx5/+vVJJRcBAFDnPR2Jyx8SY0dnPb3+POqqmqtVVVVq/PZel3mP+vj/GK8vGcY7/Y9Xv/dubp91/xcLX//e30xv7h/nK9f3le3+97j+e/89zuu++7nh3urTedrcc9+/f/j12q9t2F9Pv7M93FfLe6rzb6az7f3/HVc13/G+/r2/vl7bs/+3b7l+7fnN+8fvv/r967uv90zP9++Pj/f1zbf0xb3rM618f4+Pzee38739t2+zbMP37Vcb69hfF1/+jwW46OG8fmi47ZvnG+P5vtt/vpcrY/z/fzDfdafzp/jfv4H7eN8u84fNZ9/es9yfwEAcQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQ6AcTSxI150SdAwAAAABJRU5ErkJggg=="></div><div style="vertical-align: middle; max-width: 514px; display: flex; justify-content: space-between;"><div style="float: left;"><div title="#0b0405ff" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #0b0405ff;"></div> under</div><div style="margin: 0 auto; display: inline-block;">bad <div title="#00000000" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #00000000;"></div></div><div style="float: right;">over <div title="#def5e5ff" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #def5e5ff;"></div></div>
+<div style="vertical-align: middle;"><strong>mako</strong> </div><div class="cmap"><img alt="mako colormap" title="mako" style="border: 1px solid #555;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAABACAYAAABsv8+/AAAAE3RFWHRUaXRsZQBtYWtvIGNvbG9ybWFwf+ab6gAAABl0RVh0RGVzY3JpcHRpb24AbWFrbyBjb2xvcm1hcPRUC3IAAAAwdEVYdEF1dGhvcgBNYXRwbG90bGliIHYzLjYuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZ9RFxVEAAAAydEVYdFNvZnR3YXJlAE1hdHBsb3RsaWIgdjMuNi4zLCBodHRwczovL21hdHBsb3RsaWIub3Jn+uNadgAAAg1JREFUeJzt1juS2zAURcEHsBx5/+vVJJRcBAFDnPR2Jyx8SY0dnPb3+POqqmqtVVVVq/PZel3mP+vj/GK8vGcY7/Y9Xv/dubp91/xcLX//e30xv7h/nK9f3le3+97j+e/89zuu++7nh3urTedrcc9+/f/j12q9t2F9Pv7M93FfLe6rzb6az7f3/HVc13/G+/r2/vl7bs/+3b7l+7fnN+8fvv/r967uv90zP9++Pj/f1zbf0xb3rM618f4+Pzee38739t2+zbMP37Vcb69hfF1/+jwW46OG8fmi47ZvnG+P5vtt/vpcrY/z/fzDfdafzp/jfv4H7eN8u84fNZ9/es9yfwEAcQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQ6AcTSxI150SdAwAAAABJRU5ErkJggg=="></div><div style="vertical-align: middle; max-width: 514px; display: flex; justify-content: space-between;"><div style="float: left;"><div title="#0b0405ff" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #0b0405ff;"></div> under</div><div style="margin: 0 auto; display: inline-block;">bad <div title="#00000000" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #00000000;"></div></div><div style="float: right;">over <div title="#def5e5ff" style="display: inline-block; width: 1em; height: 1em; margin: 0; vertical-align: middle; border: 1px solid #555; background-color: #def5e5ff;"></div></div>
 </div>
 </div>
 <div class="cell" data-execution_count="24">

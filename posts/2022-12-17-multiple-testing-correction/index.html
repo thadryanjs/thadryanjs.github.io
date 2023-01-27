@@ -8,7 +8,7 @@
 
 <meta name="author" content="Thadryan">
 <meta name="dcterms.date" content="2022-12-17">
-<meta name="description" content="Re-implementing for knowledge and profit!(?)">
+<meta name="description" content="Re-implementing for knowledge and profit(?).">
 
 <title>Thadryan J. Sweeney, MS - Multiple testing correction for family-wise error-rate and false discovery rate</title>
 <style>
@@ -212,7 +212,7 @@ div.csl-indent {
       <h1 class="title">Multiple testing correction for family-wise error-rate and false discovery rate</h1>
                   <div>
         <div class="description">
-          Re-implementing for knowledge and profit!(?)
+          Re-implementing for knowledge and profit(?).
         </div>
       </div>
                 </div>
@@ -362,7 +362,7 @@ div.csl-indent {
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># divide alpha by the number of tests, ie, pvalues in the vector</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> alpha<span class="op">/</span><span class="bu">len</span>(vector)</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># make a list of Bonferroni-adjusted p values</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># compute a new threshold</span></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>bonferroni_threshold <span class="op">=</span> calc_bonferroni_threshold(pvals)</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># new threshold</span></span>

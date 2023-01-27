@@ -279,13 +279,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="summary-stats" class="level2">
 <h2 class="anchored" data-anchor-id="summary-stats">Summary Stats</h2>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> df.mpg</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>np.mean(v)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># (https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mode.html)</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>stats.mode(v, keepdims <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>np.median(v)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>np.var(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the data as a vector</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> df.mpg</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>np.mean(v)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># (https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mode.html)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>stats.mode(v, keepdims <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>np.median(v)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>np.var(v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>35.188974609374995</code></pre>
 </div>
@@ -293,12 +294,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="simulating-data" class="level2">
 <h2 class="anchored" data-anchor-id="simulating-data">Simulating Data</h2>
-<p>It looks like numpy is king <a href="https://numpy.org/doc/stable/reference/random/index.html">here</a>.</p>
+<p>After trying a few things, it looks like <a href="https://numpy.org/doc/stable/reference/random/index.html">numpy</a> is king here.</p>
 <section id="create-an-rng-object" class="level3">
 <h3 class="anchored" data-anchor-id="create-an-rng-object">Create an RNG Object</h3>
+<p>To get started, create an RNG object that will make sure everything is initialized correctly.</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> default_rng()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>We can now go through a list of common distributions, simulate from them, and visualize to make sure we’re on the right track.</p>
 </section>
 <section id="normalguassian" class="level3">
 <h3 class="anchored" data-anchor-id="normalguassian">Normal/Guassian</h3>
@@ -312,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>&lt;AxesSubplot: ylabel='Density'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-6-output-2.png" width="597" height="414"></p>
+<p><img src="index_files/figure-html/cell-6-output-2.png" width="597" height="411"></p>
 </div>
 </div>
 </section>
@@ -333,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="poisson" class="level3">
 <h3 class="anchored" data-anchor-id="poisson">Poisson</h3>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lamda was too long I guess? lol</span></span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lamda was too long I guess</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>v_poisson <span class="op">=</span> rng.poisson(lam <span class="op">=</span> <span class="dv">1</span>, size <span class="op">=</span> n)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(v_poisson)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -383,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>&lt;AxesSubplot: ylabel='Count'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-11-output-2.png" width="598" height="411"></p>
+<p><img src="index_files/figure-html/cell-11-output-2.png" width="593" height="411"></p>
 </div>
 </div>
 </section>
@@ -392,10 +395,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="modeling">Modeling</h2>
 <section id="linear-regression" class="level3">
 <h3 class="anchored" data-anchor-id="linear-regression">Linear Regression</h3>
+<p>Another routine thing that will come up a lot is linear regression. It’s not as obvious as R, but it’s pretty straight-forward.</p>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># you can use formula is you use smf </span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>linear_model <span class="op">=</span> smf.ols(formula <span class="op">=</span> <span class="st">'wt ~ disp + mpg'</span>, data <span class="op">=</span> df).fit()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>We can get the results using sume <code>summary()</code> method, and it will look pretty familiar to R users.</p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>linear_model.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -412,10 +417,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   73.65</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 13 Dec 2022</td> <th>  Prob (F-statistic):</th> <td>4.31e-12</td>
+  <th>Date:</th>             <td>Fri, 27 Jan 2023</td> <th>  Prob (F-statistic):</th> <td>4.31e-12</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>12:15:10</td>     <th>  Log-Likelihood:    </th> <td> -15.323</td>
+  <th>Time:</th>                 <td>10:21:49</td>     <th>  Log-Likelihood:    </th> <td> -15.323</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    32</td>      <th>  AIC:               </th> <td>   36.65</td>
@@ -463,6 +468,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="logistic-regression" class="level3">
 <h3 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h3>
+<p>The next logical step is logistic regression. No surprises here.</p>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fit the model</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>logistic_model <span class="op">=</span> smf.glm(<span class="st">"am ~ wt + mpg"</span>, data <span class="op">=</span> df,</span>
@@ -489,10 +495,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <th>Method:</th>                <td>IRLS</td>       <th>  Log-Likelihood:    </th> <td> -8.5921</td>
 </tr>
 <tr>
-  <th>Date:</th>            <td>Tue, 13 Dec 2022</td> <th>  Deviance:          </th> <td>  17.184</td>
+  <th>Date:</th>            <td>Fri, 27 Jan 2023</td> <th>  Deviance:          </th> <td>  17.184</td>
 </tr>
 <tr>
-  <th>Time:</th>                <td>12:15:10</td>     <th>  Pearson chi2:      </th>  <td>  32.7</td> 
+  <th>Time:</th>                <td>10:21:49</td>     <th>  Pearson chi2:      </th>  <td>  32.7</td> 
 </tr>
 <tr>
   <th>No. Iterations:</th>          <td>7</td>        <th>  Pseudo R-squ. (CS):</th>  <td>0.5569</td> 
@@ -520,6 +526,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="anova" class="level3">
 <h3 class="anchored" data-anchor-id="anova">ANOVA</h3>
+<p>The next basic anaylsis I wanted to recreate was ANOVA. This is handled nicely by <code>statsmodels</code>, looking more or less like the previous models.</p>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fit the initial model</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>anova_model <span class="op">=</span> smf.ols(<span class="st">"cyl ~ mpg + disp"</span>, data <span class="op">=</span> df).fit()</span>
@@ -573,6 +580,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <section id="tukey-test" class="level4">
 <h4 class="anchored" data-anchor-id="tukey-test">Tukey Test</h4>
+<p>After an ANOVA, some sort of post-hoc test is usually preformed. This isn’t as obvious as the ones above, requiring us to specify monovariate vectors instead of using a formla.</p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># specify the groups without the formual</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>tukey_results <span class="op">=</span> sm.stats.multicomp.pairwise_tukeyhsd(endog <span class="op">=</span> df[<span class="st">"mpg"</span>],</span>

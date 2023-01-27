@@ -1,6 +1,7 @@
 project:
   type: website
-
+execute:
+  freeze: auto
 website:
   title: "Thadryan J. Sweeney, MS"
   navbar:

@@ -119,7 +119,7 @@ def calc_bonferroni_threshold(vector, alpha = 0.5):
     # divide alpha by the number of tests, ie, pvalues in the vector
     return alpha/len(vector)
 
-# make a list of Bonferroni-adjusted p values
+# compute a new significance threshold
 bonferroni_threshold = calc_bonferroni_threshold(pvals)
 
 # new threshold

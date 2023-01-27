@@ -1,0 +1,11 @@
+{
+  "hash": "c0c814cfbdb60107ab3d4649c953d739",
+  "result": {
+    "markdown": "::: {.cell execution_count=1}\n``` {.python .cell-code}\nvar = 1\n```\n:::\n\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\ndef inc(x):\n    return x+1\n```\n:::\n\n\n::: {.cell execution_count=3}\n``` {.python .cell-code}\ninc(var)\n```\n\n::: {.cell-output .cell-output-display execution_count=3}\n```\n2\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "testing_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

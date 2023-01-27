@@ -122,7 +122,6 @@ def calc_bonferroni_threshold(vector, alpha = 0.5):
 # compute a new threshold
 bonferroni_threshold = calc_bonferroni_threshold(pvals)
 
-
 # new threshold
 bonferroni_threshold
 ```

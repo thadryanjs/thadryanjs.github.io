@@ -1,7 +1,8 @@
 ---
 author: Thadryan
 title: "Multiple testing correction for family-wise error-rate and false discovery rate"
-description: "Re-implementing for knowledge and profit!(?)"
+description: "Re-implementing for knowledge and profit(?)."
+date: 2022-12-17
 toc: true
 bibliography: MultipleTesting.bib
 csl: style.csl
@@ -118,7 +119,7 @@ def calc_bonferroni_threshold(vector, alpha = 0.5):
     # divide alpha by the number of tests, ie, pvalues in the vector
     return alpha/len(vector)
 
-# make a list of Bonferroni-adjusted p values
+# compute a new significance threshold
 bonferroni_threshold = calc_bonferroni_threshold(pvals)
 
 # new threshold
@@ -278,6 +279,7 @@ df_check.bh_reject_default.value_counts()
 ```
 
 Let's asses the agreement by making a column based on their comparison:
+
 ```{python}
 
 # do they agree?

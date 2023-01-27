@@ -150,15 +150,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../about.html">
- <span class="menu-text">What I Work On</span></a>
+ <span class="menu-text">[ What I Work On ]</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../cv.html">
- <span class="menu-text">CV</span></a>
+ <span class="menu-text">[ CV ]</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html">
- <span class="menu-text">Drops of Jupyter</span></a>
+ <span class="menu-text">[ Drops of Jupyter ]</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -252,6 +252,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#single-condition" id="toc-single-condition" class="nav-link" data-scroll-target="#single-condition">Single condition</a></li>
   <li><a href="#multiple-conditions" id="toc-multiple-conditions" class="nav-link" data-scroll-target="#multiple-conditions">Multiple conditions</a></li>
   </ul></li>
+  <li><a href="#sorting" id="toc-sorting" class="nav-link" data-scroll-target="#sorting">Sorting</a>
+  <ul class="collapse">
+  <li><a href="#ascending" id="toc-ascending" class="nav-link" data-scroll-target="#ascending">Ascending</a></li>
+  <li><a href="#descending" id="toc-descending" class="nav-link" data-scroll-target="#descending">Descending</a></li>
+  </ul></li>
   <li><a href="#applying-functions" id="toc-applying-functions" class="nav-link" data-scroll-target="#applying-functions">Applying functions</a>
   <ul class="collapse">
   <li><a href="#map-a-function-with-no-arguments-to-a-single-column" id="toc-map-a-function-with-no-arguments-to-a-single-column" class="nav-link" data-scroll-target="#map-a-function-with-no-arguments-to-a-single-column">Map a function with no arguments to a single column</a></li>
@@ -273,6 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#melting-a-dataframe" id="toc-melting-a-dataframe" class="nav-link" data-scroll-target="#melting-a-dataframe">Melting a DataFrame</a></li>
   <li><a href="#misc" id="toc-misc" class="nav-link" data-scroll-target="#misc">Misc</a>
   <ul class="collapse">
+  <li><a href="#counts-of-values-like-table-in-r" id="toc-counts-of-values-like-table-in-r" class="nav-link" data-scroll-target="#counts-of-values-like-table-in-r">Counts of values (like <code>table</code> in R)</a></li>
   <li><a href="#formatting-long-chains" id="toc-formatting-long-chains" class="nav-link" data-scroll-target="#formatting-long-chains">Formatting long chains</a></li>
   <li><a href="#iterating-over-a-df" id="toc-iterating-over-a-df" class="nav-link" data-scroll-target="#iterating-over-a-df">Iterating over a df</a></li>
   </ul></li>
@@ -286,6 +292,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+<blockquote class="blockquote">
+<p>update: 12-17-22 - added sorting and table.</p>
+</blockquote>
 <section id="data-manipulation" class="level1">
 <h1>Data Manipulation</h1>
 <div class="cell" data-execution_count="1">
@@ -1092,20 +1101,62 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </section>
 </section>
+<section id="sorting" class="level2">
+<h2 class="anchored" data-anchor-id="sorting">Sorting</h2>
+<section id="ascending" class="level3">
+<h3 class="anchored" data-anchor-id="ascending">Ascending</h3>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df.mpg.sort_values().head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>Lincoln Continental    10.4
+Cadillac Fleetwood     10.4
+Camaro Z28             13.3
+Duster 360             14.3
+Chrysler Imperial      14.7
+Maserati Bora          15.0
+Merc 450SLC            15.2
+AMC Javelin            15.2
+Dodge Challenger       15.5
+Ford Pantera L         15.8
+Name: mpg, dtype: float64</code></pre>
+</div>
+</div>
+</section>
+<section id="descending" class="level3">
+<h3 class="anchored" data-anchor-id="descending">Descending</h3>
+<p>There is no ‘descending’ per se, just set <code>ascending</code> to False.</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df.mpg.sort_values(ascending <span class="op">=</span> <span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>Toyota Corolla    33.9
+Fiat 128          32.4
+Lotus Europa      30.4
+Honda Civic       30.4
+Fiat X1-9         27.3
+Porsche 914-2     26.0
+Merc 240D         24.4
+Datsun 710        22.8
+Merc 230          22.8
+Toyota Corona     21.5
+Name: mpg, dtype: float64</code></pre>
+</div>
+</div>
+</section>
+</section>
 <section id="applying-functions" class="level2">
 <h2 class="anchored" data-anchor-id="applying-functions">Applying functions</h2>
 <section id="map-a-function-with-no-arguments-to-a-single-column" class="level3">
 <h3 class="anchored" data-anchor-id="map-a-function-with-no-arguments-to-a-single-column">Map a function with no arguments to a single column</h3>
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># some function to apply</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment(x):</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># could also be done as a lambda expression</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"ApplyResult"</span>] <span class="op">=</span> df.mpg.<span class="bu">map</span>(increment)</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"ApplyResult"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># some function to apply</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment(x):</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># could also be done as a lambda expression</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"ApplyResult"</span>] <span class="op">=</span> df.mpg.<span class="bu">map</span>(increment)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"ApplyResult"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
 
 <div>
 
@@ -1151,16 +1202,16 @@ Name: mpg, dtype: float64</code></pre>
 </section>
 <section id="apply-a-function-with-arguments-using-kwargs" class="level3">
 <h3 class="anchored" data-anchor-id="apply-a-function-with-arguments-using-kwargs">Apply a function with arguments using kwargs</h3>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># some function yadda</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> incrementBy(x, by):</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> by</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># could also be done as a lambda expression</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"ApplyResult"</span>] <span class="op">=</span> df.mpg.<span class="bu">apply</span>(incrementBy, by <span class="op">=</span> <span class="dv">5</span>)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"ApplyResult"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># some function yadda</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> incrementBy(x, by):</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">+</span> by</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># could also be done as a lambda expression</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"ApplyResult"</span>] <span class="op">=</span> df.mpg.<span class="bu">apply</span>(incrementBy, by <span class="op">=</span> <span class="dv">5</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"ApplyResult"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
 
 <div>
 
@@ -1208,13 +1259,13 @@ Name: mpg, dtype: float64</code></pre>
 <section id="missing-values" class="level2">
 <h2 class="anchored" data-anchor-id="missing-values">Missing values</h2>
 <p>Expanding on an example from <a href="https://datatofish.com/check-nan-pandas-dataframe/">here</a>. Pandas uses <code>np.nan</code> instead of <code>NA</code>.</p>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span>: [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,np.nan,<span class="dv">7</span>,<span class="dv">8</span>,np.nan,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,np.nan],</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: [<span class="dv">1</span>,np.nan,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,np.nan,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>]</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span>: [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,np.nan,<span class="dv">7</span>,<span class="dv">8</span>,np.nan,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,np.nan],</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: [<span class="dv">1</span>,np.nan,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,np.nan,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>]</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
 
 <div>
 
@@ -1299,10 +1350,10 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 <section id="missing-in-the-whole-df" class="level3">
 <h3 class="anchored" data-anchor-id="missing-in-the-whole-df">Missing in the whole df</h3>
-<div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no NA the whole thing</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>df2.isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no NA the whole thing</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>df2.isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
 
 <div>
 
@@ -1388,10 +1439,10 @@ Name: mpg, dtype: float64</code></pre>
 </section>
 <section id="missing-in-a-single-column" class="level3">
 <h3 class="anchored" data-anchor-id="missing-in-a-single-column">Missing in a single column</h3>
-<div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># just the x column</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df2.x.isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># just the x column</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>df2.x.isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>0     False
 1     False
 2     False
@@ -1411,11 +1462,11 @@ Name: x, dtype: bool</code></pre>
 </section>
 <section id="replace-nas-in-a-column" class="level3">
 <h3 class="anchored" data-anchor-id="replace-nas-in-a-column">Replace NAs in a column</h3>
-<div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fillna function </span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df2.x <span class="op">=</span> df2.x.fillna(<span class="st">"MISSING"</span>)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the fillna function </span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>df2.x <span class="op">=</span> df2.x.fillna(<span class="st">"MISSING"</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
 
 <div>
 
@@ -1501,10 +1552,10 @@ Name: x, dtype: bool</code></pre>
 </section>
 <section id="replace-the-nas-in-the-full-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="replace-the-nas-in-the-full-dataset">Replace the NAs in the full dataset</h3>
-<div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># files the other even though I didn't specify a column</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>df2.fillna(<span class="st">"MISSING!!!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># files the other even though I didn't specify a column</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>df2.fillna(<span class="st">"MISSING!!!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
 
 <div>
 
@@ -1591,15 +1642,15 @@ Name: x, dtype: bool</code></pre>
 <section id="drop-nas" class="level3">
 <h3 class="anchored" data-anchor-id="drop-nas">Drop NAs</h3>
 <p>The <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html">official docs</a> are great on this.</p>
-<div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create another sample df</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span>: [<span class="dv">1</span>,np.nan,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,np.nan,np.nan,<span class="dv">8</span>,np.nan,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,np.nan],</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: [<span class="dv">1</span>,np.nan,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,np.nan,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,np.nan],</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"z"</span>: [<span class="dv">1</span>,<span class="dv">2</span>,np.nan,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,np.nan,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,np.nan]</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>df3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create another sample df</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"x"</span>: [<span class="dv">1</span>,np.nan,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,np.nan,np.nan,<span class="dv">8</span>,np.nan,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,np.nan],</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"y"</span>: [<span class="dv">1</span>,np.nan,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,np.nan,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,np.nan],</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"z"</span>: [<span class="dv">1</span>,<span class="dv">2</span>,np.nan,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,np.nan,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,np.nan]</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>df3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
 
 <div>
 
@@ -1698,10 +1749,10 @@ Name: x, dtype: bool</code></pre>
 </div>
 <section id="drop-all-across-the-df" class="level4">
 <h4 class="anchored" data-anchor-id="drop-all-across-the-df">Drop all across the df</h4>
-<div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no NAs period </span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>df3.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no NAs period </span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>df3.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
 
 <div>
 
@@ -1765,10 +1816,10 @@ Name: x, dtype: bool</code></pre>
 </section>
 <section id="drop-if-theyre-all-na-in-that-row" class="level4">
 <h4 class="anchored" data-anchor-id="drop-if-theyre-all-na-in-that-row">Drop if they’re all na in that row</h4>
-<div class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop if the whole row is NA</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>df3.dropna(how <span class="op">=</span> <span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop if the whole row is NA</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>df3.dropna(how <span class="op">=</span> <span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
 
 <div>
 
@@ -1857,9 +1908,9 @@ Name: x, dtype: bool</code></pre>
 <section id="drop-all-in-certain-columns" class="level4">
 <h4 class="anchored" data-anchor-id="drop-all-in-certain-columns">Drop all in certain columns</h4>
 <p>This is so clutch! Much simpler than filtering across in R (though there might be a cleaner way for that)</p>
-<div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df3.dropna(subset <span class="op">=</span> [<span class="st">"x"</span>, <span class="st">"y"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df3.dropna(subset <span class="op">=</span> [<span class="st">"x"</span>, <span class="st">"y"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
 
 <div>
 
@@ -1933,18 +1984,18 @@ Name: x, dtype: bool</code></pre>
 <h2 class="anchored" data-anchor-id="group-summarize">Group &amp; Summarize</h2>
 <section id="group-by-a-factor-level" class="level3">
 <h3 class="anchored" data-anchor-id="group-by-a-factor-level">Group by a factor level</h3>
-<div class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"disp"</span>, <span class="st">"cyl"</span>]].groupby(by <span class="op">=</span> <span class="st">"cyl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
-<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f579b14b250&gt;</code></pre>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"disp"</span>, <span class="st">"cyl"</span>]].groupby(by <span class="op">=</span> <span class="st">"cyl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f7146769b40&gt;</code></pre>
 </div>
 </div>
 </section>
 <section id="groupby-factor-level-and-get-the-mean" class="level3">
 <h3 class="anchored" data-anchor-id="groupby-factor-level-and-get-the-mean">Groupby factor level and get the mean</h3>
-<div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"disp"</span>, <span class="st">"cyl"</span>]].groupby(by <span class="op">=</span> <span class="st">"cyl"</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"disp"</span>, <span class="st">"cyl"</span>]].groupby(by <span class="op">=</span> <span class="st">"cyl"</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
 
 <div>
 
@@ -1986,11 +2037,11 @@ Name: x, dtype: bool</code></pre>
 </section>
 <section id="melting-a-dataframe" class="level2">
 <h2 class="anchored" data-anchor-id="melting-a-dataframe">Melting a DataFrame</h2>
-<div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the melt function specifying ids and value vars</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> pd.melt(df, id_vars <span class="op">=</span> <span class="st">"cyl"</span>, value_vars <span class="op">=</span> [<span class="st">"mpg"</span>, <span class="st">"wt"</span>])</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>df_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the melt function specifying ids and value vars</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> pd.melt(df, id_vars <span class="op">=</span> <span class="st">"cyl"</span>, value_vars <span class="op">=</span> [<span class="st">"mpg"</span>, <span class="st">"wt"</span>])</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>df_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
 
 <div>
 
@@ -2079,15 +2130,28 @@ Name: x, dtype: bool</code></pre>
 </section>
 <section id="misc" class="level2">
 <h2 class="anchored" data-anchor-id="misc">Misc</h2>
+<section id="counts-of-values-like-table-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="counts-of-values-like-table-in-r">Counts of values (like <code>table</code> in R)</h3>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># shows how many there are of each factor</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>df.cyl.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>8    14
+4    11
+6     7
+Name: cyl, dtype: int64</code></pre>
+</div>
+</div>
+</section>
 <section id="formatting-long-chains" class="level3">
 <h3 class="anchored" data-anchor-id="formatting-long-chains">Formatting long chains</h3>
-<div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a little ugly but it works</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"disp"</span>, <span class="st">"cyl"</span>]].<span class="op">\</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    query(<span class="st">"cyl &gt; 4"</span>).<span class="op">\</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    groupby(by <span class="op">=</span> <span class="st">"cyl"</span>).<span class="op">\</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a little ugly but it works</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"disp"</span>, <span class="st">"cyl"</span>]].<span class="op">\</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    query(<span class="st">"cyl &gt; 4"</span>).<span class="op">\</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    groupby(by <span class="op">=</span> <span class="st">"cyl"</span>).<span class="op">\</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
 
 <div>
 
@@ -2123,11 +2187,11 @@ Name: x, dtype: bool</code></pre>
 </section>
 <section id="iterating-over-a-df" class="level3">
 <h3 class="anchored" data-anchor-id="iterating-over-a-df">Iterating over a df</h3>
-<p>For mutating the dataframe apply/map is reccomended, but I’m showing how to do this for completeness.</p>
-<div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> df.iterrows():</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df[<span class="st">"mpg"</span>][i])</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># j would give you all the columns with just that row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For mutating the dataframe apply/map is recommended, but I’m showing how to do this for completeness.</p>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> df.iterrows():</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df[<span class="st">"mpg"</span>][i])</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># j would give you all the columns with just that row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>21.0
 21.0
@@ -2163,6 +2227,7 @@ Name: x, dtype: bool</code></pre>
 21.4</code></pre>
 </div>
 </div>
+<p>https://www.statsmodels.org/stable/examples/notebooks/generated/glm.html https://www.geeksforgeeks.org/linear-regression-in-python-using-statsmodels/ https://datagy.io/pandas-iterate-over-rows/ https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html</p>
 
 
 </section>

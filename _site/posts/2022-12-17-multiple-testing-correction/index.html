@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.258">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Thadryan">
+<meta name="dcterms.date" content="2022-12-17">
 <meta name="description" content="Re-implementing for knowledge and profit!(?)">
 
 <title>Thadryan J. Sweeney, MS - Multiple testing correction for family-wise error-rate and false discovery rate</title>
@@ -166,15 +167,15 @@ div.csl-indent {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../about.html">
- <span class="menu-text">What I Work On</span></a>
+ <span class="menu-text">[ What I Work On ]</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../cv.html">
- <span class="menu-text">CV</span></a>
+ <span class="menu-text">[ CV ]</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html">
- <span class="menu-text">Drops of Jupyter</span></a>
+ <span class="menu-text">[ Drops of Jupyter ]</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -205,7 +206,40 @@ div.csl-indent {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Multiple testing correction for family-wise error-rate and false discovery rate</h1>
+                  <div>
+        <div class="description">
+          Re-implementing for knowledge and profit!(?)
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Thadryan </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 17, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -223,35 +257,10 @@ div.csl-indent {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Multiple testing correction for family-wise error-rate and false discovery rate</h1>
-</div>
-
-<div>
-  <div class="description">
-    Re-implementing for knowledge and profit!(?)
-  </div>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Thadryan </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-</header>
 
 <p>In this post we explain and re-implement two multiple testing corrections, Bonferroni and Benjamini-Hochberg, for the sake of understanding.</p>
 <section id="preliminaries" class="level2">

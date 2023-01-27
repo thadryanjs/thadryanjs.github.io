@@ -11,6 +11,8 @@ altair = "*"
 nbformat = "*"
 nbclient = "*"
 scipy = "*"
+ipykernel = "*"
+jupyter = "*"
 
 [dev-packages]
 ipykernel = "*"

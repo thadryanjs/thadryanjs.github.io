@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: ""
 layout: article
 image: assets/pic.jpg
 about:
@@ -29,4 +29,6 @@ I also taught an introductory class in the
 program at Northeastern University. If you're interested in seeing what I'm working on professionally, check out my <a href="/CV"> CV </a> or my <a href=https://www.linkedin.com/in/thadryan-sweeney-10b938a> LinkedIn. </a>
 When I'm not doing science-y stuff, I play RPGs, write music, or make cartoons.
 
-<!-- Of the links below, <a rel="me" href="https://fediscience.org/@thadryanjs">Mastodon</a> is my preferred platform. -->
+Of the links below, <a rel="me" href="https://fediscience.org/@thadryanjs">Mastodon</a> is my preferred platform.
+
+<!-- <a rel="me" href="https://fediscience.org/@thadryanjs">Mastodon</a> -->

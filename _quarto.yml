@@ -11,6 +11,9 @@ website:
       - cv.qmd
       - blog.qmd
     right:
+    - icon: google
+      text: Scholar
+      href: https://scholar.google.com/citations?user=KLdJrhgAAAAJ
     - icon: github
       text: Github
       href: https://github.com/thadryanjs

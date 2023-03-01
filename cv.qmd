@@ -1,5 +1,23 @@
 ---
 title: "[ CV ]"
+about:
+  template: jolla 
+  links:
+    - icon: google
+      text: Scholar
+      href: https://scholar.google.com/citations?user=KLdJrhgAAAAJ
+    - icon: github
+      text: Github
+      href: https://github.com/thadryanjs
+    - icon: mastodon
+      text: Mastodon
+      href: https://fediscience.org/@thadryanjs
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/ThadryanJS
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/thadryan-sweeney-10b938a/
 ---
 
 <p>

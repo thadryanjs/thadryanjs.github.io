@@ -4,6 +4,22 @@ layout: article
 image: assets/pic.jpg
 about:
   template: jolla 
+  links:
+    - icon: google
+      text: Scholar
+      href: https://scholar.google.com/citations?user=KLdJrhgAAAAJ
+    - icon: github
+      text: Github
+      href: https://github.com/thadryanjs
+    - icon: mastodon
+      text: Mastodon
+      href: https://fediscience.org/@thadryanjs
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/ThadryanJS
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/thadryan-sweeney-10b938a/
 ---
 I'm a Firefighter and Human Services Professional turned Data Scientist interested in statistics, interactive visualization, and biomarker discovery. I do statistically oriented biology research using R, Python, and JavaScript. I'm currently pursing a PhD in <a href="https://geiselmed.dartmouth.edu/qbs/">Quantitative Biomedical Sciences</a>.
 
@@ -13,7 +29,8 @@ at the <a href="https://cvrc.massgeneral.org/"> Cardiovascular Research Center.<
 
 I also taught an introductory class in the 
 <a href="https://www.northeastern.edu/graduate/program/master-of-science-in-bioinformatics-online-14245/">Bioinformatics MS </a>
-program at Northeastern University. If you're interested in seeing what I'm working on professionally, check out my <a href="/CV"> CV </a> or my <a href=https://www.linkedin.com/in/thadryan-sweeney-10b938a> LinkedIn. </a>
+program at Northeastern University. If you're interested in seeing what I'm working on professionally, check out my <a href="/CV"> CV </a>.
+
 When I'm not doing science-y stuff, I play RPGs, write music, or make cartoons.
 
 Of the links below, <a rel="me" href="https://fediscience.org/@thadryanjs">Mastodon</a> is my preferred platform.

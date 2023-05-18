@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.258">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -49,43 +50,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -143,52 +114,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">Thadryan J. Sweeney, MS</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">[ What I Work On ]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html">
+    <a class="nav-link" href="../../cv.html" rel="" target="">
  <span class="menu-text">[ CV ]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">[ Drops of Jupyter ]</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ"><i class="bi bi-google" role="img">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ" rel="" target=""><i class="bi bi-google" role="img">
 </i> 
  <span class="menu-text">Scholar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/thadryanjs"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/thadryanjs" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text">Github</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://fediscience.org/@thadryanjs"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://fediscience.org/(thadryanjs?)" rel="" target=""><i class="bi bi-mastodon" role="img">
 </i> 
  <span class="menu-text">Mastodon</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/ThadryanJS"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ThadryanJS" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text">Twitter</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text">LinkedIn</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -313,99 +286,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>cyl</th>
-      <th>disp</th>
-      <th>hp</th>
-      <th>drat</th>
-      <th>wt</th>
-      <th>qsec</th>
-      <th>vs</th>
-      <th>am</th>
-      <th>gear</th>
-      <th>carb</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>21.0</td>
-      <td>6</td>
-      <td>160.0</td>
-      <td>110</td>
-      <td>3.90</td>
-      <td>2.620</td>
-      <td>16.46</td>
-      <td>0</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>21.0</td>
-      <td>6</td>
-      <td>160.0</td>
-      <td>110</td>
-      <td>3.90</td>
-      <td>2.875</td>
-      <td>17.02</td>
-      <td>0</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Datsun 710</th>
-      <td>22.8</td>
-      <td>4</td>
-      <td>108.0</td>
-      <td>93</td>
-      <td>3.85</td>
-      <td>2.320</td>
-      <td>18.61</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>21.4</td>
-      <td>6</td>
-      <td>258.0</td>
-      <td>110</td>
-      <td>3.08</td>
-      <td>3.215</td>
-      <td>19.44</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Hornet Sportabout</th>
-      <td>18.7</td>
-      <td>8</td>
-      <td>360.0</td>
-      <td>175</td>
-      <td>3.15</td>
-      <td>3.440</td>
-      <td>17.02</td>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>2</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th">disp</th>
+<th data-quarto-table-cell-role="th">hp</th>
+<th data-quarto-table-cell-role="th">drat</th>
+<th data-quarto-table-cell-role="th">wt</th>
+<th data-quarto-table-cell-role="th">qsec</th>
+<th data-quarto-table-cell-role="th">vs</th>
+<th data-quarto-table-cell-role="th">am</th>
+<th data-quarto-table-cell-role="th">gear</th>
+<th data-quarto-table-cell-role="th">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+<td>3.90</td>
+<td>2.620</td>
+<td>16.46</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+<td>3.90</td>
+<td>2.875</td>
+<td>17.02</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Datsun 710</td>
+<td>22.8</td>
+<td>4</td>
+<td>108.0</td>
+<td>93</td>
+<td>3.85</td>
+<td>2.320</td>
+<td>18.61</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>21.4</td>
+<td>6</td>
+<td>258.0</td>
+<td>110</td>
+<td>3.08</td>
+<td>3.215</td>
+<td>19.44</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet Sportabout</td>
+<td>18.7</td>
+<td>8</td>
+<td>360.0</td>
+<td>175</td>
+<td>3.15</td>
+<td>3.440</td>
+<td>17.02</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -479,141 +453,142 @@ memory usage: 3.0+ KB</code></pre>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary of distributional information</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>cyl</th>
-      <th>disp</th>
-      <th>hp</th>
-      <th>drat</th>
-      <th>wt</th>
-      <th>qsec</th>
-      <th>vs</th>
-      <th>am</th>
-      <th>gear</th>
-      <th>carb</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.000000</td>
-      <td>32.0000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>20.090625</td>
-      <td>6.187500</td>
-      <td>230.721875</td>
-      <td>146.687500</td>
-      <td>3.596563</td>
-      <td>3.217250</td>
-      <td>17.848750</td>
-      <td>0.437500</td>
-      <td>0.406250</td>
-      <td>3.687500</td>
-      <td>2.8125</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>6.026948</td>
-      <td>1.785922</td>
-      <td>123.938694</td>
-      <td>68.562868</td>
-      <td>0.534679</td>
-      <td>0.978457</td>
-      <td>1.786943</td>
-      <td>0.504016</td>
-      <td>0.498991</td>
-      <td>0.737804</td>
-      <td>1.6152</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>10.400000</td>
-      <td>4.000000</td>
-      <td>71.100000</td>
-      <td>52.000000</td>
-      <td>2.760000</td>
-      <td>1.513000</td>
-      <td>14.500000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>3.000000</td>
-      <td>1.0000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>15.425000</td>
-      <td>4.000000</td>
-      <td>120.825000</td>
-      <td>96.500000</td>
-      <td>3.080000</td>
-      <td>2.581250</td>
-      <td>16.892500</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>3.000000</td>
-      <td>2.0000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>19.200000</td>
-      <td>6.000000</td>
-      <td>196.300000</td>
-      <td>123.000000</td>
-      <td>3.695000</td>
-      <td>3.325000</td>
-      <td>17.710000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>4.000000</td>
-      <td>2.0000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>22.800000</td>
-      <td>8.000000</td>
-      <td>326.000000</td>
-      <td>180.000000</td>
-      <td>3.920000</td>
-      <td>3.610000</td>
-      <td>18.900000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>4.000000</td>
-      <td>4.0000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>33.900000</td>
-      <td>8.000000</td>
-      <td>472.000000</td>
-      <td>335.000000</td>
-      <td>4.930000</td>
-      <td>5.424000</td>
-      <td>22.900000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-      <td>5.000000</td>
-      <td>8.0000</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th">disp</th>
+<th data-quarto-table-cell-role="th">hp</th>
+<th data-quarto-table-cell-role="th">drat</th>
+<th data-quarto-table-cell-role="th">wt</th>
+<th data-quarto-table-cell-role="th">qsec</th>
+<th data-quarto-table-cell-role="th">vs</th>
+<th data-quarto-table-cell-role="th">am</th>
+<th data-quarto-table-cell-role="th">gear</th>
+<th data-quarto-table-cell-role="th">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.000000</td>
+<td>32.0000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>20.090625</td>
+<td>6.187500</td>
+<td>230.721875</td>
+<td>146.687500</td>
+<td>3.596563</td>
+<td>3.217250</td>
+<td>17.848750</td>
+<td>0.437500</td>
+<td>0.406250</td>
+<td>3.687500</td>
+<td>2.8125</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>6.026948</td>
+<td>1.785922</td>
+<td>123.938694</td>
+<td>68.562868</td>
+<td>0.534679</td>
+<td>0.978457</td>
+<td>1.786943</td>
+<td>0.504016</td>
+<td>0.498991</td>
+<td>0.737804</td>
+<td>1.6152</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>10.400000</td>
+<td>4.000000</td>
+<td>71.100000</td>
+<td>52.000000</td>
+<td>2.760000</td>
+<td>1.513000</td>
+<td>14.500000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>3.000000</td>
+<td>1.0000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>15.425000</td>
+<td>4.000000</td>
+<td>120.825000</td>
+<td>96.500000</td>
+<td>3.080000</td>
+<td>2.581250</td>
+<td>16.892500</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>3.000000</td>
+<td>2.0000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>19.200000</td>
+<td>6.000000</td>
+<td>196.300000</td>
+<td>123.000000</td>
+<td>3.695000</td>
+<td>3.325000</td>
+<td>17.710000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>4.000000</td>
+<td>2.0000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>22.800000</td>
+<td>8.000000</td>
+<td>326.000000</td>
+<td>180.000000</td>
+<td>3.920000</td>
+<td>3.610000</td>
+<td>18.900000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>4.000000</td>
+<td>4.0000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>33.900000</td>
+<td>8.000000</td>
+<td>472.000000</td>
+<td>335.000000</td>
+<td>4.930000</td>
+<td>5.424000</td>
+<td>22.900000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>5.000000</td>
+<td>8.0000</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -654,39 +629,40 @@ Name: mpg, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select column (as a dataframe)</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>21.0</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>21.0</td>
-    </tr>
-    <tr>
-      <th>Datsun 710</th>
-      <td>22.8</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>21.4</td>
-    </tr>
-    <tr>
-      <th>Hornet Sportabout</th>
-      <td>18.7</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>21.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>21.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Datsun 710</td>
+<td>22.8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>21.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet Sportabout</td>
+<td>18.7</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -697,45 +673,46 @@ Name: mpg, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select a column by several names</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"wt"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>wt</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>21.0</td>
-      <td>2.620</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>21.0</td>
-      <td>2.875</td>
-    </tr>
-    <tr>
-      <th>Datsun 710</th>
-      <td>22.8</td>
-      <td>2.320</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>21.4</td>
-      <td>3.215</td>
-    </tr>
-    <tr>
-      <th>Hornet Sportabout</th>
-      <td>18.7</td>
-      <td>3.440</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">wt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>21.0</td>
+<td>2.620</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>21.0</td>
+<td>2.875</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Datsun 710</td>
+<td>22.8</td>
+<td>2.320</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>21.4</td>
+<td>3.215</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet Sportabout</td>
+<td>18.7</td>
+<td>3.440</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -746,57 +723,58 @@ Name: mpg, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select a range by name of start and end "mph through hp"</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="st">"mpg"</span>:<span class="st">"hp"</span>].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>cyl</th>
-      <th>disp</th>
-      <th>hp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>21.0</td>
-      <td>6</td>
-      <td>160.0</td>
-      <td>110</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>21.0</td>
-      <td>6</td>
-      <td>160.0</td>
-      <td>110</td>
-    </tr>
-    <tr>
-      <th>Datsun 710</th>
-      <td>22.8</td>
-      <td>4</td>
-      <td>108.0</td>
-      <td>93</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>21.4</td>
-      <td>6</td>
-      <td>258.0</td>
-      <td>110</td>
-    </tr>
-    <tr>
-      <th>Hornet Sportabout</th>
-      <td>18.7</td>
-      <td>8</td>
-      <td>360.0</td>
-      <td>175</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th">disp</th>
+<th data-quarto-table-cell-role="th">hp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Datsun 710</td>
+<td>22.8</td>
+<td>4</td>
+<td>108.0</td>
+<td>93</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>21.4</td>
+<td>6</td>
+<td>258.0</td>
+<td>110</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet Sportabout</td>
+<td>18.7</td>
+<td>8</td>
+<td>360.0</td>
+<td>175</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -811,45 +789,46 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pass the list to pandas</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>df[starts_with_d].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>disp</th>
-      <th>drat</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>160.0</td>
-      <td>3.90</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>160.0</td>
-      <td>3.90</td>
-    </tr>
-    <tr>
-      <th>Datsun 710</th>
-      <td>108.0</td>
-      <td>3.85</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>258.0</td>
-      <td>3.08</td>
-    </tr>
-    <tr>
-      <th>Hornet Sportabout</th>
-      <td>360.0</td>
-      <td>3.15</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">disp</th>
+<th data-quarto-table-cell-role="th">drat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>160.0</td>
+<td>3.90</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>160.0</td>
+<td>3.90</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Datsun 710</td>
+<td>108.0</td>
+<td>3.85</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>258.0</td>
+<td>3.08</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet Sportabout</td>
+<td>360.0</td>
+<td>3.15</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -864,127 +843,128 @@ Name: mpg, dtype: float64</code></pre>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df.query(<span class="st">"cyl == 6"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>cyl</th>
-      <th>disp</th>
-      <th>hp</th>
-      <th>drat</th>
-      <th>wt</th>
-      <th>qsec</th>
-      <th>vs</th>
-      <th>am</th>
-      <th>gear</th>
-      <th>carb</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>21.0</td>
-      <td>6</td>
-      <td>160.0</td>
-      <td>110</td>
-      <td>3.90</td>
-      <td>2.620</td>
-      <td>16.46</td>
-      <td>0</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>21.0</td>
-      <td>6</td>
-      <td>160.0</td>
-      <td>110</td>
-      <td>3.90</td>
-      <td>2.875</td>
-      <td>17.02</td>
-      <td>0</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>21.4</td>
-      <td>6</td>
-      <td>258.0</td>
-      <td>110</td>
-      <td>3.08</td>
-      <td>3.215</td>
-      <td>19.44</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Valiant</th>
-      <td>18.1</td>
-      <td>6</td>
-      <td>225.0</td>
-      <td>105</td>
-      <td>2.76</td>
-      <td>3.460</td>
-      <td>20.22</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Merc 280</th>
-      <td>19.2</td>
-      <td>6</td>
-      <td>167.6</td>
-      <td>123</td>
-      <td>3.92</td>
-      <td>3.440</td>
-      <td>18.30</td>
-      <td>1</td>
-      <td>0</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Merc 280C</th>
-      <td>17.8</td>
-      <td>6</td>
-      <td>167.6</td>
-      <td>123</td>
-      <td>3.92</td>
-      <td>3.440</td>
-      <td>18.90</td>
-      <td>1</td>
-      <td>0</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Ferrari Dino</th>
-      <td>19.7</td>
-      <td>6</td>
-      <td>145.0</td>
-      <td>175</td>
-      <td>3.62</td>
-      <td>2.770</td>
-      <td>15.50</td>
-      <td>0</td>
-      <td>1</td>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th">disp</th>
+<th data-quarto-table-cell-role="th">hp</th>
+<th data-quarto-table-cell-role="th">drat</th>
+<th data-quarto-table-cell-role="th">wt</th>
+<th data-quarto-table-cell-role="th">qsec</th>
+<th data-quarto-table-cell-role="th">vs</th>
+<th data-quarto-table-cell-role="th">am</th>
+<th data-quarto-table-cell-role="th">gear</th>
+<th data-quarto-table-cell-role="th">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+<td>3.90</td>
+<td>2.620</td>
+<td>16.46</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+<td>3.90</td>
+<td>2.875</td>
+<td>17.02</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>21.4</td>
+<td>6</td>
+<td>258.0</td>
+<td>110</td>
+<td>3.08</td>
+<td>3.215</td>
+<td>19.44</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Valiant</td>
+<td>18.1</td>
+<td>6</td>
+<td>225.0</td>
+<td>105</td>
+<td>2.76</td>
+<td>3.460</td>
+<td>20.22</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Merc 280</td>
+<td>19.2</td>
+<td>6</td>
+<td>167.6</td>
+<td>123</td>
+<td>3.92</td>
+<td>3.440</td>
+<td>18.30</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Merc 280C</td>
+<td>17.8</td>
+<td>6</td>
+<td>167.6</td>
+<td>123</td>
+<td>3.92</td>
+<td>3.440</td>
+<td>18.90</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Ferrari Dino</td>
+<td>19.7</td>
+<td>6</td>
+<td>145.0</td>
+<td>175</td>
+<td>3.62</td>
+<td>2.770</td>
+<td>15.50</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -994,113 +974,114 @@ Name: mpg, dtype: float64</code></pre>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.query(<span class="st">"cyl == 6 &amp; hp &gt; 105"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>cyl</th>
-      <th>disp</th>
-      <th>hp</th>
-      <th>drat</th>
-      <th>wt</th>
-      <th>qsec</th>
-      <th>vs</th>
-      <th>am</th>
-      <th>gear</th>
-      <th>carb</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>21.0</td>
-      <td>6</td>
-      <td>160.0</td>
-      <td>110</td>
-      <td>3.90</td>
-      <td>2.620</td>
-      <td>16.46</td>
-      <td>0</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>21.0</td>
-      <td>6</td>
-      <td>160.0</td>
-      <td>110</td>
-      <td>3.90</td>
-      <td>2.875</td>
-      <td>17.02</td>
-      <td>0</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>21.4</td>
-      <td>6</td>
-      <td>258.0</td>
-      <td>110</td>
-      <td>3.08</td>
-      <td>3.215</td>
-      <td>19.44</td>
-      <td>1</td>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>Merc 280</th>
-      <td>19.2</td>
-      <td>6</td>
-      <td>167.6</td>
-      <td>123</td>
-      <td>3.92</td>
-      <td>3.440</td>
-      <td>18.30</td>
-      <td>1</td>
-      <td>0</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Merc 280C</th>
-      <td>17.8</td>
-      <td>6</td>
-      <td>167.6</td>
-      <td>123</td>
-      <td>3.92</td>
-      <td>3.440</td>
-      <td>18.90</td>
-      <td>1</td>
-      <td>0</td>
-      <td>4</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>Ferrari Dino</th>
-      <td>19.7</td>
-      <td>6</td>
-      <td>145.0</td>
-      <td>175</td>
-      <td>3.62</td>
-      <td>2.770</td>
-      <td>15.50</td>
-      <td>0</td>
-      <td>1</td>
-      <td>5</td>
-      <td>6</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th">disp</th>
+<th data-quarto-table-cell-role="th">hp</th>
+<th data-quarto-table-cell-role="th">drat</th>
+<th data-quarto-table-cell-role="th">wt</th>
+<th data-quarto-table-cell-role="th">qsec</th>
+<th data-quarto-table-cell-role="th">vs</th>
+<th data-quarto-table-cell-role="th">am</th>
+<th data-quarto-table-cell-role="th">gear</th>
+<th data-quarto-table-cell-role="th">carb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+<td>3.90</td>
+<td>2.620</td>
+<td>16.46</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>21.0</td>
+<td>6</td>
+<td>160.0</td>
+<td>110</td>
+<td>3.90</td>
+<td>2.875</td>
+<td>17.02</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>21.4</td>
+<td>6</td>
+<td>258.0</td>
+<td>110</td>
+<td>3.08</td>
+<td>3.215</td>
+<td>19.44</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Merc 280</td>
+<td>19.2</td>
+<td>6</td>
+<td>167.6</td>
+<td>123</td>
+<td>3.92</td>
+<td>3.440</td>
+<td>18.30</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Merc 280C</td>
+<td>17.8</td>
+<td>6</td>
+<td>167.6</td>
+<td>123</td>
+<td>3.92</td>
+<td>3.440</td>
+<td>18.90</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Ferrari Dino</td>
+<td>19.7</td>
+<td>6</td>
+<td>145.0</td>
+<td>175</td>
+<td>3.62</td>
+<td>2.770</td>
+<td>15.50</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1162,45 +1143,46 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"ApplyResult"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>ApplyResult</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>21.0</td>
-      <td>22.0</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>21.0</td>
-      <td>22.0</td>
-    </tr>
-    <tr>
-      <th>Datsun 710</th>
-      <td>22.8</td>
-      <td>23.8</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>21.4</td>
-      <td>22.4</td>
-    </tr>
-    <tr>
-      <th>Hornet Sportabout</th>
-      <td>18.7</td>
-      <td>19.7</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">ApplyResult</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>21.0</td>
+<td>22.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>21.0</td>
+<td>22.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Datsun 710</td>
+<td>22.8</td>
+<td>23.8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>21.4</td>
+<td>22.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet Sportabout</td>
+<td>18.7</td>
+<td>19.7</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1217,45 +1199,46 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"ApplyResult"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>ApplyResult</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Mazda RX4</th>
-      <td>21.0</td>
-      <td>26.0</td>
-    </tr>
-    <tr>
-      <th>Mazda RX4 Wag</th>
-      <td>21.0</td>
-      <td>26.0</td>
-    </tr>
-    <tr>
-      <th>Datsun 710</th>
-      <td>22.8</td>
-      <td>27.8</td>
-    </tr>
-    <tr>
-      <th>Hornet 4 Drive</th>
-      <td>21.4</td>
-      <td>26.4</td>
-    </tr>
-    <tr>
-      <th>Hornet Sportabout</th>
-      <td>18.7</td>
-      <td>23.7</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">ApplyResult</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mazda RX4</td>
+<td>21.0</td>
+<td>26.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Mazda RX4 Wag</td>
+<td>21.0</td>
+<td>26.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Datsun 710</td>
+<td>22.8</td>
+<td>27.8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Hornet 4 Drive</td>
+<td>21.4</td>
+<td>26.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Hornet Sportabout</td>
+<td>18.7</td>
+<td>23.7</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1271,85 +1254,86 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>7.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>NaN</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>10.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>11.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12.0</td>
-      <td>12.0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>NaN</td>
-      <td>13.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>NaN</td>
+<td>6.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>NaN</td>
+<td>9.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10.0</td>
+<td>10.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>11.0</td>
+<td>11.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>12.0</td>
+<td>12.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>NaN</td>
+<td>13.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1359,85 +1343,86 @@ Name: mpg, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no NA the whole thing</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>df2.isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>True</td>
+<td>False</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1472,85 +1457,86 @@ Name: x, dtype: bool</code></pre>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>df2.x <span class="op">=</span> df2.x.fillna(<span class="st">"MISSING"</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>MISSING</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>7.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>MISSING</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>10.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>11.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12.0</td>
-      <td>12.0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>MISSING</td>
-      <td>13.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>MISSING</td>
+<td>6.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>MISSING</td>
+<td>9.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10.0</td>
+<td>10.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>11.0</td>
+<td>11.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>12.0</td>
+<td>12.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>MISSING</td>
+<td>13.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1561,85 +1547,86 @@ Name: x, dtype: bool</code></pre>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># files the other even though I didn't specify a column</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>df2.fillna(<span class="st">"MISSING!!!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2.0</td>
-      <td>MISSING!!!</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>MISSING</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>7.0</td>
-      <td>MISSING!!!</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>MISSING</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>10.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>11.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12.0</td>
-      <td>12.0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>MISSING</td>
-      <td>13.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2.0</td>
+<td>MISSING!!!</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3.0</td>
+<td>3.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>MISSING</td>
+<td>6.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>7.0</td>
+<td>MISSING!!!</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>MISSING</td>
+<td>9.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10.0</td>
+<td>10.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>11.0</td>
+<td>11.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>12.0</td>
+<td>12.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>MISSING</td>
+<td>13.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1656,99 +1643,100 @@ Name: x, dtype: bool</code></pre>
 <span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>df3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>6.0</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>NaN</td>
-      <td>9.0</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>11.0</td>
-      <td>11.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12.0</td>
-      <td>12.0</td>
-      <td>12.0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+<th data-quarto-table-cell-role="th">z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>NaN</td>
+<td>6.0</td>
+<td>6.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8.0</td>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>NaN</td>
+<td>9.0</td>
+<td>9.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>11.0</td>
+<td>11.0</td>
+<td>11.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>12.0</td>
+<td>12.0</td>
+<td>12.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1758,63 +1746,64 @@ Name: x, dtype: bool</code></pre>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no NAs period </span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>df3.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>11.0</td>
-      <td>11.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12.0</td>
-      <td>12.0</td>
-      <td>12.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+<th data-quarto-table-cell-role="th">z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8.0</td>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">10</td>
+<td>11.0</td>
+<td>11.0</td>
+<td>11.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">11</td>
+<td>12.0</td>
+<td>12.0</td>
+<td>12.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1825,87 +1814,88 @@ Name: x, dtype: bool</code></pre>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop if the whole row is NA</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>df3.dropna(how <span class="op">=</span> <span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>6.0</td>
-      <td>6.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>NaN</td>
-      <td>9.0</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>11.0</td>
-      <td>11.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12.0</td>
-      <td>12.0</td>
-      <td>12.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+<th data-quarto-table-cell-role="th">z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>NaN</td>
+<td>6.0</td>
+<td>6.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8.0</td>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8</td>
+<td>NaN</td>
+<td>9.0</td>
+<td>9.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">10</td>
+<td>11.0</td>
+<td>11.0</td>
+<td>11.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">11</td>
+<td>12.0</td>
+<td>12.0</td>
+<td>12.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -1916,69 +1906,70 @@ Name: x, dtype: bool</code></pre>
 <div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df3.dropna(subset <span class="op">=</span> [<span class="st">"x"</span>, <span class="st">"y"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.0</td>
-      <td>1.0</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3.0</td>
-      <td>3.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.0</td>
-      <td>4.0</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>5.0</td>
-      <td>5.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>8.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>10.0</td>
-      <td>10.0</td>
-      <td>10.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>11.0</td>
-      <td>11.0</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>12.0</td>
-      <td>12.0</td>
-      <td>12.0</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+<th data-quarto-table-cell-role="th">z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>5.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7</td>
+<td>8.0</td>
+<td>8.0</td>
+<td>8.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>11.0</td>
+<td>11.0</td>
+<td>11.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>12.0</td>
+<td>12.0</td>
+<td>12.0</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2001,40 +1992,41 @@ Name: x, dtype: bool</code></pre>
 <div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"disp"</span>, <span class="st">"cyl"</span>]].groupby(by <span class="op">=</span> <span class="st">"cyl"</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>disp</th>
-    </tr>
-    <tr>
-      <th>cyl</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>4</th>
-      <td>26.663636</td>
-      <td>105.136364</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>19.742857</td>
-      <td>183.314286</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>15.100000</td>
-      <td>353.100000</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">disp</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>26.663636</td>
+<td>105.136364</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6</td>
+<td>19.742857</td>
+<td>183.314286</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>15.100000</td>
+<td>353.100000</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2047,87 +2039,88 @@ Name: x, dtype: bool</code></pre>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> pd.melt(df, id_vars <span class="op">=</span> <span class="st">"cyl"</span>, value_vars <span class="op">=</span> [<span class="st">"mpg"</span>, <span class="st">"wt"</span>])</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>df_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>cyl</th>
-      <th>variable</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>6</td>
-      <td>mpg</td>
-      <td>21.000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>6</td>
-      <td>mpg</td>
-      <td>21.000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4</td>
-      <td>mpg</td>
-      <td>22.800</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>6</td>
-      <td>mpg</td>
-      <td>21.400</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>8</td>
-      <td>mpg</td>
-      <td>18.700</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>4</td>
-      <td>wt</td>
-      <td>1.513</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>8</td>
-      <td>wt</td>
-      <td>3.170</td>
-    </tr>
-    <tr>
-      <th>61</th>
-      <td>6</td>
-      <td>wt</td>
-      <td>2.770</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>8</td>
-      <td>wt</td>
-      <td>3.570</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>4</td>
-      <td>wt</td>
-      <td>2.780</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th">variable</th>
+<th data-quarto-table-cell-role="th">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>6</td>
+<td>mpg</td>
+<td>21.000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>6</td>
+<td>mpg</td>
+<td>21.000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4</td>
+<td>mpg</td>
+<td>22.800</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>6</td>
+<td>mpg</td>
+<td>21.400</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>8</td>
+<td>mpg</td>
+<td>18.700</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">59</td>
+<td>4</td>
+<td>wt</td>
+<td>1.513</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">60</td>
+<td>8</td>
+<td>wt</td>
+<td>3.170</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">61</td>
+<td>6</td>
+<td>wt</td>
+<td>2.770</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">62</td>
+<td>8</td>
+<td>wt</td>
+<td>3.570</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">63</td>
+<td>4</td>
+<td>wt</td>
+<td>2.780</td>
+</tr>
+</tbody>
 </table>
+
 <p>64 rows × 3 columns</p>
 </div>
 </div>
@@ -2157,35 +2150,36 @@ Name: cyl, dtype: int64</code></pre>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    groupby(by <span class="op">=</span> <span class="st">"cyl"</span>).<span class="op">\</span></span>
 <span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>mpg</th>
-      <th>disp</th>
-    </tr>
-    <tr>
-      <th>cyl</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>6</th>
-      <td>19.742857</td>
-      <td>183.314286</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>15.100000</td>
-      <td>353.100000</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mpg</th>
+<th data-quarto-table-cell-role="th">disp</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">cyl</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>19.742857</td>
+<td>183.314286</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8</td>
+<td>15.100000</td>
+<td>353.100000</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -2267,9 +2261,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -2334,6 +2342,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

@@ -34,7 +34,7 @@ to make their content easier to use and increase engagement.
 ### Original Software
 
 I work on creating new software for unmet needs. One example is our <a href="https://covid.omics.kitchen/"> Bayesian COVID Diagnostics app.</a> This serves to complement our <a href="https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-06257-7"> manuscript </a> on lateral flow assays for SARS-CoV-2 antibodies as well as providing the user with an easy-to-use tool to avoid the pitfalls of black-and-white thinking about diagnostics and counter-intuitive conditional 
-probability. Another is <a href="https://omics-kitchen.github.io/ContrApption/#"> ContrApption</a>, which is a JavaScript-powered R package that allows to user to create an interactive widget for exploring the results of differential expression experiments or any dataset with similar structure.
+probability. Another is <a href="https://omics-kitchen.github.io/ContrApption/"> ContrApption</a>, which is a JavaScript-powered R package that allows to user to create an interactive widget for exploring the results of differential expression experiments or any dataset with similar structure.
 
 ### Statistics for biomarkers
 

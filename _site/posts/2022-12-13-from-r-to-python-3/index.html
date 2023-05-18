@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.258">
+<meta name="generator" content="quarto-1.3.340">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -49,43 +50,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -143,52 +114,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">Thadryan J. Sweeney, MS</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">[ What I Work On ]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html">
+    <a class="nav-link" href="../../cv.html" rel="" target="">
  <span class="menu-text">[ CV ]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">[ Drops of Jupyter ]</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ"><i class="bi bi-google" role="img">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ" rel="" target=""><i class="bi bi-google" role="img">
 </i> 
  <span class="menu-text">Scholar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/thadryanjs"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/thadryanjs" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text">Github</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://fediscience.org/@thadryanjs"><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://fediscience.org/(thadryanjs?)" rel="" target=""><i class="bi bi-mastodon" role="img">
 </i> 
  <span class="menu-text">Mastodon</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/ThadryanJS"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ThadryanJS" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text">Twitter</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/"><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/" rel="" target=""><i class="bi bi-linkedin" role="img">
 </i> 
  <span class="menu-text">LinkedIn</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -409,65 +382,134 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>linear_model.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-
-<table class="simpletable">
+<table class="simpletable table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>OLS Regression Results</caption>
-<tbody><tr>
-  <th>Dep. Variable:</th>           <td>wt</td>        <th>  R-squared:         </th> <td>   0.836</td>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Dep. Variable:</td>
+<td>wt</td>
+<td data-quarto-table-cell-role="th">R-squared:</td>
+<td>0.836</td>
 </tr>
-<tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.824</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Model:</td>
+<td>OLS</td>
+<td data-quarto-table-cell-role="th">Adj. R-squared:</td>
+<td>0.824</td>
 </tr>
-<tr>
-  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   73.65</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Method:</td>
+<td>Least Squares</td>
+<td data-quarto-table-cell-role="th">F-statistic:</td>
+<td>73.65</td>
 </tr>
-<tr>
-  <th>Date:</th>             <td>Fri, 27 Jan 2023</td> <th>  Prob (F-statistic):</th> <td>4.31e-12</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Date:</td>
+<td>Fri, 27 Jan 2023</td>
+<td data-quarto-table-cell-role="th">Prob (F-statistic):</td>
+<td>4.31e-12</td>
 </tr>
-<tr>
-  <th>Time:</th>                 <td>10:21:49</td>     <th>  Log-Likelihood:    </th> <td> -15.323</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Time:</td>
+<td>10:21:49</td>
+<td data-quarto-table-cell-role="th">Log-Likelihood:</td>
+<td>-15.323</td>
 </tr>
-<tr>
-  <th>No. Observations:</th>      <td>    32</td>      <th>  AIC:               </th> <td>   36.65</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">No. Observations:</td>
+<td>32</td>
+<td data-quarto-table-cell-role="th">AIC:</td>
+<td>36.65</td>
 </tr>
-<tr>
-  <th>Df Residuals:</th>          <td>    29</td>      <th>  BIC:               </th> <td>   41.04</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Df Residuals:</td>
+<td>29</td>
+<td data-quarto-table-cell-role="th">BIC:</td>
+<td>41.04</td>
 </tr>
-<tr>
-  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>     <td> </td>   
+<tr class="even">
+<td data-quarto-table-cell-role="th">Df Model:</td>
+<td>2</td>
+<td data-quarto-table-cell-role="th"></td>
+<td></td>
 </tr>
-<tr>
-  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Covariance Type:</td>
+<td>nonrobust</td>
+<td data-quarto-table-cell-role="th"></td>
+<td></td>
 </tr>
-</tbody></table>
-<table class="simpletable">
-<tbody><tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P&gt;|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tbody>
+</table>
+<table class="simpletable table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td></td>
+<td data-quarto-table-cell-role="th">coef</td>
+<td data-quarto-table-cell-role="th">std err</td>
+<td data-quarto-table-cell-role="th">t</td>
+<td data-quarto-table-cell-role="th">P&gt;|t|</td>
+<td data-quarto-table-cell-role="th">[0.025</td>
+<td data-quarto-table-cell-role="th">0.975]</td>
 </tr>
-<tr>
-  <th>Intercept</th> <td>    3.5627</td> <td>    0.699</td> <td>    5.094</td> <td> 0.000</td> <td>    2.132</td> <td>    4.993</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Intercept</td>
+<td>3.5627</td>
+<td>0.699</td>
+<td>5.094</td>
+<td>0.000</td>
+<td>2.132</td>
+<td>4.993</td>
 </tr>
-<tr>
-  <th>disp</th>      <td>    0.0043</td> <td>    0.001</td> <td>    3.818</td> <td> 0.001</td> <td>    0.002</td> <td>    0.007</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">disp</td>
+<td>0.0043</td>
+<td>0.001</td>
+<td>3.818</td>
+<td>0.001</td>
+<td>0.002</td>
+<td>0.007</td>
 </tr>
-<tr>
-  <th>mpg</th>       <td>   -0.0663</td> <td>    0.023</td> <td>   -2.878</td> <td> 0.007</td> <td>   -0.113</td> <td>   -0.019</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mpg</td>
+<td>-0.0663</td>
+<td>0.023</td>
+<td>-2.878</td>
+<td>0.007</td>
+<td>-0.113</td>
+<td>-0.019</td>
 </tr>
-</tbody></table>
-<table class="simpletable">
-<tbody><tr>
-  <th>Omnibus:</th>       <td> 0.431</td> <th>  Durbin-Watson:     </th> <td>   1.028</td>
+</tbody>
+</table>
+<table class="simpletable table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Omnibus:</td>
+<td>0.431</td>
+<td data-quarto-table-cell-role="th">Durbin-Watson:</td>
+<td>1.028</td>
 </tr>
-<tr>
-  <th>Prob(Omnibus):</th> <td> 0.806</td> <th>  Jarque-Bera (JB):  </th> <td>   0.579</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Prob(Omnibus):</td>
+<td>0.806</td>
+<td data-quarto-table-cell-role="th">Jarque-Bera (JB):</td>
+<td>0.579</td>
 </tr>
-<tr>
-  <th>Skew:</th>          <td> 0.187</td> <th>  Prob(JB):          </th> <td>   0.749</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Skew:</td>
+<td>0.187</td>
+<td data-quarto-table-cell-role="th">Prob(JB):</td>
+<td>0.749</td>
 </tr>
-<tr>
-  <th>Kurtosis:</th>      <td> 2.458</td> <th>  Cond. No.          </th> <td>2.52e+03</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Kurtosis:</td>
+<td>2.458</td>
+<td data-quarto-table-cell-role="th">Cond. No.</td>
+<td>2.52e+03</td>
 </tr>
-</tbody></table><br><br>Notes:<br>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br>[2] The condition number is large, 2.52e+03. This might indicate that there are<br>strong multicollinearity or other numerical problems.
+</tbody>
+</table>
+<br><br>Notes:<br>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br>[2] The condition number is large, 2.52e+03. This might indicate that there are<br>strong multicollinearity or other numerical problems.
 </div>
 </div>
 </section>
@@ -481,51 +523,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>logistic_model.summary()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-
-<table class="simpletable">
+<table class="simpletable table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>Generalized Linear Model Regression Results</caption>
-<tbody><tr>
-  <th>Dep. Variable:</th>          <td>am</td>        <th>  No. Observations:  </th>  <td>    32</td> 
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Dep. Variable:</td>
+<td>am</td>
+<td data-quarto-table-cell-role="th">No. Observations:</td>
+<td>32</td>
 </tr>
-<tr>
-  <th>Model:</th>                  <td>GLM</td>       <th>  Df Residuals:      </th>  <td>    29</td> 
+<tr class="even">
+<td data-quarto-table-cell-role="th">Model:</td>
+<td>GLM</td>
+<td data-quarto-table-cell-role="th">Df Residuals:</td>
+<td>29</td>
 </tr>
-<tr>
-  <th>Model Family:</th>        <td>Binomial</td>     <th>  Df Model:          </th>  <td>     2</td> 
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Model Family:</td>
+<td>Binomial</td>
+<td data-quarto-table-cell-role="th">Df Model:</td>
+<td>2</td>
 </tr>
-<tr>
-  <th>Link Function:</th>         <td>Logit</td>      <th>  Scale:             </th> <td>  1.0000</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Link Function:</td>
+<td>Logit</td>
+<td data-quarto-table-cell-role="th">Scale:</td>
+<td>1.0000</td>
 </tr>
-<tr>
-  <th>Method:</th>                <td>IRLS</td>       <th>  Log-Likelihood:    </th> <td> -8.5921</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Method:</td>
+<td>IRLS</td>
+<td data-quarto-table-cell-role="th">Log-Likelihood:</td>
+<td>-8.5921</td>
 </tr>
-<tr>
-  <th>Date:</th>            <td>Fri, 27 Jan 2023</td> <th>  Deviance:          </th> <td>  17.184</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Date:</td>
+<td>Fri, 27 Jan 2023</td>
+<td data-quarto-table-cell-role="th">Deviance:</td>
+<td>17.184</td>
 </tr>
-<tr>
-  <th>Time:</th>                <td>10:21:49</td>     <th>  Pearson chi2:      </th>  <td>  32.7</td> 
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Time:</td>
+<td>10:21:49</td>
+<td data-quarto-table-cell-role="th">Pearson chi2:</td>
+<td>32.7</td>
 </tr>
-<tr>
-  <th>No. Iterations:</th>          <td>7</td>        <th>  Pseudo R-squ. (CS):</th>  <td>0.5569</td> 
+<tr class="even">
+<td data-quarto-table-cell-role="th">No. Iterations:</td>
+<td>7</td>
+<td data-quarto-table-cell-role="th">Pseudo R-squ. (CS):</td>
+<td>0.5569</td>
 </tr>
-<tr>
-  <th>Covariance Type:</th>     <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Covariance Type:</td>
+<td>nonrobust</td>
+<td data-quarto-table-cell-role="th"></td>
+<td></td>
 </tr>
-</tbody></table>
-<table class="simpletable">
-<tbody><tr>
-      <td></td>         <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P&gt;|z|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tbody>
+</table>
+<table class="simpletable table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td></td>
+<td data-quarto-table-cell-role="th">coef</td>
+<td data-quarto-table-cell-role="th">std err</td>
+<td data-quarto-table-cell-role="th">z</td>
+<td data-quarto-table-cell-role="th">P&gt;|z|</td>
+<td data-quarto-table-cell-role="th">[0.025</td>
+<td data-quarto-table-cell-role="th">0.975]</td>
 </tr>
-<tr>
-  <th>Intercept</th> <td>   25.8866</td> <td>   12.194</td> <td>    2.123</td> <td> 0.034</td> <td>    1.988</td> <td>   49.785</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Intercept</td>
+<td>25.8866</td>
+<td>12.194</td>
+<td>2.123</td>
+<td>0.034</td>
+<td>1.988</td>
+<td>49.785</td>
 </tr>
-<tr>
-  <th>wt</th>        <td>   -6.4162</td> <td>    2.547</td> <td>   -2.519</td> <td> 0.012</td> <td>  -11.407</td> <td>   -1.425</td>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">wt</td>
+<td>-6.4162</td>
+<td>2.547</td>
+<td>-2.519</td>
+<td>0.012</td>
+<td>-11.407</td>
+<td>-1.425</td>
 </tr>
-<tr>
-  <th>mpg</th>       <td>   -0.3242</td> <td>    0.239</td> <td>   -1.354</td> <td> 0.176</td> <td>   -0.794</td> <td>    0.145</td>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mpg</td>
+<td>-0.3242</td>
+<td>0.239</td>
+<td>-1.354</td>
+<td>0.176</td>
+<td>-0.794</td>
+<td>0.145</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 </div>
 </section>
@@ -539,47 +635,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>anova <span class="op">=</span> sm.stats.anova_lm(anova_model)</span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>anova</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>df</th>
-      <th>sum_sq</th>
-      <th>mean_sq</th>
-      <th>F</th>
-      <th>PR(&gt;F)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>mpg</th>
-      <td>1.0</td>
-      <td>71.801048</td>
-      <td>71.801048</td>
-      <td>132.393794</td>
-      <td>2.496891e-12</td>
-    </tr>
-    <tr>
-      <th>disp</th>
-      <td>1.0</td>
-      <td>11.346399</td>
-      <td>11.346399</td>
-      <td>20.921600</td>
-      <td>8.274021e-05</td>
-    </tr>
-    <tr>
-      <th>Residual</th>
-      <td>29.0</td>
-      <td>15.727553</td>
-      <td>0.542329</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">df</th>
+<th data-quarto-table-cell-role="th">sum_sq</th>
+<th data-quarto-table-cell-role="th">mean_sq</th>
+<th data-quarto-table-cell-role="th">F</th>
+<th data-quarto-table-cell-role="th">PR(&gt;F)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">mpg</td>
+<td>1.0</td>
+<td>71.801048</td>
+<td>71.801048</td>
+<td>132.393794</td>
+<td>2.496891e-12</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">disp</td>
+<td>1.0</td>
+<td>11.346399</td>
+<td>11.346399</td>
+<td>20.921600</td>
+<td>8.274021e-05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Residual</td>
+<td>29.0</td>
+<td>15.727553</td>
+<td>0.542329</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -638,9 +735,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -705,6 +816,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

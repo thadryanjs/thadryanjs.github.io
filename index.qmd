@@ -26,7 +26,7 @@ I'm a Firefighter and Human Services Professional turned Data Scientist interest
 
 I'm currently pursing a PhD in <a href="https://geiselmed.dartmouth.edu/qbs/">Quantitative Biomedical Sciences</a>, where I am advised by <a href="https://wesleymarrero.wixsite.com/home"> Wesley Marrero </a> of the <a href="https://or.engineering.dartmouth.edu"> Operations Research Group</a>. My research focuses on finding optimal policy-level treatment strategies for opioid use disorder treatment using reinforcement learning as well as traditional biostatistics. I'm also working on more general epidemiological projects related to disparities in access to treatment for opioid use disorder.
 
-Before starting my doctorate, I worked at Mass General Hospital evaluating biomarkers in the <a href="https://www.actru.org/"> Alzheimer's Clinical & Translational Research Unit.</a> and the <a href="https://cvrc.massgeneral.org/"> Cardiovascular Research Center.</a>
+Before starting my doctorate, I worked at Mass General Hospital evaluating biomarkers in the <a href="https://www.actru.org/"> Alzheimer's Clinical & Translational Research Unit </a> and the <a href="https://cvrc.massgeneral.org/"> Cardiovascular Research Center.</a>
 
 I also taught an introductory class in the
 <a href="https://www.northeastern.edu/graduate/program/master-of-science-in-bioinformatics-online-14245/">Bioinformatics MS </a>

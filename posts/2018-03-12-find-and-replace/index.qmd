@@ -2,7 +2,7 @@
 author: "Thadryan"
 title: "Find and replace in Python"
 date: "2018-03-12"
-description: "Like ctrl-f with for Python."
+description: "Like ctrl-f with Python."
 categories:
   - Python
   - Data Processing
@@ -73,7 +73,7 @@ There is a final kink in this however. What would happen if one of the single ch
 # the middle "ABC" has been replaced with just an "C"
 s = "HEREABCISABCACSAMPLEABCSTRING"
 
-# ...which we see 
+# ...which we see
 find_replace_multi(s,d)
 ```
 

@@ -3,7 +3,7 @@ title: ""
 layout: article
 image: assets/pic.jpg
 about:
-  template: jolla 
+  template: jolla
   links:
     - icon: google
       text: Scholar
@@ -21,17 +21,18 @@ about:
       text: LinkedIn
       href: https://www.linkedin.com/in/thadryan-sweeney-10b938a/
 ---
-I'm a Firefighter and Human Services Professional turned Data Scientist interested in statistics, interactive visualization, and biomarker discovery. I do statistically oriented biology research using R, Python, and JavaScript. I'm currently pursing a PhD in <a href="https://geiselmed.dartmouth.edu/qbs/">Quantitative Biomedical Sciences</a>.
 
-Before starting my doctorate, I was at Mass General Hospital where I worked in the <a href="https://www.actru.org/"> Alzheimer's Clinical & Translational Research Unit.</a> 
-Before moving to ACTRU, I did statistics and web app development for studies of SARS-Cov-2 and various heart diseases
-at the <a href="https://cvrc.massgeneral.org/"> Cardiovascular Research Center.</a> 
+I'm a Firefighter and Human Services Professional turned Data Scientist interested in statistical approaches to understanding and optimizing biomedical systems large and small. My goal is to conduct that leads to more efficient use of resources, more personalized care, and reduces friction and suffering. You might call it <a href=https://d3.harvard.edu/platform-digit/submission/optum-using-moneyball-analytics-to-provided-better-insights-in-healthcare/"> Biomedical Moneyball </a>.
 
-I also taught an introductory class in the 
+I'm currently pursing a PhD in <a href="https://geiselmed.dartmouth.edu/qbs/">Quantitative Biomedical Sciences</a>, where I am advised by <a href="https://wesleymarrero.wixsite.com/home"> Wesley Marrero </a> of the <a href="https://or.engineering.dartmouth.edu"> Operations Research Group</a>. My research focuses on finding optimal policy-level treatment strategies for opioid use disorder treatment using reinforcement learning as well as traditional biostatistics. I'm also working on more general epidemiological projects related to disparities in access to treatment for opioid use disorder.
+
+Before starting my doctorate, I worked at Mass General Hospital evaluating biomarkers in the <a href="https://www.actru.org/"> Alzheimer's Clinical & Translational Research Unit.</a> and the <a href="https://cvrc.massgeneral.org/"> Cardiovascular Research Center.</a>
+
+I also taught an introductory class in the
 <a href="https://www.northeastern.edu/graduate/program/master-of-science-in-bioinformatics-online-14245/">Bioinformatics MS </a>
-program at Northeastern University. If you're interested in seeing what I'm working on professionally, check out my <a href="/CV"> CV </a>.
+program at Northeastern University.
 
-When I'm not doing science-y stuff, I play RPGs, write music, or make cartoons.
+When I'm not doing science-y stuff, I play RPGs or make cartoons.
 
 Of the links below, <a rel="me" href="https://fediscience.org/@thadryanjs">Mastodon</a> is my preferred platform.
 

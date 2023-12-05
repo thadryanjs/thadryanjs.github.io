@@ -3,7 +3,7 @@ title: "[ What I Work On ]"
 page-layout: full
 toc: true
 about:
-  template: jolla 
+  template: jolla
   links:
     - icon: google
       text: Scholar
@@ -22,29 +22,34 @@ about:
       href: https://www.linkedin.com/in/thadryan-sweeney-10b938a/
 ---
 
-      
-My work falls roughly into five (often overlapping) spheres. 
+## Research Focus
+
+I'm interested in statistical methods to reduce disparities and inefficiencies in healthcare. The current form this takes is biostatistical and reinforcement learning approaches to understanding and improving health outcomes in opioid use disorder.
+
+Before starting my PhD, this took the form of trying to identify biomarkers for Alzheimer's Dementia, Heart Failure, and COVID-19. The overarching goal was to find reliable markers of disease or to compare existing methods to determine which diagnostic approach was optimal in terms of expense or invasivness.
+
+## Previous Work
+
+Before starting my PhD, my work fell roughly into five (often overlapping) spheres.
 
 ### General Research Programming
 
-I work on <a href="https://microrna-atlas.omics.kitchen/"> apps </a>
-that complement <a href="https://www.frontiersin.org/articles/10.3389/fcell.2022.804164/full"> publications </a> 
+I worked on <a href="https://microrna-atlas.omics.kitchen/"> apps </a>
+that complement <a href="https://www.frontiersin.org/articles/10.3389/fcell.2022.804164/full"> publications </a>
 to make their content easier to use and increase engagement.
 
 ### Original Software
 
-I work on creating new software for unmet needs. One example is our <a href="https://covid.omics.kitchen/"> Bayesian COVID Diagnostics app.</a> This serves to complement our <a href="https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-06257-7"> manuscript </a> on lateral flow assays for SARS-CoV-2 antibodies as well as providing the user with an easy-to-use tool to avoid the pitfalls of black-and-white thinking about diagnostics and counter-intuitive conditional 
+I worked on creating new software for unmet needs. One example is our <a href="https://covid.omics.kitchen/"> Bayesian COVID Diagnostics app.</a> This serves to complement our <a href="https://bmcinfectdis.biomedcentral.com/articles/10.1186/s12879-021-06257-7"> manuscript </a> on lateral flow assays for SARS-CoV-2 antibodies as well as providing the user with an easy-to-use tool to avoid the pitfalls of black-and-white thinking about diagnostics and counter-intuitive conditional
 probability. Another is <a href="https://omics-kitchen.github.io/ContrApption/"> ContrApption</a>, which is a JavaScript-powered R package that allows to user to create an interactive widget for exploring the results of differential expression experiments or any dataset with similar structure.
 
 ### Statistics for biomarkers
 
-I work on statistical analysis for biomarkers of potential use in Alzheimer's Dementia and Neurological symptoms of COVID-19. 
-We've got two manuscripts submitted and a few more nearing completion in the sphere, so stay tuned and see my CV for the titles
-if you're curious.
+I worked on statistical analysis for biomarkers of potential use in Alzheimer's Dementia and Neurological symptoms of COVID-19. Publications related to this can be found on my <a href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ&hl=en"> Google Scholar </a> page.
 
 ### Statistics and genomics for basic science
 
-For an example of this, check out our <a href="https://www.biorxiv.org/content/10.1101/2021.09.03.458085v1"> manuscript </a>
+For an example of this, check out our <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/advs.202200829"> manuscript </a>
 on stress-dependent signatures of cellular and extracellular tRNA-derived small RNAs (tDRs). We're interested in this from a basic science perspective as well as a potential avenue of biomarkers for diseases.
 
 ### "Hacktivism"

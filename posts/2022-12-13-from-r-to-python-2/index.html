@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -82,7 +82,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -107,10 +114,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Thadryan J. Sweeney, MS</span>
     </a>
@@ -122,48 +129,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">[ What I Work On ]</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">[ What I Work On ]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html" rel="" target="">
- <span class="menu-text">[ CV ]</span></a>
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">[ CV ]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
- <span class="menu-text">[ Drops of Jupyter ]</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">[ Drops of Jupyter ]</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ" rel="" target=""><i class="bi bi-google" role="img">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ"> <i class="bi bi-google" role="img">
 </i> 
- <span class="menu-text">Scholar</span></a>
+<span class="menu-text">Scholar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/thadryanjs" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/thadryanjs"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text">Github</span></a>
+<span class="menu-text">Github</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://fediscience.org/(thadryanjs?)" rel="" target=""><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://fediscience.org/@thadryanjs"> <i class="bi bi-mastodon" role="img">
 </i> 
- <span class="menu-text">Mastodon</span></a>
+<span class="menu-text">Mastodon</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/ThadryanJS" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ThadryanJS"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text">Twitter</span></a>
+<span class="menu-text">Twitter</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text">LinkedIn</span></a>
+<span class="menu-text">LinkedIn</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -238,6 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -362,7 +370,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: xlabel='mpg', ylabel='disp'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-4-output-2.png" width="600" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-2.png" width="600" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="line-plot-by-factor" class="level3">
@@ -374,7 +386,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: xlabel='mpg', ylabel='disp'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-5-output-2.png" width="600" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-2.png" width="600" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -603,7 +619,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: xlabel='cyl', ylabel='value'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-7-output-2.png" width="585" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-7-output-2.png" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Or, use <code>lmplot</code> to git a linear model like you’d get with <code>geom_smooth(method = lm)</code>.</p>
@@ -613,7 +633,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f5d567270d0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-8-output-2.png" width="470" height="470"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-output-2.png" width="470" height="470" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -626,7 +650,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: xlabel='cyl', ylabel='mpg'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-9-output-2.png" width="585" height="433"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-9-output-2.png" width="585" height="433" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -638,7 +666,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: xlabel='wt', ylabel='Count'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-10-output-2.png" width="585" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-2.png" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -650,7 +682,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: xlabel='disp', ylabel='Density'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-11-output-2.png" width="614" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-11-output-2.png" width="614" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -662,7 +698,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-12-output-2.png" width="650" height="412"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-12-output-2.png" width="650" height="412" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -676,7 +716,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: ylabel='Density'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-13-output-2.png" width="606" height="411"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-13-output-2.png" width="606" height="411" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -688,7 +732,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-14-output-2.png" width="580" height="411"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-14-output-2.png" width="580" height="411" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -705,7 +753,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;seaborn.axisgrid.FacetGrid at 0x7f5d55cf2590&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-15-output-2.png" width="566" height="566"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-15-output-2.png" width="566" height="566" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The initial display is automatic. If you want to show the same plot again, access the <code>figure</code> property of the object.</p>
@@ -719,7 +771,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>grid.figure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<p><img src="index_files/figure-html/cell-17-output-1.png" width="566" height="566"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-17-output-1.png" width="566" height="566" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -732,10 +788,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>p_line <span class="op">=</span> sns.lineplot(df.loc[:, [<span class="st">"mpg"</span>, <span class="st">"wt"</span>]])</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>p_line.figure </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-<p><img src="index_files/figure-html/cell-18-output-1.png" width="580" height="411"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-18-output-1.png" width="580" height="411" class="figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-18-output-2.png" width="580" height="411"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-18-output-2.png" width="580" height="411" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The syntax is a little awkward. Essentially there is a set method, and you use a get method to retrieve the labels to pass into it, specifying a rotation.</p>
@@ -748,7 +812,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   p_line.set_xticklabels(p_line.get_xticklabels(), rotation = 45)</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="18">
-<p><img src="index_files/figure-html/cell-19-output-2.png" width="573" height="498"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-19-output-2.png" width="573" height="498" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>They still conflict a little. We can make them a little smaller overall. The technique is the same, just setting a different property.</p>
@@ -760,7 +828,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   p_line.set_xticklabels(p_line.get_xticklabels(), size = 5)</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="19">
-<p><img src="index_files/figure-html/cell-20-output-2.png" width="566" height="449"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-20-output-2.png" width="566" height="449" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -771,7 +843,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>p_line.figure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
-<p><img src="index_files/figure-html/cell-21-output-1.png" width="566" height="468"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-21-output-1.png" width="566" height="468" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -790,7 +866,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>p_box <span class="op">=</span> sns.boxplot(df, x <span class="op">=</span> <span class="st">"cyl"</span>, y <span class="op">=</span> <span class="st">"mpg"</span>, palette <span class="op">=</span> <span class="st">"dark"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-23-output-1.png" width="585" height="433"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-23-output-1.png" width="585" height="433" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -808,7 +888,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>&lt;AxesSubplot: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-25-output-2.png" width="650" height="412"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-25-output-2.png" width="650" height="412" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -898,10 +982,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -911,8 +994,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -925,6 +1017,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -968,6 +1179,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -993,6 +1205,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1053,6 +1291,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

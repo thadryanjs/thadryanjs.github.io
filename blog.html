@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -95,16 +102,43 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Thadryan J. Sweeney, MS</span>
     </a>
@@ -116,48 +150,48 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">[ What I Work On ]</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">[ What I Work On ]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html" rel="" target="">
- <span class="menu-text">[ CV ]</span></a>
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">[ CV ]</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
- <span class="menu-text">[ Drops of Jupyter ]</span></a>
+    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+<span class="menu-text">[ Drops of Jupyter ]</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ" rel="" target=""><i class="bi bi-google" role="img">
+    <a class="nav-link" href="https://scholar.google.com/citations?user=KLdJrhgAAAAJ"> <i class="bi bi-google" role="img">
 </i> 
- <span class="menu-text">Scholar</span></a>
+<span class="menu-text">Scholar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/thadryanjs" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/thadryanjs"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text">Github</span></a>
+<span class="menu-text">Github</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://fediscience.org/@thadryanjs" rel="" target=""><i class="bi bi-mastodon" role="img">
+    <a class="nav-link" href="https://fediscience.org/@thadryanjs"> <i class="bi bi-mastodon" role="img">
 </i> 
- <span class="menu-text">Mastodon</span></a>
+<span class="menu-text">Mastodon</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/ThadryanJS" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ThadryanJS"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text">Twitter</span></a>
+<span class="menu-text">Twitter</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/thadryan-sweeney-10b938a/"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text">LinkedIn</span></a>
+<span class="menu-text">LinkedIn</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -170,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -186,6 +220,7 @@ ul.task-list li input[type="checkbox"] {
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(31)</span></div><div class="category" data-category="Academia">Academia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Advice">Advice <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Analysis">Analysis <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Antigens">Antigens <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Bioinformatics">Bioinformatics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Processing">Data Processing <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Differential Expression">Differential Expression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Functional Programming">Functional Programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="JavaScript">JavaScript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Linux">Linux <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NLP">NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Object-Oriented Programming">Object-Oriented Programming <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Opioids">Opioids <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Perl">Perl <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Publications">Publications <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(10)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Research">Research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Sociopolitical">Sociopolitical <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Statistics">Statistics <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Tools">Tools <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
 
 
 
@@ -225,25 +260,25 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1671253200000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1671253200000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1722">
 <div class="thumbnail">
-<p><a href="./posts/2022-12-17-multiple-testing-correction/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2022-12-17-multiple-testing-correction/index.html" class="no-external"></a></p><a href="./posts/2022-12-17-multiple-testing-correction/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2022-12-17-multiple-testing-correction/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-12-17-multiple-testing-correction/index.html">
 <h3 class="no-anchor listing-title">
-Multiple testing correction for family-wise error-rate and false discovery rate
+<a href="./posts/2022-12-17-multiple-testing-correction/index.html" class="no-external">Multiple testing correction for family-wise error-rate and false discovery rate</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-12-17-multiple-testing-correction/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Re-implementing for knowledge and profit(?).</p>
+<a href="./posts/2022-12-17-multiple-testing-correction/index.html" class="no-external">Re-implementing for knowledge and profit(?).</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-12-17-multiple-testing-correction/index.html">
+<a href="./posts/2022-12-17-multiple-testing-correction/index.html" class="no-external">
 <div class="listing-date">
 Dec 17, 2022
 </div>
@@ -253,25 +288,25 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1670907600000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1670907600000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="369">
 <div class="thumbnail">
-<p><a href="./posts/2022-12-13-from-r-to-python-3/index.html"> <p class="card-img-top"><img src="posts/2022-12-13-from-r-to-python-3/index_files/figure-html/cell-6-output-2.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/2022-12-13-from-r-to-python-3/index.html" class="no-external"></a></p><a href="./posts/2022-12-13-from-r-to-python-3/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2022-12-13-from-r-to-python-3/index_files/figure-html/cell-6-output-2.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2022-12-13-from-r-to-python-3/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-12-13-from-r-to-python-3/index.html">
 <h3 class="no-anchor listing-title">
-Stats Python in a Hurry Part 3: Simulation, Basic Analysis, &amp; Modeling
+<a href="./posts/2022-12-13-from-r-to-python-3/index.html" class="no-external">Stats Python in a Hurry Part 3: Simulation, Basic Analysis, &amp; Modeling</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-12-13-from-r-to-python-3/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Transferring the basics of my R modeling knowledge back to my first language.</p>
+<a href="./posts/2022-12-13-from-r-to-python-3/index.html" class="no-external">Transferring the basics of my R modeling knowledge back to my first language.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-12-13-from-r-to-python-3/index.html">
+<a href="./posts/2022-12-13-from-r-to-python-3/index.html" class="no-external">
 <div class="listing-date">
 Dec 13, 2022
 </div>
@@ -281,25 +316,25 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1670821200000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1670821200000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
 <div class="thumbnail">
-<p><a href="./posts/2022-12-13-from-r-to-python-2/index.html"> <p class="card-img-top"><img src="posts/2022-12-13-from-r-to-python-2/index_files/figure-html/cell-4-output-2.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/2022-12-13-from-r-to-python-2/index.html" class="no-external"></a></p><a href="./posts/2022-12-13-from-r-to-python-2/index.html" class="no-external">
+<p class="card-img-top"><img src="posts/2022-12-13-from-r-to-python-2/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAABACAYAAABsv8+/AAAAE3RFWHRUaXRsZQBtYWtvIGNvbG9ybWFwf+ab6gAAABl0RVh0RGVzY3JpcHRpb24AbWFrbyBjb2xvcm1hcPRUC3IAAAAwdEVYdEF1dGhvcgBNYXRwbG90bGliIHYzLjYuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZ9RFxVEAAAAydEVYdFNvZnR3YXJlAE1hdHBsb3RsaWIgdjMuNi4zLCBodHRwczovL21hdHBsb3RsaWIub3Jn+uNadgAAAg1JREFUeJzt1juS2zAURcEHsBx5/+vVJJRcBAFDnPR2Jyx8SY0dnPb3+POqqmqtVVVVq/PZel3mP+vj/GK8vGcY7/Y9Xv/dubp91/xcLX/e30xv7h/nK9f3le3+97j+e/89zuu++7nh3urTedrcc9+/f/j12q9t2F9Pv7M93FfLe6rzb6az7f3/HVc13/G+/r2/vl7bs/+3b7l+7fnN+8fvv/r967uv90zP9++Pj/f1zbf0xb3rM618f4+Pzee38739t2+zbMP37Vcb69hfF1/+jwW46OG8fmi47ZvnG+P5vtt/vpcrY/z/fzDfdafzp/jfv4H7eN8u84fNZ9/es9yfwEAcQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQ6AcTSxI150SdAwAAAABJRU5ErkJggg==" alt="mako colormap" title="mako" class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2022-12-13-from-r-to-python-2/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-12-13-from-r-to-python-2/index.html">
 <h3 class="no-anchor listing-title">
-Stats Python in a Hurry Part 2: Visualization
+<a href="./posts/2022-12-13-from-r-to-python-2/index.html" class="no-external">Stats Python in a Hurry Part 2: Visualization</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-12-13-from-r-to-python-2/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Transferring my R data viz knowledge back to my first language.</p>
+<a href="./posts/2022-12-13-from-r-to-python-2/index.html" class="no-external">Transferring my R data viz knowledge back to my first language.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-12-13-from-r-to-python-2/index.html">
+<a href="./posts/2022-12-13-from-r-to-python-2/index.html" class="no-external">
 <div class="listing-date">
 Dec 12, 2022
 </div>
@@ -309,25 +344,25 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1670734800000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1670734800000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="629">
 <div class="thumbnail">
-<p><a href="./posts/2022-12-13-from-r-to-python-1/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2022-12-13-from-r-to-python-1/index.html" class="no-external"></a></p><a href="./posts/2022-12-13-from-r-to-python-1/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2022-12-13-from-r-to-python-1/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-12-13-from-r-to-python-1/index.html">
 <h3 class="no-anchor listing-title">
-Stats Python in a Hurry Part 1: Data Wrangling
+<a href="./posts/2022-12-13-from-r-to-python-1/index.html" class="no-external">Stats Python in a Hurry Part 1: Data Wrangling</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-12-13-from-r-to-python-1/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Transferring my R data-munging knowledge back to my first language.</p>
+<a href="./posts/2022-12-13-from-r-to-python-1/index.html" class="no-external">Transferring my R data-munging knowledge back to my first language.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-12-13-from-r-to-python-1/index.html">
+<a href="./posts/2022-12-13-from-r-to-python-1/index.html" class="no-external">
 <div class="listing-date">
 Dec 11, 2022
 </div>
@@ -337,19 +372,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Opioids,Research" data-listing-date-sort="1670648400000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="4" data-categories="Opioids,Research" data-listing-date-sort="1670648400000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1383">
 <div class="thumbnail">
-<p><a href="./posts/2022-12-10-opiods/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2022-12-10-opiods/index.html" class="no-external"></a></p><a href="./posts/2022-12-10-opiods/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2022-12-10-opiods/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2022-12-10-opiods/index.html">
 <h3 class="no-anchor listing-title">
-Summarizing a review of contributors to the opioid epidemic
+<a href="./posts/2022-12-10-opiods/index.html" class="no-external">Summarizing a review of contributors to the opioid epidemic</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2022-12-10-opiods/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Opioids'); return false;">
 Opioids
@@ -358,14 +393,12 @@ Opioids
 Research
 </div>
 </div>
-<a href="./posts/2022-12-10-opiods/index.html">
 <div class="listing-description">
-<p>A concise summary of Cerdá, et al with some additional fundamentals.</p>
+<a href="./posts/2022-12-10-opiods/index.html" class="no-external">A concise summary of Cerdá, et al with some additional fundamentals.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2022-12-10-opiods/index.html">
+<a href="./posts/2022-12-10-opiods/index.html" class="no-external">
 <div class="listing-date">
 Dec 10, 2022
 </div>
@@ -375,19 +408,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="Academia,Advice" data-listing-date-sort="1632888000000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19">
+<div class="quarto-post image-right" data-index="5" data-categories="Academia,Advice" data-listing-date-sort="1632888000000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="19" data-listing-word-count-sort="3638">
 <div class="thumbnail">
-<p><a href="./posts/2021-09-29-survival-guide/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2021-09-29-survival-guide/index.html" class="no-external"></a></p><a href="./posts/2021-09-29-survival-guide/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2021-09-29-survival-guide/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-09-29-survival-guide/index.html">
 <h3 class="no-anchor listing-title">
-A Survival Guide for Students Starting an MS in Bioinformatics
+<a href="./posts/2021-09-29-survival-guide/index.html" class="no-external">A Survival Guide for Students Starting an MS in Bioinformatics</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-09-29-survival-guide/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Academia'); return false;">
 Academia
@@ -396,14 +429,12 @@ Academia
 Advice
 </div>
 </div>
-<a href="./posts/2021-09-29-survival-guide/index.html">
 <div class="listing-description">
-<p>Some lessons learned in grad school.</p>
+<a href="./posts/2021-09-29-survival-guide/index.html" class="no-external">Some lessons learned in grad school.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-09-29-survival-guide/index.html">
+<a href="./posts/2021-09-29-survival-guide/index.html" class="no-external">
 <div class="listing-date">
 Sep 29, 2021
 </div>
@@ -413,32 +444,30 @@ Thadyan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="Tools" data-listing-date-sort="1611032400000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="6" data-categories="Tools" data-listing-date-sort="1611032400000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="92">
 <div class="thumbnail">
-<p><a href="./posts/2021-01-19-retraction-watch/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2021-01-19-retraction-watch/index.html" class="no-external"></a></p><a href="./posts/2021-01-19-retraction-watch/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2021-01-19-retraction-watch/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-01-19-retraction-watch/index.html">
 <h3 class="no-anchor listing-title">
-Rygor: a Retraction Watch database companion
+<a href="./posts/2021-01-19-retraction-watch/index.html" class="no-external">Rygor: a Retraction Watch database companion</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-01-19-retraction-watch/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Tools'); return false;">
 Tools
 </div>
 </div>
-<a href="./posts/2021-01-19-retraction-watch/index.html">
 <div class="listing-description">
-<p>A command line tool to check a list of citations against The Retraction Watch Database</p>
+<a href="./posts/2021-01-19-retraction-watch/index.html" class="no-external">A command line tool to check a list of citations against The Retraction Watch Database</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-01-19-retraction-watch/index.html">
+<a href="./posts/2021-01-19-retraction-watch/index.html" class="no-external">
 <div class="listing-date">
 Jan 19, 2021
 </div>
@@ -448,32 +477,30 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="Sociopolitical" data-listing-date-sort="1610946000000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="7" data-categories="Sociopolitical" data-listing-date-sort="1610946000000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="76">
 <div class="thumbnail">
-<p><a href="./posts/2021-01-26-mlk/index.html"> <p class="card-img-top"><img src="assets/MLK/2021/initials.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/2021-01-26-mlk/index.html" class="no-external"></a></p><a href="./posts/2021-01-26-mlk/index.html" class="no-external">
+<p class="card-img-top"><img src="assets/MLK/2021/initials.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2021-01-26-mlk/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-01-26-mlk/index.html">
 <h3 class="no-anchor listing-title">
-In Honor of MLK 2021: “I Have A Dream” Wordclouds Revisited
+<a href="./posts/2021-01-26-mlk/index.html" class="no-external">In Honor of MLK 2021: “I Have A Dream” Wordclouds Revisited</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-01-26-mlk/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Sociopolitical'); return false;">
 Sociopolitical
 </div>
 </div>
-<a href="./posts/2021-01-26-mlk/index.html">
 <div class="listing-description">
-<p>Some more wordclouds to celebrate the day.</p>
+<a href="./posts/2021-01-26-mlk/index.html" class="no-external">Some more wordclouds to celebrate the day.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-01-26-mlk/index.html">
+<a href="./posts/2021-01-26-mlk/index.html" class="no-external">
 <div class="listing-date">
 Jan 18, 2021
 </div>
@@ -483,19 +510,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="Tools,Publications,Statistics,JavaScript" data-listing-date-sort="1610082000000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="8" data-categories="Tools,Publications,Statistics,JavaScript" data-listing-date-sort="1610082000000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88">
 <div class="thumbnail">
-<p><a href="./posts/2021-01-08-preprint-and-app/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2021-01-08-preprint-and-app/index.html" class="no-external"></a></p><a href="./posts/2021-01-08-preprint-and-app/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2021-01-08-preprint-and-app/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2021-01-08-preprint-and-app/index.html">
 <h3 class="no-anchor listing-title">
-An interactive Bayseian app for interpretation of SARS-CoV-2 antibody tests
+<a href="./posts/2021-01-08-preprint-and-app/index.html" class="no-external">An interactive Bayseian app for interpretation of SARS-CoV-2 antibody tests</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2021-01-08-preprint-and-app/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Tools'); return false;">
 Tools
@@ -510,14 +537,12 @@ Statistics
 JavaScript
 </div>
 </div>
-<a href="./posts/2021-01-08-preprint-and-app/index.html">
 <div class="listing-description">
-<p>A webapp to complement our recent paper.</p>
+<a href="./posts/2021-01-08-preprint-and-app/index.html" class="no-external">A webapp to complement our recent paper.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2021-01-08-preprint-and-app/index.html">
+<a href="./posts/2021-01-08-preprint-and-app/index.html" class="no-external">
 <div class="listing-date">
 Jan 8, 2021
 </div>
@@ -527,19 +552,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Sociopolitical,Analysis" data-listing-date-sort="1594440000000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="9" data-categories="Sociopolitical,Analysis" data-listing-date-sort="1594440000000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="88">
 <div class="thumbnail">
-<p><a href="./posts/2020-07-11-fact-check-quote/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2020-07-11-fact-check-quote/index.html" class="no-external"></a></p><a href="./posts/2020-07-11-fact-check-quote/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2020-07-11-fact-check-quote/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-07-11-fact-check-quote/index.html">
 <h3 class="no-anchor listing-title">
-Fact Check: The Quote Heather Mac Donald presents when discussing Johnson et al comes from a passage of a pre-print that does not appear in the published work.
+<a href="./posts/2020-07-11-fact-check-quote/index.html" class="no-external">Fact Check: The Quote Heather Mac Donald presents when discussing Johnson et al comes from a passage of a pre-print that does not appear in the published work.</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-07-11-fact-check-quote/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Sociopolitical'); return false;">
 Sociopolitical
@@ -548,14 +573,12 @@ Sociopolitical
 Analysis
 </div>
 </div>
-<a href="./posts/2020-07-11-fact-check-quote/index.html">
 <div class="listing-description">
-<p>More bad form.</p>
+<a href="./posts/2020-07-11-fact-check-quote/index.html" class="no-external">More bad form.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-07-11-fact-check-quote/index.html">
+<a href="./posts/2020-07-11-fact-check-quote/index.html" class="no-external">
 <div class="listing-date">
 Jul 11, 2020
 </div>
@@ -565,19 +588,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="Sociopolitical,Analysis" data-listing-date-sort="1594353600000" data-listing-file-modified-sort="1701793369757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="10" data-categories="Sociopolitical,Analysis" data-listing-date-sort="1594353600000" data-listing-file-modified-sort="1701793370757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="435">
 <div class="thumbnail">
-<p><a href="./posts/2020-07-10-hmd-removed-quote/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2020-07-10-hmd-removed-quote/index.html" class="no-external"></a></p><a href="./posts/2020-07-10-hmd-removed-quote/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2020-07-10-hmd-removed-quote/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-07-10-hmd-removed-quote/index.html">
 <h3 class="no-anchor listing-title">
-Evidence Heather Mac Donald Presented A Pre-print Claim That Was Remove In Peer Review As Scientific
+<a href="./posts/2020-07-10-hmd-removed-quote/index.html" class="no-external">Evidence Heather Mac Donald Presented A Pre-print Claim That Was Remove In Peer Review As Scientific</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-07-10-hmd-removed-quote/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Sociopolitical'); return false;">
 Sociopolitical
@@ -586,14 +609,12 @@ Sociopolitical
 Analysis
 </div>
 </div>
-<a href="./posts/2020-07-10-hmd-removed-quote/index.html">
 <div class="listing-description">
-<p>More details on a previously observed biff from HMD.</p>
+<a href="./posts/2020-07-10-hmd-removed-quote/index.html" class="no-external">More details on a previously observed biff from HMD.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-07-10-hmd-removed-quote/index.html">
+<a href="./posts/2020-07-10-hmd-removed-quote/index.html" class="no-external">
 <div class="listing-date">
 Jul 10, 2020
 </div>
@@ -603,19 +624,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="Sociopolitical,Analysis" data-listing-date-sort="1594267200000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="11" data-categories="Sociopolitical,Analysis" data-listing-date-sort="1594267200000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="824">
 <div class="thumbnail">
-<p><a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html" class="no-external"></a></p><a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html">
 <h3 class="no-anchor listing-title">
-Letter - “The Myth of Systemic Police Racism” is full of statistical and journalistic errors
+<a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html" class="no-external">Letter - “The Myth of Systemic Police Racism” is full of statistical and journalistic errors</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Sociopolitical'); return false;">
 Sociopolitical
@@ -624,14 +645,12 @@ Sociopolitical
 Analysis
 </div>
 </div>
-<a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html">
 <div class="listing-description">
-<p>Applying some more skepticism to a recent WSJ Op-ed, because it deserves it.</p>
+<a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html" class="no-external">Applying some more skepticism to a recent WSJ Op-ed, because it deserves it.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html">
+<a href="./posts/2020-07-09-the-myth-of-police-racism-debunk2/index.html" class="no-external">
 <div class="listing-date">
 Jul 9, 2020
 </div>
@@ -641,19 +660,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="Sociopolitical,Analysis" data-listing-date-sort="1593230400000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="12" data-categories="Sociopolitical,Analysis" data-listing-date-sort="1593230400000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="193">
 <div class="thumbnail">
-<p><a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html" class="no-external"></a></p><a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html">
 <h3 class="no-anchor listing-title">
-Video - “The Myth of Systemic Police Racism” is full of statistical and journalistic errors
+<a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html" class="no-external">Video - “The Myth of Systemic Police Racism” is full of statistical and journalistic errors</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Sociopolitical'); return false;">
 Sociopolitical
@@ -662,14 +681,12 @@ Sociopolitical
 Analysis
 </div>
 </div>
-<a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html">
 <div class="listing-description">
-<p>Applying some skepticism to a recent WSJ Op-ed</p>
+<a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html" class="no-external">Applying some skepticism to a recent WSJ Op-ed</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html">
+<a href="./posts/2020-06-27-the-myth-of-police-racism-debunk1/index.html" class="no-external">
 <div class="listing-date">
 Jun 27, 2020
 </div>
@@ -679,19 +696,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="R,Bioinformatics,Statistics,Differential Expression,Tools" data-listing-date-sort="1587960000000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="13" data-categories="R,Bioinformatics,Statistics,Differential Expression,Tools" data-listing-date-sort="1587960000000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="185">
 <div class="thumbnail">
-<p><a href="./posts/2020-04-27-r-type-error/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2020-04-27-r-type-error/index.html" class="no-external"></a></p><a href="./posts/2020-04-27-r-type-error/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2020-04-27-r-type-error/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-04-27-r-type-error/index.html">
 <h3 class="no-anchor listing-title">
-A Case study in Silent Data Corruption in an RNA-Seq Experiment
+<a href="./posts/2020-04-27-r-type-error/index.html" class="no-external">A Case study in Silent Data Corruption in an RNA-Seq Experiment</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-04-27-r-type-error/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
@@ -709,14 +726,12 @@ Differential Expression
 Tools
 </div>
 </div>
-<a href="./posts/2020-04-27-r-type-error/index.html">
 <div class="listing-description">
-<p>How a subtle bug and misleading error message can transform your RNA-Seq data.</p>
+<a href="./posts/2020-04-27-r-type-error/index.html" class="no-external">How a subtle bug and misleading error message can transform your RNA-Seq data.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-04-27-r-type-error/index.html">
+<a href="./posts/2020-04-27-r-type-error/index.html" class="no-external">
 <div class="listing-date">
 Apr 27, 2020
 </div>
@@ -726,32 +741,30 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="14" data-categories="Linux" data-listing-date-sort="1585540800000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13">
+<div class="quarto-post image-right" data-index="14" data-categories="Linux" data-listing-date-sort="1585540800000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2545">
 <div class="thumbnail">
-<p><a href="./posts/2020-03-30-arch-linux-virtual-box/index.html"> <p class="card-img-top"><img src="http://pythoninthewyld.com/wp-content/uploads/2020/03/install_loadScreen.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/2020-03-30-arch-linux-virtual-box/index.html" class="no-external"></a></p><a href="./posts/2020-03-30-arch-linux-virtual-box/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2020-03-30-arch-linux-virtual-box/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-03-30-arch-linux-virtual-box/index.html">
 <h3 class="no-anchor listing-title">
-How to install Arch Linux on a VirtualBox VM
+<a href="./posts/2020-03-30-arch-linux-virtual-box/index.html" class="no-external">How to install Arch Linux on a VirtualBox VM</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-03-30-arch-linux-virtual-box/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Linux'); return false;">
 Linux
 </div>
 </div>
-<a href="./posts/2020-03-30-arch-linux-virtual-box/index.html">
 <div class="listing-description">
-<p>Testing Arch before you wreck your computer installing it.</p>
+<a href="./posts/2020-03-30-arch-linux-virtual-box/index.html" class="no-external">Testing Arch before you wreck your computer installing it.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-03-30-arch-linux-virtual-box/index.html">
+<a href="./posts/2020-03-30-arch-linux-virtual-box/index.html" class="no-external">
 <div class="listing-date">
 Mar 30, 2020
 </div>
@@ -761,32 +774,30 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="15" data-categories="Sociopolitical" data-listing-date-sort="1579496400000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="15" data-categories="Sociopolitical" data-listing-date-sort="1579496400000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66">
 <div class="thumbnail">
-<p><a href="./posts/2020-01-20-mlk/index.html"> <p class="card-img-top"><img src="assets/jail.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/2020-01-20-mlk/index.html" class="no-external"></a></p><a href="./posts/2020-01-20-mlk/index.html" class="no-external">
+<p class="card-img-top"><img src="assets/jail.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2020-01-20-mlk/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2020-01-20-mlk/index.html">
 <h3 class="no-anchor listing-title">
-In Honor of MLK 2020: ‘Letter from Birmingham Jail’ Wordcloud Example in R
+<a href="./posts/2020-01-20-mlk/index.html" class="no-external">In Honor of MLK 2020: ‘Letter from Birmingham Jail’ Wordcloud Example in R</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2020-01-20-mlk/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Sociopolitical'); return false;">
 Sociopolitical
 </div>
 </div>
-<a href="./posts/2020-01-20-mlk/index.html">
 <div class="listing-description">
-<p>Marking the occasion with word clouds.</p>
+<a href="./posts/2020-01-20-mlk/index.html" class="no-external">Marking the occasion with word clouds.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2020-01-20-mlk/index.html">
+<a href="./posts/2020-01-20-mlk/index.html" class="no-external">
 <div class="listing-date">
 Jan 20, 2020
 </div>
@@ -796,19 +807,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="Sociopolitical,Analysis,R,Statistics" data-listing-date-sort="1567137600000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="16" data-categories="Sociopolitical,Analysis,R,Statistics" data-listing-date-sort="1567137600000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="70">
 <div class="thumbnail">
-<p><a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html" class="no-external"></a></p><a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html">
 <h3 class="no-anchor listing-title">
-Seasonality in gun deaths
+<a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html" class="no-external">Seasonality in gun deaths</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Sociopolitical'); return false;">
 Sociopolitical
@@ -823,14 +834,12 @@ R
 Statistics
 </div>
 </div>
-<a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html">
 <div class="listing-description">
-<p>Practicing data analysis on some CDC gun data.</p>
+<a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html" class="no-external">Practicing data analysis on some CDC gun data.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html">
+<a href="./posts/2019-08-30-seasonality-in-gun-deaths/index.html" class="no-external">
 <div class="listing-date">
 Aug 30, 2019
 </div>
@@ -840,19 +849,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="Python,Functional Programming" data-listing-date-sort="1553745600000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="17" data-categories="Python,Functional Programming" data-listing-date-sort="1553745600000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="955">
 <div class="thumbnail">
-<p><a href="./posts/2019-03-28-closures-in-python/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2019-03-28-closures-in-python/index.html" class="no-external"></a></p><a href="./posts/2019-03-28-closures-in-python/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2019-03-28-closures-in-python/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2019-03-28-closures-in-python/index.html">
 <h3 class="no-anchor listing-title">
-Closures in Python
+<a href="./posts/2019-03-28-closures-in-python/index.html" class="no-external">Closures in Python</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2019-03-28-closures-in-python/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
 Python
@@ -861,14 +870,12 @@ Python
 Functional Programming
 </div>
 </div>
-<a href="./posts/2019-03-28-closures-in-python/index.html">
 <div class="listing-description">
-<p>Makeshift type checking in Python and when I find it handy.</p>
+<a href="./posts/2019-03-28-closures-in-python/index.html" class="no-external">Makeshift type checking in Python and when I find it handy.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2019-03-28-closures-in-python/index.html">
+<a href="./posts/2019-03-28-closures-in-python/index.html" class="no-external">
 <div class="listing-date">
 Mar 28, 2019
 </div>
@@ -878,19 +885,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="Antigens,Python" data-listing-date-sort="1548910800000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="18" data-categories="Antigens,Python" data-listing-date-sort="1548910800000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="73">
 <div class="thumbnail">
-<p><a href="./posts/2019-01-31-more-rigorous-ash/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2019-01-31-more-rigorous-ash/index.html" class="no-external"></a></p><a href="./posts/2019-01-31-more-rigorous-ash/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2019-01-31-more-rigorous-ash/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2019-01-31-more-rigorous-ash/index.html">
 <h3 class="no-anchor listing-title">
-A more rigorous ASH
+<a href="./posts/2019-01-31-more-rigorous-ash/index.html" class="no-external">A more rigorous ASH</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2019-01-31-more-rigorous-ash/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Antigens'); return false;">
 Antigens
@@ -899,14 +906,12 @@ Antigens
 Python
 </div>
 </div>
-<a href="./posts/2019-01-31-more-rigorous-ash/index.html">
 <div class="listing-description">
-<p>Builing on the ASH tool from a previous post.</p>
+<a href="./posts/2019-01-31-more-rigorous-ash/index.html" class="no-external">Builing on the ASH tool from a previous post.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2019-01-31-more-rigorous-ash/index.html">
+<a href="./posts/2019-01-31-more-rigorous-ash/index.html" class="no-external">
 <div class="listing-date">
 Jan 31, 2019
 </div>
@@ -916,32 +921,30 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="19" data-categories="Perl" data-listing-date-sort="1538625600000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="19" data-categories="Perl" data-listing-date-sort="1538625600000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="485">
 <div class="thumbnail">
-<p><a href="./posts/2018-10-04-perl-for-the-impatient/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-10-04-perl-for-the-impatient/index.html" class="no-external"></a></p><a href="./posts/2018-10-04-perl-for-the-impatient/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-10-04-perl-for-the-impatient/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-10-04-perl-for-the-impatient/index.html">
 <h3 class="no-anchor listing-title">
-Perl for the impatient
+<a href="./posts/2018-10-04-perl-for-the-impatient/index.html" class="no-external">Perl for the impatient</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-10-04-perl-for-the-impatient/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Perl'); return false;">
 Perl
 </div>
 </div>
-<a href="./posts/2018-10-04-perl-for-the-impatient/index.html">
 <div class="listing-description">
-<p>A dangerously fast introduction to a dangerously concise language.</p>
+<a href="./posts/2018-10-04-perl-for-the-impatient/index.html" class="no-external">A dangerously fast introduction to a dangerously concise language.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-10-04-perl-for-the-impatient/index.html">
+<a href="./posts/2018-10-04-perl-for-the-impatient/index.html" class="no-external">
 <div class="listing-date">
 Oct 4, 2018
 </div>
@@ -951,32 +954,30 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="Python" data-listing-date-sort="1538280000000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="20" data-categories="Python" data-listing-date-sort="1538280000000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="94">
 <div class="thumbnail">
-<p><a href="./posts/2018-09-30-python-imports/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-09-30-python-imports/index.html" class="no-external"></a></p><a href="./posts/2018-09-30-python-imports/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-09-30-python-imports/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-09-30-python-imports/index.html">
 <h3 class="no-anchor listing-title">
-Python imports: Sample Project + Explanations
+<a href="./posts/2018-09-30-python-imports/index.html" class="no-external">Python imports: Sample Project + Explanations</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-09-30-python-imports/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
 Python
 </div>
 </div>
-<a href="./posts/2018-09-30-python-imports/index.html">
 <div class="listing-description">
-<p>Answering a question on using imports in Python pograms</p>
+<a href="./posts/2018-09-30-python-imports/index.html" class="no-external">Answering a question on using imports in Python pograms</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-09-30-python-imports/index.html">
+<a href="./posts/2018-09-30-python-imports/index.html" class="no-external">
 <div class="listing-date">
 Sep 30, 2018
 </div>
@@ -986,19 +987,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="21" data-categories="Python,Object-Oriented Programming" data-listing-date-sort="1535601600000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
+<div class="quarto-post image-right" data-index="21" data-categories="Python,Object-Oriented Programming" data-listing-date-sort="1535601600000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2318">
 <div class="thumbnail">
-<p><a href="./posts/2018-08-30-oop/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-08-30-oop/index.html" class="no-external"></a></p><a href="./posts/2018-08-30-oop/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-08-30-oop/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-08-30-oop/index.html">
 <h3 class="no-anchor listing-title">
-Object-oriented Python: an overview
+<a href="./posts/2018-08-30-oop/index.html" class="no-external">Object-oriented Python: an overview</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-08-30-oop/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
 Python
@@ -1007,14 +1008,12 @@ Python
 Object-Oriented Programming
 </div>
 </div>
-<a href="./posts/2018-08-30-oop/index.html">
 <div class="listing-description">
-<p>An overview of object-oriented programming in Python.</p>
+<a href="./posts/2018-08-30-oop/index.html" class="no-external">An overview of object-oriented programming in Python.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-08-30-oop/index.html">
+<a href="./posts/2018-08-30-oop/index.html" class="no-external">
 <div class="listing-date">
 Aug 30, 2018
 </div>
@@ -1024,25 +1023,25 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="22" data-listing-date-sort="1532059200000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
+<div class="quarto-post image-right" data-index="22" data-listing-date-sort="1532059200000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1780">
 <div class="thumbnail">
-<p><a href="./posts/2018-07-20-scala/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-07-20-scala/index.html" class="no-external"></a></p><a href="./posts/2018-07-20-scala/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-07-20-scala/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-07-20-scala/index.html">
 <h3 class="no-anchor listing-title">
-A handshake with Scala
+<a href="./posts/2018-07-20-scala/index.html" class="no-external">A handshake with Scala</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-07-20-scala/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Scala is a JVM language that seeks to marry functional and object-oriented programming styles. It was was Designed by Martin Odersky and first appeared in 2004. While I…
+<a href="./posts/2018-07-20-scala/index.html" class="no-external">Scala is a JVM language that seeks to marry functional and object-oriented programming styles. It was was Designed by Martin Odersky and first appeared in 2004. While I…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-07-20-scala/index.html">
+<a href="./posts/2018-07-20-scala/index.html" class="no-external">
 <div class="listing-date">
 Jul 20, 2018
 </div>
@@ -1052,19 +1051,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="Python,Object-Oriented Programming" data-listing-date-sort="1525924800000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="23" data-categories="Python,Object-Oriented Programming" data-listing-date-sort="1525924800000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="352">
 <div class="thumbnail">
-<p><a href="./posts/2018-05-10-oop-lighthearted/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-05-10-oop-lighthearted/index.html" class="no-external"></a></p><a href="./posts/2018-05-10-oop-lighthearted/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-05-10-oop-lighthearted/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-05-10-oop-lighthearted/index.html">
 <h3 class="no-anchor listing-title">
-Some light-hearted oop
+<a href="./posts/2018-05-10-oop-lighthearted/index.html" class="no-external">Some light-hearted oop</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-05-10-oop-lighthearted/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
 Python
@@ -1073,14 +1072,12 @@ Python
 Object-Oriented Programming
 </div>
 </div>
-<a href="./posts/2018-05-10-oop-lighthearted/index.html">
 <div class="listing-description">
-<p>…or: circumstantial evidence that I am still alive.</p>
+<a href="./posts/2018-05-10-oop-lighthearted/index.html" class="no-external">…or: circumstantial evidence that I am still alive.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-05-10-oop-lighthearted/index.html">
+<a href="./posts/2018-05-10-oop-lighthearted/index.html" class="no-external">
 <div class="listing-date">
 May 10, 2018
 </div>
@@ -1090,19 +1087,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="Python,Data Processing" data-listing-date-sort="1520827200000" data-listing-file-modified-sort="1701801331643" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="24" data-categories="Python,Data Processing" data-listing-date-sort="1520827200000" data-listing-file-modified-sort="1701801332643" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1033">
 <div class="thumbnail">
-<p><a href="./posts/2018-03-12-find-and-replace/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-03-12-find-and-replace/index.html" class="no-external"></a></p><a href="./posts/2018-03-12-find-and-replace/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-03-12-find-and-replace/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-03-12-find-and-replace/index.html">
 <h3 class="no-anchor listing-title">
-Find and replace in Python
+<a href="./posts/2018-03-12-find-and-replace/index.html" class="no-external">Find and replace in Python</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-03-12-find-and-replace/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
 Python
@@ -1111,14 +1108,12 @@ Python
 Data Processing
 </div>
 </div>
-<a href="./posts/2018-03-12-find-and-replace/index.html">
 <div class="listing-description">
-<p>Like ctrl-f with Python.</p>
+<a href="./posts/2018-03-12-find-and-replace/index.html" class="no-external">Like ctrl-f with Python.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-03-12-find-and-replace/index.html">
+<a href="./posts/2018-03-12-find-and-replace/index.html" class="no-external">
 <div class="listing-date">
 Mar 12, 2018
 </div>
@@ -1128,19 +1123,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="25" data-categories="Antigens,Python" data-listing-date-sort="1519102800000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="25" data-categories="Antigens,Python" data-listing-date-sort="1519102800000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="157">
 <div class="thumbnail">
-<p><a href="./posts/2018-02-20-ash/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-02-20-ash/index.html" class="no-external"></a></p><a href="./posts/2018-02-20-ash/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-02-20-ash/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-02-20-ash/index.html">
 <h3 class="no-anchor listing-title">
-ASH: Antigen Selection Heuristic
+<a href="./posts/2018-02-20-ash/index.html" class="no-external">ASH: Antigen Selection Heuristic</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-02-20-ash/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Antigens'); return false;">
 Antigens
@@ -1149,14 +1144,12 @@ Antigens
 Python
 </div>
 </div>
-<a href="./posts/2018-02-20-ash/index.html">
 <div class="listing-description">
-<p>A prototype to select antigenic peptides.</p>
+<a href="./posts/2018-02-20-ash/index.html" class="no-external">A prototype to select antigenic peptides.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-02-20-ash/index.html">
+<a href="./posts/2018-02-20-ash/index.html" class="no-external">
 <div class="listing-date">
 Feb 20, 2018
 </div>
@@ -1166,19 +1159,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="26" data-categories="Python,Data Processing" data-listing-date-sort="1517893200000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="26" data-categories="Python,Data Processing" data-listing-date-sort="1517893200000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="881">
 <div class="thumbnail">
-<p><a href="./posts/2018-02-06-simple-date-conversion/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-02-06-simple-date-conversion/index.html" class="no-external"></a></p><a href="./posts/2018-02-06-simple-date-conversion/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-02-06-simple-date-conversion/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-02-06-simple-date-conversion/index.html">
 <h3 class="no-anchor listing-title">
-Simple date-string conversion
+<a href="./posts/2018-02-06-simple-date-conversion/index.html" class="no-external">Simple date-string conversion</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-02-06-simple-date-conversion/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
 Python
@@ -1187,14 +1180,12 @@ Python
 Data Processing
 </div>
 </div>
-<a href="./posts/2018-02-06-simple-date-conversion/index.html">
 <div class="listing-description">
-<p>Answering a question an dates and strings.</p>
+<a href="./posts/2018-02-06-simple-date-conversion/index.html" class="no-external">Answering a question an dates and strings.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-02-06-simple-date-conversion/index.html">
+<a href="./posts/2018-02-06-simple-date-conversion/index.html" class="no-external">
 <div class="listing-date">
 Feb 6, 2018
 </div>
@@ -1204,19 +1195,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="27" data-categories="Sociopolitical,R,NLP" data-listing-date-sort="1516078800000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="27" data-categories="Sociopolitical,R,NLP" data-listing-date-sort="1516078800000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="143">
 <div class="thumbnail">
-<p><a href="./posts/2018-01-16-mlk/index.html"> <p class="card-img-top"><img data-src="assets/dream.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/2018-01-16-mlk/index.html" class="no-external"></a></p><a href="./posts/2018-01-16-mlk/index.html" class="no-external">
+<p class="card-img-top"><img data-src="assets/dream.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/2018-01-16-mlk/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-01-16-mlk/index.html">
 <h3 class="no-anchor listing-title">
-Matrin Luther King Day
+<a href="./posts/2018-01-16-mlk/index.html" class="no-external">Matrin Luther King Day</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-01-16-mlk/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Sociopolitical'); return false;">
 Sociopolitical
@@ -1228,14 +1219,12 @@ R
 NLP
 </div>
 </div>
-<a href="./posts/2018-01-16-mlk/index.html">
 <div class="listing-description">
-<p>Marking the occasion with word clouds.</p>
+<a href="./posts/2018-01-16-mlk/index.html" class="no-external">Marking the occasion with word clouds.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-01-16-mlk/index.html">
+<a href="./posts/2018-01-16-mlk/index.html" class="no-external">
 <div class="listing-date">
 Jan 16, 2018
 </div>
@@ -1245,25 +1234,25 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="28" data-listing-date-sort="1515474000000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="28" data-listing-date-sort="1515474000000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="123">
 <div class="thumbnail">
-<p><a href="./posts/2018-01-09-twitter-metadata-classifier/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2018-01-09-twitter-metadata-classifier/index.html" class="no-external"></a></p><a href="./posts/2018-01-09-twitter-metadata-classifier/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2018-01-09-twitter-metadata-classifier/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2018-01-09-twitter-metadata-classifier/index.html">
 <h3 class="no-anchor listing-title">
-Trump v. Clinton: Twitter metadata classifier
+<a href="./posts/2018-01-09-twitter-metadata-classifier/index.html" class="no-external">Trump v. Clinton: Twitter metadata classifier</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2018-01-09-twitter-metadata-classifier/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<p>Classifiying tweets as Hilary or Trump.</p>
+<a href="./posts/2018-01-09-twitter-metadata-classifier/index.html" class="no-external">Classifiying tweets as Hilary or Trump.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2018-01-09-twitter-metadata-classifier/index.html">
+<a href="./posts/2018-01-09-twitter-metadata-classifier/index.html" class="no-external">
 <div class="listing-date">
 Jan 9, 2018
 </div>
@@ -1273,19 +1262,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="29" data-categories="Python,Perl" data-listing-date-sort="1513832400000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="29" data-categories="Python,Perl" data-listing-date-sort="1513832400000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="152">
 <div class="thumbnail">
-<p><a href="./posts/2017-12-21-python-for-perl-users/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2017-12-21-python-for-perl-users/index.html" class="no-external"></a></p><a href="./posts/2017-12-21-python-for-perl-users/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2017-12-21-python-for-perl-users/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2017-12-21-python-for-perl-users/index.html">
 <h3 class="no-anchor listing-title">
-Python for Perl users
+<a href="./posts/2017-12-21-python-for-perl-users/index.html" class="no-external">Python for Perl users</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2017-12-21-python-for-perl-users/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
 Python
@@ -1294,14 +1283,12 @@ Python
 Perl
 </div>
 </div>
-<a href="./posts/2017-12-21-python-for-perl-users/index.html">
 <div class="listing-description">
-<p>All the kids are using Python now.</p>
+<a href="./posts/2017-12-21-python-for-perl-users/index.html" class="no-external">All the kids are using Python now.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2017-12-21-python-for-perl-users/index.html">
+<a href="./posts/2017-12-21-python-for-perl-users/index.html" class="no-external">
 <div class="listing-date">
 Dec 21, 2017
 </div>
@@ -1311,19 +1298,19 @@ Thadryan
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="30" data-categories="Perl,Python" data-listing-date-sort="1513746000000" data-listing-file-modified-sort="1701793369754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="30" data-categories="Perl,Python" data-listing-date-sort="1513746000000" data-listing-file-modified-sort="1701793370754" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="394">
 <div class="thumbnail">
-<p><a href="./posts/2017-12-20-zip-and-dict/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/2017-12-20-zip-and-dict/index.html" class="no-external"></a></p><a href="./posts/2017-12-20-zip-and-dict/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2017-12-20-zip-and-dict/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/2017-12-20-zip-and-dict/index.html">
 <h3 class="no-anchor listing-title">
-zip and dict
+<a href="./posts/2017-12-20-zip-and-dict/index.html" class="no-external">zip and dict</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2017-12-20-zip-and-dict/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Perl'); return false;">
 Perl
@@ -1332,14 +1319,12 @@ Perl
 Python
 </div>
 </div>
-<a href="./posts/2017-12-20-zip-and-dict/index.html">
 <div class="listing-description">
-<p>The peanutbetter and jelly of paired data.</p>
+<a href="./posts/2017-12-20-zip-and-dict/index.html" class="no-external">The peanutbetter and jelly of paired data.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2017-12-20-zip-and-dict/index.html">
+<a href="./posts/2017-12-20-zip-and-dict/index.html" class="no-external">
 <div class="listing-date">
 Dec 20, 2017
 </div>
@@ -1436,10 +1421,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1449,8 +1433,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1463,6 +1456,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1506,6 +1618,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1531,6 +1644,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1591,6 +1730,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

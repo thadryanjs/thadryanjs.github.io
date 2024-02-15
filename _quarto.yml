@@ -3,7 +3,7 @@ project:
 execute:
   freeze: auto
 website:
-  title: "Thadryan J. Sweeney, MS"
+  title: "Thadryan J. Sweeney, MS | Medical Data Scientist"
   navbar:
     background: primary
     left:

@@ -22,7 +22,13 @@ about:
       href: https://www.linkedin.com/in/thadryan-sweeney-10b938a/
 ---
 
-I'm a Firefighter and Human Services Professional turned Data Scientist interested in statistical approaches to understanding and optimizing biomedical systems large and small. My goal is to conduct research that leads to more efficient use of resources, more personalized care, and that reduces friction and suffering. You might call it <a href=https://d3.harvard.edu/platform-digit/submission/optum-using-moneyball-analytics-to-provided-better-insights-in-healthcare/"> Biomedical Moneyball</a>.
+<h4> {biostatistics, machine learning, drug epidemiology} </h4>
+
+<p></p>
+<p></p>
+<p></p>
+
+I'm a Firefighter and Human Services Professional turned Data Scientist interested in statistical approaches to understanding and optimizing biomedical systems large and small. My goal is to conduct research that leads to more efficient use of resources, more personalized care, and that reduces friction and suffering. You might call it <a href="https://d3.harvard.edu/platform-digit/submission/optum-using-moneyball-analytics-to-provided-better-insights-in-healthcare/"> Biomedical Moneyball</a>.
 
 I'm currently pursing a PhD in <a href="https://geiselmed.dartmouth.edu/qbs/">Quantitative Biomedical Sciences</a>, where I am advised by <a href="https://wesleymarrero.wixsite.com/home"> Wesley Marrero </a> of the <a href="https://or.engineering.dartmouth.edu"> Operations Research Group</a>. My research focuses on finding optimal policy-level treatment strategies for opioid use disorder treatment using reinforcement learning as well as traditional biostatistics. I'm also working on more general epidemiological projects related to disparities in access to treatment for opioid use disorder.
 

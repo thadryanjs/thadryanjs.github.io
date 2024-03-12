@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -296,6 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -392,6 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</div>
 <section id="basics" class="level2">
 <h2 class="anchored" data-anchor-id="basics">Basics</h2>
 <p>How to get basic information about the df.</p>
@@ -462,6 +464,7 @@ memory usage: 3.0+ KB</code></pre>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary of distributional information</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
+<div>
 <div>
 
 
@@ -601,6 +604,7 @@ memory usage: 3.0+ KB</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="selections" class="level2">
@@ -639,6 +643,7 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -675,6 +680,7 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="select-several-columns-by-string-name" class="level3">
 <h3 class="anchored" data-anchor-id="select-several-columns-by-string-name">Select several columns by string name</h3>
@@ -682,6 +688,7 @@ Name: mpg, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select a column by several names</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"wt"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
+<div>
 <div>
 
 
@@ -725,6 +732,7 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="select-from-one-column-through-another-with-names" class="level3">
 <h3 class="anchored" data-anchor-id="select-from-one-column-through-another-with-names">Select from one column through another with names</h3>
@@ -732,6 +740,7 @@ Name: mpg, dtype: float64</code></pre>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select a range by name of start and end "mph through hp"</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="st">"mpg"</span>:<span class="st">"hp"</span>].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
+<div>
 <div>
 
 
@@ -787,6 +796,7 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="select-arbitrarily" class="level3">
 <h3 class="anchored" data-anchor-id="select-arbitrarily">Select arbitrarily</h3>
@@ -798,6 +808,7 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pass the list to pandas</span></span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>df[starts_with_d].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
+<div>
 <div>
 
 
@@ -841,6 +852,7 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="filtering" class="level2">
@@ -852,6 +864,7 @@ Name: mpg, dtype: float64</code></pre>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df.query(<span class="st">"cyl == 6"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
+<div>
 <div>
 
 
@@ -977,12 +990,14 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="multiple-conditions" class="level3">
 <h3 class="anchored" data-anchor-id="multiple-conditions">Multiple conditions</h3>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.query(<span class="st">"cyl == 6 &amp; hp &gt; 105"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
+<div>
 <div>
 
 
@@ -1094,6 +1109,7 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="sorting" class="level2">
@@ -1153,6 +1169,7 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"ApplyResult"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1195,6 +1212,7 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="apply-a-function-with-arguments-using-kwargs" class="level3">
 <h3 class="anchored" data-anchor-id="apply-a-function-with-arguments-using-kwargs">Apply a function with arguments using kwargs</h3>
@@ -1208,6 +1226,7 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"ApplyResult"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
+<div>
 <div>
 
 
@@ -1251,6 +1270,7 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="missing-values" class="level2">
@@ -1263,6 +1283,7 @@ Name: mpg, dtype: float64</code></pre>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>})</span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
+<div>
 <div>
 
 
@@ -1346,12 +1367,14 @@ Name: mpg, dtype: float64</code></pre>
 </div>
 </div>
 </div>
+</div>
 <section id="missing-in-the-whole-df" class="level3">
 <h3 class="anchored" data-anchor-id="missing-in-the-whole-df">Missing in the whole df</h3>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no NA the whole thing</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>df2.isnull()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
+<div>
 <div>
 
 
@@ -1432,6 +1455,7 @@ Name: mpg, dtype: float64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -1467,6 +1491,7 @@ Name: x, dtype: bool</code></pre>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1549,6 +1574,7 @@ Name: x, dtype: bool</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="replace-the-nas-in-the-full-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="replace-the-nas-in-the-full-dataset">Replace the NAs in the full dataset</h3>
@@ -1556,6 +1582,7 @@ Name: x, dtype: bool</code></pre>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># files the other even though I didn't specify a column</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>df2.fillna(<span class="st">"MISSING!!!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
+<div>
 <div>
 
 
@@ -1636,6 +1663,7 @@ Name: x, dtype: bool</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -1653,6 +1681,7 @@ Name: x, dtype: bool</code></pre>
 <span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>df3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <div>
+<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -1749,12 +1778,14 @@ Name: x, dtype: bool</code></pre>
 </div>
 </div>
 </div>
+</div>
 <section id="drop-all-across-the-df" class="level4">
 <h4 class="anchored" data-anchor-id="drop-all-across-the-df">Drop all across the df</h4>
 <div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no NAs period </span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>df3.dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
+<div>
 <div>
 
 
@@ -1816,6 +1847,7 @@ Name: x, dtype: bool</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="drop-if-theyre-all-na-in-that-row" class="level4">
 <h4 class="anchored" data-anchor-id="drop-if-theyre-all-na-in-that-row">Drop if they’re all na in that row</h4>
@@ -1823,6 +1855,7 @@ Name: x, dtype: bool</code></pre>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># drop if the whole row is NA</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>df3.dropna(how <span class="op">=</span> <span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
+<div>
 <div>
 
 
@@ -1908,6 +1941,7 @@ Name: x, dtype: bool</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="drop-all-in-certain-columns" class="level4">
 <h4 class="anchored" data-anchor-id="drop-all-in-certain-columns">Drop all in certain columns</h4>
@@ -1915,6 +1949,7 @@ Name: x, dtype: bool</code></pre>
 <div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df3.dropna(subset <span class="op">=</span> [<span class="st">"x"</span>, <span class="st">"y"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
+<div>
 <div>
 
 
@@ -1979,6 +2014,7 @@ Name: x, dtype: bool</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -2001,6 +2037,7 @@ Name: x, dtype: bool</code></pre>
 <div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"mpg"</span>, <span class="st">"disp"</span>, <span class="st">"cyl"</span>]].groupby(by <span class="op">=</span> <span class="st">"cyl"</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
+<div>
 <div>
 
 
@@ -2039,6 +2076,7 @@ Name: x, dtype: bool</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="melting-a-dataframe" class="level2">
@@ -2048,6 +2086,7 @@ Name: x, dtype: bool</code></pre>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> pd.melt(df, id_vars <span class="op">=</span> <span class="st">"cyl"</span>, value_vars <span class="op">=</span> [<span class="st">"mpg"</span>, <span class="st">"wt"</span>])</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>df_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
+<div>
 <div>
 
 
@@ -2134,6 +2173,7 @@ Name: x, dtype: bool</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="misc" class="level2">
 <h2 class="anchored" data-anchor-id="misc">Misc</h2>
@@ -2159,6 +2199,7 @@ Name: cyl, dtype: int64</code></pre>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    groupby(by <span class="op">=</span> <span class="st">"cyl"</span>).<span class="op">\</span></span>
 <span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
+<div>
 <div>
 
 
@@ -2189,6 +2230,7 @@ Name: cyl, dtype: int64</code></pre>
 </tbody>
 </table>
 
+</div>
 </div>
 </div>
 </div>
@@ -2322,6 +2364,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/thadryanjs\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -2356,7 +2416,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

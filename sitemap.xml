@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://thadryanjs.github.io/index.html</loc>
-    <lastmod>2024-02-15T14:19:53.201Z</lastmod>
+    <lastmod>2024-03-12T17:18:59.481Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thadryanjs.github.io/test.html</loc>
+    <lastmod>2024-03-12T17:07:48.766Z</lastmod>
   </url>
   <url>
     <loc>https://thadryanjs.github.io/wip/wtf/testing.html</loc>
@@ -77,10 +81,6 @@
     <lastmod>2023-12-05T16:22:50.754Z</lastmod>
   </url>
   <url>
-    <loc>https://thadryanjs.github.io/cv.html</loc>
-    <lastmod>2023-12-05T16:22:50.754Z</lastmod>
-  </url>
-  <url>
     <loc>https://thadryanjs.github.io/posts/2017-12-21-python-for-perl-users/index.html</loc>
     <lastmod>2023-12-05T16:22:50.754Z</lastmod>
   </url>
@@ -145,7 +145,11 @@
     <lastmod>2023-12-05T16:22:50.757Z</lastmod>
   </url>
   <url>
+    <loc>https://thadryanjs.github.io/cv.html</loc>
+    <lastmod>2024-03-12T17:06:08.251Z</lastmod>
+  </url>
+  <url>
     <loc>https://thadryanjs.github.io/about.html</loc>
-    <lastmod>2023-12-05T18:14:33.188Z</lastmod>
+    <lastmod>2024-03-12T17:13:42.531Z</lastmod>
   </url>
 </urlset>

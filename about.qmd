@@ -24,9 +24,9 @@ about:
 
 ## Research Focus
 
-I'm interested in statistical methods to reduce disparities and inefficiencies in healthcare. The current form this takes is biostatistical and reinforcement learning approaches to understanding and improving health outcomes in opioid use disorder.
+I'm interested in statistical methods to reduce disparities and inefficiencies in healthcare. This currently manifests in work on biostatistical and reinforcement learning approaches to understanding and improving health outcomes in opioid use disorder.
 
-Before starting my PhD, this took the form of trying to identify biomarkers for Alzheimer's Dementia, Heart Failure, and COVID-19. The overarching goal was to find reliable markers of disease or to compare existing methods to determine which diagnostic approach was optimal in terms of expense or invasivness.
+I Previously to identify biomarkers for Alzheimer's Dementia, Heart Failure, and COVID-19. The overarching goal was to find reliable markers of disease or to compare existing methods to determine which diagnostic approach was optimal in terms of expense or invasiveness
 
 ## Previous Work
 

@@ -1,7 +1,7 @@
 ---
 title: "[ CV ]"
 about:
-  template: jolla 
+  template: jolla
   links:
     - icon: google
       text: Scholar
@@ -25,7 +25,7 @@ about:
   <a href="https://github.com/sweeney-th/Portfolio">portfolio</a>.
 </p>
 
-<p>	
+<p>
 	<p>
 		<embed src="assets/cv-with-resume.pdf" type="application/pdf"  width="1000" height="2550">
 	</p>

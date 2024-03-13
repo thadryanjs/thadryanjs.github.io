@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Thadryan J. Sweeney, MS | Medical Data Scientist",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "[ What I Work On ]",
     "section": "",
-    "text": "{ biostatistics, machine learning, drug epidemiology }\n\n\n\n\n“Like Moneyball for healthcare”\n\n\n\nI’m a Firefighter and Human Services Professional turned Data Scientist interested in statistical approaches to understanding and optimizing biomedical systems large and small. My goal is to conduct research that leads to more efficient use of resources, more personalized care, and that reduces friction and suffering.\nI’m currently pursing a PhD in Quantitative Biomedical Sciences, where I am advised by  Wesley Marrero  of the  Operations Research Group. My research focuses on finding optimal policy-level treatment strategies for opioid use disorder treatment using reinforcement learning as well as traditional biostatistics. I’m also working on more general epidemiological projects related to disparities in access to treatment for opioid use disorder.\nBefore starting my doctorate, I worked at Mass General Hospital evaluating biomarkers in the  Alzheimer’s Clinical & Translational Research Unit  and the  Cardiovascular Research Center.\nI also taught an introductory class in the Bioinformatics MS  program at Northeastern University.\nWhen I’m not doing science-y stuff, I play RPGs or make cartoons.\nOf the links below, Mastodon is my preferred platform."
+    "text": "I’m interested in statistical methods to reduce disparities and inefficiencies in healthcare. This currently manifests in work on biostatistical and reinforcement learning approaches to understanding and improving health outcomes in opioid use disorder.\nI Previously to identify biomarkers for Alzheimer’s Dementia, Heart Failure, and COVID-19. The overarching goal was to find reliable markers of disease or to compare existing methods to determine which diagnostic approach was optimal in terms of expense or invasiveness"
+  },
+  {
+    "objectID": "about.html#research-focus",
+    "href": "about.html#research-focus",
+    "title": "[ What I Work On ]",
+    "section": "",
+    "text": "I’m interested in statistical methods to reduce disparities and inefficiencies in healthcare. This currently manifests in work on biostatistical and reinforcement learning approaches to understanding and improving health outcomes in opioid use disorder.\nI Previously to identify biomarkers for Alzheimer’s Dementia, Heart Failure, and COVID-19. The overarching goal was to find reliable markers of disease or to compare existing methods to determine which diagnostic approach was optimal in terms of expense or invasiveness"
+  },
+  {
+    "objectID": "about.html#previous-work-general-applied-statistics-and-scientific-programming",
+    "href": "about.html#previous-work-general-applied-statistics-and-scientific-programming",
+    "title": "[ What I Work On ]",
+    "section": "Previous Work: General Applied Statistics and Scientific Programming",
+    "text": "Previous Work: General Applied Statistics and Scientific Programming\nBefore starting my PhD, my work fell roughly into five (often overlapping) spheres.\n\nGeneral Research Programming\nI worked on  apps  that complement  publications  to make their content easier to use and increase engagement.\n\n\nOriginal Software\nI worked on creating new software for unmet needs. One example is our  Bayesian COVID Diagnostics app. This serves to complement our  manuscript  on lateral flow assays for SARS-CoV-2 antibodies as well as providing the user with an easy-to-use tool to avoid the pitfalls of black-and-white thinking about diagnostics and counter-intuitive conditional probability. Another is  ContrApption, which is a JavaScript-powered R package that allows to user to create an interactive widget for exploring the results of differential expression experiments or any dataset with similar structure.\n\n\nStatistics for biomarkers\nI worked on statistical analysis for biomarkers of potential use in Alzheimer’s Dementia and Neurological symptoms of COVID-19. Publications related to this can be found on my  Google Scholar  page.\n\n\nStatistics and genomics for basic science\nFor an example of this, check out our  manuscript  on stress-dependent signatures of cellular and extracellular tRNA-derived small RNAs (tDRs). We’re interested in this from a basic science perspective as well as a potential avenue of biomarkers for diseases.\n\n\n“Hacktivism”\nI had the privilege of contributing to a  web tool  that allows users to interact with a dataset that ranks the states in the US based on how well they support the financial well-being of survivors of domestic abuse. I did this as a member of  RagTag  in support of  FREEFROM."
   },
   {
     "objectID": "test.html",
@@ -763,24 +777,10 @@
     "text": "For computational and data science projects, see my portfolio."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "[ What I Work On ]",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Thadryan J. Sweeney, MS | Medical Data Scientist",
     "section": "",
-    "text": "I’m interested in statistical methods to reduce disparities and inefficiencies in healthcare. This currently manifests in work on biostatistical and reinforcement learning approaches to understanding and improving health outcomes in opioid use disorder.\nI Previously to identify biomarkers for Alzheimer’s Dementia, Heart Failure, and COVID-19. The overarching goal was to find reliable markers of disease or to compare existing methods to determine which diagnostic approach was optimal in terms of expense or invasiveness"
-  },
-  {
-    "objectID": "about.html#research-focus",
-    "href": "about.html#research-focus",
-    "title": "[ What I Work On ]",
-    "section": "",
-    "text": "I’m interested in statistical methods to reduce disparities and inefficiencies in healthcare. This currently manifests in work on biostatistical and reinforcement learning approaches to understanding and improving health outcomes in opioid use disorder.\nI Previously to identify biomarkers for Alzheimer’s Dementia, Heart Failure, and COVID-19. The overarching goal was to find reliable markers of disease or to compare existing methods to determine which diagnostic approach was optimal in terms of expense or invasiveness"
-  },
-  {
-    "objectID": "about.html#previous-work",
-    "href": "about.html#previous-work",
-    "title": "[ What I Work On ]",
-    "section": "Previous Work",
-    "text": "Previous Work\nBefore starting my PhD, my work fell roughly into five (often overlapping) spheres.\n\nGeneral Research Programming\nI worked on  apps  that complement  publications  to make their content easier to use and increase engagement.\n\n\nOriginal Software\nI worked on creating new software for unmet needs. One example is our  Bayesian COVID Diagnostics app. This serves to complement our  manuscript  on lateral flow assays for SARS-CoV-2 antibodies as well as providing the user with an easy-to-use tool to avoid the pitfalls of black-and-white thinking about diagnostics and counter-intuitive conditional probability. Another is  ContrApption, which is a JavaScript-powered R package that allows to user to create an interactive widget for exploring the results of differential expression experiments or any dataset with similar structure.\n\n\nStatistics for biomarkers\nI worked on statistical analysis for biomarkers of potential use in Alzheimer’s Dementia and Neurological symptoms of COVID-19. Publications related to this can be found on my  Google Scholar  page.\n\n\nStatistics and genomics for basic science\nFor an example of this, check out our  manuscript  on stress-dependent signatures of cellular and extracellular tRNA-derived small RNAs (tDRs). We’re interested in this from a basic science perspective as well as a potential avenue of biomarkers for diseases.\n\n\n“Hacktivism”\nI had the privilege of contributing to a  web tool  that allows users to interact with a dataset that ranks the states in the US based on how well they support the financial well-being of survivors of domestic abuse. I did this as a member of  RagTag  in support of  FREEFROM."
+    "text": "{ biostatistics, machine learning, drug epidemiology }\n\n\n\n\n“Like Moneyball for healthcare”\n\n\n\nI’m a Firefighter and Human Services Professional turned Data Scientist interested in statistical approaches to understanding and optimizing biomedical systems large and small. My goal is to conduct research that leads to more efficient use of resources, more personalized care, and that reduces friction and suffering.\nI’m currently pursing a PhD in Quantitative Biomedical Sciences, where I am advised by  Wesley Marrero  of the  Operations Research Group. My research focuses on finding optimal policy-level treatment strategies for opioid use disorder treatment using reinforcement learning as well as traditional biostatistics. I’m also working on more general epidemiological projects related to disparities in access to treatment for opioid use disorder.\nBefore starting my doctorate, I worked at Mass General Hospital evaluating biomarkers in the  Alzheimer’s Clinical & Translational Research Unit  and the  Cardiovascular Research Center.\nI also taught an introductory class in the Bioinformatics MS  program at Northeastern University.\nWhen I’m not doing science-y stuff, I play RPGs or make cartoons.\nOf the links below, Mastodon is my preferred platform."
   }
 ]
